@@ -1,7 +1,7 @@
 # Project Title
 The Toronto Brew? 6ixcafes
 
-## Overview
+## Overview ☕️
 
 6ixCafes is a platform designed for coffee lovers in Toronto to easily find and keep track of the best cafés in the city. It addresses the pain point of having to look up multiple resources (Google Maps, blogTO, Instagram, etc.) to find a good café. This website will filter cafés based on the best study spots, ambiance, and coffee quality.
 
@@ -28,17 +28,28 @@ Finding a good café can be a tedious process involving multiple websites and re
 
 ### Tech Stack
 
-- Frontend: React, JavaScript
-- Backend: Express, MySQL
-- Client libraries: 
+### Frontend
+<p>
+  <img src="https://skillicons.dev/icons?i=react&theme=dark" width="50" height="50"/>
+  <img src="https://skillicons.dev/icons?i=javascript&theme=dark" width="50" height="50"/>
+  <img src="https://skillicons.dev/icons?i=sass&theme=dark" width="50" height="50"/>
+</p>
+
+### Backend
+<p>
+  <img src="https://skillicons.dev/icons?i=express&theme=dark" width="50" height="50"/>
+  <img src="https://skillicons.dev/icons?i=mysql&theme=dark" width="50" height="50"/>
+</p>
+
+### Client Libraries
     - react
     - react-router
     - axios
-- Server libraries:
+    
+### Server libraries:
     - knex
     - express
     - bcrypt for password hashing
-
 
 ### APIs
 
@@ -46,7 +57,7 @@ Finding a good café can be a tedious process involving multiple websites and re
 
 ### Sitemap
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
+List the pages of my app with brief descriptions. Create mockups using Canva.
 
 ### Mockups
 
