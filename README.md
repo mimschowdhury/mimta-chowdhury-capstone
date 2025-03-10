@@ -1,5 +1,5 @@
 # Project Title
-The Toronto Brew? 6ixcafes
+The Toronto Brew? 6ixcafes?
 
 ## Overview
 
@@ -51,7 +51,9 @@ List the pages of your app with brief descriptions. You can show this visually, 
 ### Mockups
 
 	• Home Page: Displays a list of nearby cafés with filtering options.
-	• View Café Page: Detailed information and ratings for individual cafés.
+	• Café Page: Detailed information and ratings for individual cafés.
+
+![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
 
 ### Data
 
@@ -68,6 +70,8 @@ List endpoints that your server will implement, including HTTP methods, paramete
 	3.	Develop core features: Cafés list, rating system, user authentication.
 	4.	Deploy both client and server to production.
 	5.	Bug fixing and user feedback integration.
+
+    //make mockups
 
 ---
 
