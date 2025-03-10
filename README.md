@@ -54,13 +54,72 @@ List the pages of your app with brief descriptions. You can show this visually, 
 
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
 
-## Roadmap
+### Endpoints
 
-	1.	Set up the client and server projects.
-	2.	Create migrations and seed café data.
-	3.	Develop core features: Cafés list, rating system, user authentication.
-	4.	Deploy both client and server to production.
-	5.	Bug fixing and user feedback integration.
+**GET /cafes**
+
+- Get cafés, with an optional "visited" if the user is logged in or not
+- Filter: Filter by ambience, study_spots, or best_coffee (comma-separated if multiple)
+
+Response:
+```
+[
+    {
+        "id": 1,
+        "name": "Out of Office",
+        "distance": 0.25,
+        "ambience": "Modern, Minimal",
+        "study_spots": true,
+        "best_coffee": true,
+        "visited": true
+    },
+    ...
+]
+```
+
+**GET /cafes/:id**
+- Get detailed information about a single café.
+
+Parameters:
+- id: Café id as number
+
+Response:
+```
+[
+{
+    "id": 1,
+    "name": "Quantum Coffee",
+    "description": "Bright, airy space perfect for working.",
+    "address": "460 King St W, Toronto, ON",
+    "longitude": -79.394,
+    "latitude": 43.644,
+    "distance": 0.25,
+    "ambience": "Modern, Minimal",
+    "study_spots": true,
+    "best_coffee": true,
+    "visited": true
+    },
+    ...
+]
+```
+
+## Roadmap
+	1. Create client
+	•	React project with routes and boilerplate pages
+	2. Create server
+	•	Express project with routing and placeholder 200 responses
+	3. Create migrations
+	4. Gather 20+ sample cafés
+	5. Include geolocations, ambience descriptions, study spot status, coffee rating (editor-curated)
+	6. Create seeds with sample data
+	7. Deploy client and server projects
+	8. Feature: List cafés from a given location
+	•	Implement list cafés page with a location form
+	•	Use Google Maps API to display café pins
+	•	Create GET /cafes endpoint
+	9. Feature: View café
+	•	Implement view café page
+	•	Create GET /cafes/:id endpoint
 
 ---
 
