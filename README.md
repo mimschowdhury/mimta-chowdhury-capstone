@@ -66,6 +66,9 @@ List the pages of my app with brief descriptions. Create mockups using Canva.
 
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
 
+About Page
+![Sitemap](./src/assets/mockups/about.png)
+
 ### Endpoints
 
 **GET /cafes**
