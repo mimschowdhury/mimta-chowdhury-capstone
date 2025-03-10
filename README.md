@@ -39,7 +39,6 @@ Finding a good café can be a tedious process involving multiple websites and re
     - express
     - bcrypt for password hashing
 
-
 ### APIs
 
 - No external APIs will be used in the first sprint.
@@ -55,14 +54,6 @@ List the pages of your app with brief descriptions. You can show this visually, 
 
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
 
-### Data
-
-Describe your data and the relationships between the data points. You can show this visually using diagrams, or write it out. 
-
-### Endpoints
-
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
-
 ## Roadmap
 
 	1.	Set up the client and server projects.
@@ -70,8 +61,6 @@ List endpoints that your server will implement, including HTTP methods, paramete
 	3.	Develop core features: Cafés list, rating system, user authentication.
 	4.	Deploy both client and server to production.
 	5.	Bug fixing and user feedback integration.
-
-    //make mockups
 
 ---
 
