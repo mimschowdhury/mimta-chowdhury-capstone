@@ -62,6 +62,7 @@ List the pages of my app with brief descriptions. Create mockups using Canva.
 ### Mockups
 
 	• Home Page: Displays a list of nearby cafés with filtering options.
+	• About Page: Detailed information about the website.
 	• Café Page: Detailed information and ratings for individual cafés.
 
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
@@ -119,22 +120,56 @@ Response:
 ```
 
 ## Roadmap
-	1. Create client
-	•	React project with routes and boilerplate pages
-	2. Create server
-	•	Express project with routing and placeholder 200 responses
-	3. Create migrations
-	4. Gather 20+ sample cafés
-	5. Include geolocations, ambience descriptions, study spot status, coffee rating (editor-curated)
-	6. Create seeds with sample data
-	7. Deploy client and server projects
-	8. Feature: List cafés from a given location
-	•	Implement list cafés page with a location form
-	•	Use Google Maps API to display café pins
-	•	Create GET /cafes endpoint
-	9. Feature: View café
-	•	Implement view café page
-	•	Create GET /cafes/:id endpoint
+Week 1: Project Setup + Core Infrastructure
+
+Goal: Set up the foundational client and server, and gather data to seed the app.
+	1.	Create Client
+		- Initialize React project
+		- Set up basic routing
+		- Create boilerplate pages (Home, Café List, Café Details)
+	2.	Create Server
+		- Set up Express project
+		- Add routing structure with placeholder 200 responses
+	3.	Create Migrations
+		- Design database schema
+		- Set up migrations for cafés table and any additional fields (ambience, study spots, geolocation, etc.)
+	4.	Gather Sample Data
+		- Research and gather data for 20+ cafés
+		- Include geolocations, ambience descriptions, study spot status, and coffee ratings
+
+⸻
+
+Week 2: Data + Basic API Integration
+
+Goal: Seed the database, deploy the project, and create endpoints for listing and viewing cafés.
+	5.	Create Seeds with Sample Data
+		- Insert café data into the database
+		- Test database seeding works in dev and production environments
+	6.	Deploy Projects
+		- Deploy React client
+		- Deploy Express server.
+		- Connect deployed front-end with back-end
+	7.	Feature: List Cafés from a Given Location
+		- Implement List Cafés page in React
+		- Add location form to enter/select user location
+		- Integrate Google Maps API to display café pins
+		- Create and connect to GET /cafes endpoint
+		- Filter cafés based on proximity to the given location
+
+⸻
+
+Week 3: Viewing Café Details + Polish
+
+Goal: Implement café details page, fine-tune the user experience, and QA before wrap-up.
+	8.	Feature: View Café
+		- Implement View Café page in React
+		- Create and connect to GET /cafes/:id endpoint
+		- Display all café details (ambience, study spot availability, coffee rating, location on map)
+	9.	Polish & Testing
+		- Test all features on mobile & desktop
+		- Ensure map interactions are smooth
+		- Add basic styling for a clean, intuitive UI
+		- QA: Catch any bugs before final presentation/demo
 
 ---
 
@@ -144,4 +179,3 @@ Response:
 	•	User achievements: Badges for café visits and ratings.
 	•	Expanded rating system: Include coffee, ambiance, and staff ratings.
 	•	Unit and integration tests to ensure stability.
-
