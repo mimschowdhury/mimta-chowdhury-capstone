@@ -1,0 +1,20 @@
+//mixins.scss
+@use "variables" as *;
+
+@mixin tablet {
+    @media (min-width: $tablet-breakpoint) {
+    @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-breakpoint) {
+    @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: 20rem) and (max-width: 47.9375rem) { 
+        @content;
+    }
+}

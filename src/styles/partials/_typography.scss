@@ -1,0 +1,101 @@
+//typography.scss
+@use "variables" as *;
+@use "mixins" as *;
+
+// Newsreader - Regular
+@font-face {
+    font-family: 'Newsreader-Regular';
+    src: url("../../assets/fonts/Newsreader-Regular.woff") format("woff");
+    font-style: normal;
+}
+
+// Newsreader - Light 
+@font-face {
+    font-family: "Newsreader-Light";
+    src: url("../../assets/fonts/Newsreader-Light.woff") format("woff");
+}
+
+// Newsreader - Light Italic
+@font-face {
+    font-family: 'Newsreader-LightItalic';
+    src: url("../../assets/fonts/Newsreader-LightItalic.woff") format("woff");
+}
+
+// Outfit - Medium
+@font-face {
+    font-family: 'Outfit-Medium';
+    src: url("../../assets/fonts/Outfit-Medium.woff") format("woff");
+}
+
+// Outfit - Light
+@font-face {
+    font-family: "Outfit-Light";
+    src: url("../../assets/fonts/Outfit-Light.woff") format("woff");
+}
+
+//section typography mixins
+@mixin wordmark {
+    font-family: 'Newsreader-Regular';
+    font-weight: 400;
+    font-size: 2rem; //mobile
+    line-height: 2rem;
+    @include tablet {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+}
+
+@mixin title-typography {
+    //change font-family in scss
+    font-weight: 300;
+    line-height: 2.375rem;
+    font-size: 1.625rem;
+    @include tablet {
+        font-size: 3.25rem; 
+        line-height: 4.125rem;
+    }
+}
+
+@mixin heading {
+    //change font family in scss
+    font-weight: 500;
+    line-height: 1.4375rem;
+    font-size: 1.125rem; // Mobile
+    @include tablet {
+        font-size: 1.5rem; // Tablet & Desktop
+    line-height: 1.4375rem;
+    }
+}
+
+@mixin body-copy {
+    font-family: 'Outfit-Medium';
+    //change font weight light 300 or default medium 500
+    line-height: .9375rem;
+    font-size: .75rem; // Mobile
+    @include tablet {
+        font-size: 1.25rem; // Tablet & Desktop
+        line-height: 1.625rem;
+    }
+}
+
+@mixin small-body-copy {
+    font-family: 'Outfit-Medium';
+    font-weight: 500;
+    line-height: .75rem;
+    font-size: .625rem; // Mobile
+    @include tablet {
+        font-size: .75rem;// Tablet & Desktop
+        line-height: .9375rem;
+    }
+}
+
+@mixin buttonlabel-text {
+    font-family: 'Outfit-Medium';
+    font-weight: 500;
+    line-height: .9375rem;
+    font-size: .75rem; 
+    @include tablet {
+        font-size: .875rem; 
+        line-height: 1.0938rem;
+    }
+}
