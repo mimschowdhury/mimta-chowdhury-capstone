@@ -13,10 +13,10 @@ Finding a good café can be a tedious process involving multiple websites and re
 
 
 6ixCafes solves this problem by:
-✅ Consolidating reliable café data into one easy-to-use platform.
-✅ Letting users filter based on study spots, ambiance, and coffee quality.
-✅ Helping users keep track of cafés they’ve visited and want to visit.
-✅ Offering simple, visual ratings for quick decision-making.
+<br>✅ Consolidating reliable café data into one easy-to-use platform.
+<br>✅ Letting users filter based on study spots, ambiance, and coffee quality.
+<br>✅ Helping users keep track of cafés they’ve visited and want to visit.
+<br>✅ Offering simple, visual ratings for quick decision-making.
 
 ### User Profile
 
@@ -79,10 +79,10 @@ Finding a good café can be a tedious process involving multiple websites and re
 
 ### Sitemap 🗺️
 
-1️⃣ Home Page – Browse cafés and explore filters.
-2️⃣ Café Details Page – View detailed information about a café.
-3️⃣ Visited Cafés Page – Your personalized café list and favourites.
-4️⃣ About Page – Info about 6ixCafes and how it works.
+<br>1️⃣ Home Page – Browse cafés and explore filters.
+<br>2️⃣ Café Details Page – View detailed information about a café.
+<br>3️⃣ Visited Cafés Page – Your personalized café list and favourites.
+<br>4️⃣ About Page – Info about 6ixCafes and how it works.
 
 ### Mockups
 
@@ -147,13 +147,13 @@ Response:
 
 ## Database & Relationships 🗄️
 The app’s database consists of:
-	•	Users → who can track and rate cafés.
-	•	Cafés → each with multiple attributes (ambience, location, study-friendliness).
-	•	Favourites → users’ favourite ratings of cafés.
+	<br>•	Users → who can track and rate cafés.
+	<br>•	Cafés → each with multiple attributes (ambience, location, study-friendliness).
+	<br>•	Favourites → users’ favourite ratings of cafés.
 
 🔗 Relationships
-	•	Users ↔ Favourites ↔ Cafés – Users favourite cafés they’ve visited.
-	•	Users ↔ Visited Cafés – Track where they’ve been.
+	<br>•	Users ↔ Favourites ↔ Cafés – Users favourite cafés they’ve visited.
+	<br>•	Users ↔ Visited Cafés – Track where they’ve been.
 
 ## Roadmap
 Week 1: Project Setup + Core Infrastructure
@@ -178,14 +178,14 @@ Goal: Set up the foundational client and server, and gather data to seed the app
 Week 2: Data + Basic API Integration
 
 Goal: Seed the database, deploy the project, and create endpoints for listing and viewing cafés.
-5.	Create Seeds with Sample Data
+1.	Create Seeds with Sample Data
 	- Insert café data into the database
 	- Test database seeding works in dev and production environments
-6.	Deploy Projects
+2.	Deploy Projects
 	- Deploy React client
 	- Deploy Express server.
 	- Connect deployed front-end with back-end
-7.	Feature: List Cafés from a Given Location
+3.	Feature: List Cafés from a Given Location
 	- Implement List Cafés page in React
 	- Add location form to enter/select user location
 	- Integrate Google Maps API to display café pins
@@ -197,12 +197,12 @@ Goal: Seed the database, deploy the project, and create endpoints for listing an
 Week 3: Viewing Café Details + Polish
 
 Goal: Implement café details page, fine-tune the user experience, and QA before wrap-up.
-8.	Feature: View Café
+1.	Feature: View Café
 	- Implement View Café page in React
 	- Create and connect to GET /cafes/:id endpoint
 	- Display all café details (ambience, study spot availability, coffee rating, location on map)
-9.	Polish & Testing
-	- Test all features on mobile & desktop
+2.	Polish & Testing
+   	- Test all features on mobile & desktop
 	- Ensure map interactions are smooth
 	- Add basic styling for a clean, intuitive UI
 	- QA: Catch any bugs before final presentation/demo
@@ -211,9 +211,9 @@ Goal: Implement café details page, fine-tune the user experience, and QA before
 
 ## Future Implementations 🌱
 
-🔸 Google Maps API – Enhanced location-based search.
-🔸 User Profiles – Custom avatars & personalized themes.
-🔸 Friend Lists – Share café lists with friends.
-🔸 Café Submission – Users can recommend new cafés.
-🔸 Mobile App – Bring 6ixCafes to iOS & Android.
-🔸 Advanced Filters – Filter by Wi-Fi quality, plug availability, etc.
+<br>🔸 Google Maps API – Enhanced location-based search.
+<br>🔸 User Profiles – Custom avatars & personalized themes.
+<br>🔸 Friend Lists – Share café lists with friends.
+<br>🔸 Café Submission – Users can recommend new cafés.
+<br>🔸 Mobile App – Bring 6ixCafes to iOS & Android.
+<br>🔸 Advanced Filters – Filter by Wi-Fi quality, plug availability, etc.
