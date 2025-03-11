@@ -36,28 +36,14 @@
       }
     }
   
-    .icon-container {
-      width: 60px;
-      height: 60px;
+    .icon-image {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      color: white;
-      font-size: 24px;
-  
-      &.purple {
-        background-color: $primary-purple; /* MediumPurple */
-      }
-  
-      &.blue {
-        background-color: $primary-blue; /* SteelBlue */
-      }
-  
-      &.green {
-        background-color: $background-green; /* LightGreen */
-      }
     }
   
     .feature-title {

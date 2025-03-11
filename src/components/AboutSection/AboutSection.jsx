@@ -1,13 +1,16 @@
 import React from "react";
 import "./AboutSection.scss";
+import coffeeicon from "../../assets/images/coffeeicon.svg";
+import locationicon from "../../assets/images/locationicon.svg";
+import torontoicon from "../../assets/images/torontoicon.svg"
 
 function AboutSection() {
   return (
     <section className="about-section">
       <div className="features-container">
         <div className="feature-box">
-          <div className="icon-container purple">
-            <i className="fas fa-check"></i>
+          <div className="icon-container">
+            <img src ={torontoicon} alt="Toronto Icon" className="icon-image" />
           </div>
           <h3 className="feature-title">Filter Cafes in Toronto</h3>
           <p className="feature-description">
@@ -16,8 +19,8 @@ function AboutSection() {
           </p>
         </div>
         <div className="feature-box">
-          <div className="icon-container blue">
-            <i className="fas fa-map-marker-alt"></i>
+          <div className="icon-container">
+          <img src ={locationicon} alt="Location Icon" className="icon-image" />
           </div>
           <h3 className="feature-title">Google Maps Integration</h3>
           <p className="feature-description">
@@ -28,8 +31,8 @@ function AboutSection() {
           </p>
         </div>
         <div className="feature-box">
-          <div className="icon-container green">
-            <i className="fas fa-star"></i>
+          <div className="icon-container">
+            <img src ={coffeeicon} alt="Coffee Icon" className="icon-image" />
           </div>
           <h3 className="feature-title">Cafe Profiles</h3>
           <p className="feature-description">
