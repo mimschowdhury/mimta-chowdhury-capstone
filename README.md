@@ -1,27 +1,48 @@
 # Project Title
-The Toronto Brew? 6ixcafes?
+6ixcafes - your guide to the best cafés in Toronto!
 
 ## Overview ☕️
 
-6ixCafes is a platform designed for coffee lovers in Toronto to easily find and keep track of the best cafés in the city. It addresses the pain point of having to look up multiple resources (Google Maps, blogTO, Instagram, etc.) to find a good café. This website will filter cafés based on the best study spots, ambiance, and coffee quality.
+6ixCafes is a platform designed for coffee lovers in Toronto to easily find and keep track of the best cafés in the city. It addresses the pain point of having to look up multiple resources (Google Maps, blogTO, Instagram, etc.) to find a good café. 
+
+This website simplifies café hunting by consolidating information from Google Maps, blogTO, and Instagram into one cozy place—helping you save time and focus on what really matters: enjoying your coffee.
 
 ### Problem Space
 
 Finding a good café can be a tedious process involving multiple websites and reviews. People often search through Google Maps, blogs, and social media to find cafes, but there isn’t a single platform that consolidates this information and lets users filter cafés by study-friendly spaces, great ambiance, and quality coffee.
 
+
+6ixCafes solves this problem by:
+✅ Consolidating reliable café data into one easy-to-use platform.
+✅ Letting users filter based on study spots, ambiance, and coffee quality.
+✅ Helping users keep track of cafés they’ve visited and want to visit.
+✅ Offering simple, visual ratings for quick decision-making.
+
 ### User Profile
 
+🎯 Target Audience
 - Coffee drinkers who:
 	- Are looking for a café close to their current or future location
     - Want to find the best places for studying or relaxing
 	- Want to track cafés they have visited and rate them
+	- Tourists & locals exploring Toronto's cafe scene.
+
+💡 How They’ll Use It:
+   - Search & filter cafés based on study spots, ambiance, and coffee quality.
+   - Track cafés they’ve visited and rate them.
+   - Plan coffee dates or study sessions based on café attributes.
+   - Explore nearby cafés based on their current location.
+
+🌿 Special Considerations
+   - The platform should be simple and intuitive, without overwhelming the user.
+   - The aesthetic should reflect cozy café vibes—neutral colors, soft design, and smooth UX.
+   - Provide consistent and accurate data—no fake ratings or reviews.
 
 ### Features
 
 	- Find nearby cafés based on the user’s current or provided location
 	- Filter cafés based on criteria such as study spots, ambiance, and coffee quality
-	- Rate cafés out of 5 coffee cups for ambiance, study-friendliness, and coffee
-	- Update ratings for cafes based on future visits
+	- Favourites cafés to create a user-based favourite list
 	- View and filter visited cafés by rating, location, etc.
 
 ## Implementation
@@ -51,13 +72,17 @@ Finding a good café can be a tedious process involving multiple websites and re
     - express
     - bcrypt for password hashing
 
-### APIs
+### APIs & Integrations 🔗
 
 - No external APIs will be used in the first sprint.
+- Future sprints may include Google Maps API for geolcation enhancements
 
-### Sitemap
+### Sitemap 🗺️
 
-List the pages of my app with brief descriptions. Create mockups using Canva.
+1️⃣ Home Page – Browse cafés and explore filters.
+2️⃣ Café Details Page – View detailed information about a café.
+3️⃣ Visited Cafés Page – Your personalized café list and favourites.
+4️⃣ About Page – Info about 6ixCafes and how it works.
 
 ### Mockups
 
@@ -65,12 +90,13 @@ List the pages of my app with brief descriptions. Create mockups using Canva.
 	• About Page: Detailed information about the website.
 	• Café Page: Detailed information and ratings for individual cafés.
 
+Home Page: Displays nearby cafes and offers quick filtering
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
 
-About Page
+About Page: Learn about the platform's mission.
 ![Sitemap](./src/assets/mockups/about.png)
 
-### Endpoints
+### API Endpoints
 
 **GET /cafes**
 
@@ -118,6 +144,16 @@ Response:
     ...
 ]
 ```
+
+## Database & Relationships 🗄️
+The app’s database consists of:
+	•	Users → who can track and rate cafés.
+	•	Cafés → each with multiple attributes (ambience, location, study-friendliness).
+	•	Favourites → users’ favourite ratings of cafés.
+
+🔗 Relationships
+	•	Users ↔ Favourites ↔ Cafés – Users favourite cafés they’ve visited.
+	•	Users ↔ Visited Cafés – Track where they’ve been.
 
 ## Roadmap
 Week 1: Project Setup + Core Infrastructure
@@ -173,9 +209,11 @@ Goal: Implement café details page, fine-tune the user experience, and QA before
 
 ---
 
-## Future Implementations
-	•	Google Places API integration for better location searches.
-	•	Add new cafés by users or café owners.
-	•	User achievements: Badges for café visits and ratings.
-	•	Expanded rating system: Include coffee, ambiance, and staff ratings.
-	•	Unit and integration tests to ensure stability.
+## Future Implementations 🌱
+
+🔸 Google Maps API – Enhanced location-based search.
+🔸 User Profiles – Custom avatars & personalized themes.
+🔸 Friend Lists – Share café lists with friends.
+🔸 Café Submission – Users can recommend new cafés.
+🔸 Mobile App – Bring 6ixCafes to iOS & Android.
+🔸 Advanced Filters – Filter by Wi-Fi quality, plug availability, etc.
