@@ -1,0 +1,113 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: $primary-brown;
+    @include body-copy;
+  
+    .features-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 50px;
+  
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  
+    .feature-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30%;
+      text-align: center;
+  
+      @media (max-width: 768px) {
+        width: 80%;
+        margin-bottom: 40px;
+      }
+    }
+  
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: white;
+      font-size: 24px;
+  
+      &.purple {
+        background-color: $primary-purple; /* MediumPurple */
+      }
+  
+      &.blue {
+        background-color: $primary-blue; /* SteelBlue */
+      }
+  
+      &.green {
+        background-color: $background-green; /* LightGreen */
+      }
+    }
+  
+    .feature-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+  
+    .feature-description {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.6;
+    }
+  
+    .main-heading {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+  
+    .main-description {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+  
+    .illustration-container {
+      background-color: #ff69b4; /* Pink */
+      width: 100%;
+      max-width: 600px;
+      height: 200px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      margin-top: 20px;
+    }
+  
+    .blue-shape {
+      background-color: #6495ed; /* Cornflower Blue */
+      width: 60px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 10px;
+    }
+  }
+  
