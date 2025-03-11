@@ -6,13 +6,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 20px;
+    padding: 50px 16px;
     background-color: $primary-brown;
     @include body-copy;
+
+    @include tablet {
+        padding: 50px 24px;
+    }
   
     .features-container {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       width: 100%;
       max-width: 1200px;
       margin-bottom: 50px;
@@ -53,6 +57,7 @@
     }
   
     .feature-description {
+      font-family: 'Outfit-Light';
       font-size: 16px;
       color: #666;
       line-height: 1.6;
@@ -63,9 +68,14 @@
       margin-bottom: 20px;
       color: #333;
       text-align: center;
+
+      @include tablet {
+        padding: 32px 0px 0px;
+      }
     }
   
     .main-description {
+      font-family: 'Outfit-Light';
       font-size: 18px;
       color: #666;
       line-height: 1.6;
