@@ -1,0 +1,96 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.hero {
+    position: relative;
+    height: 48vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+
+    @include tablet {
+        height: 60vh;
+        padding: 24px;
+        justify-content: center;
+    }
+
+    &__text {
+        z-index: 3;
+    }
+
+    &__content {
+        font-family: 'Newsreader-Light';
+        @include title-typography;
+        color: $secondary-white;
+        padding-left: 16px;
+
+        @include tablet {
+            padding-left: 0px;
+        }
+
+        @include desktop {
+            width: 49%;
+        }
+
+        &-italics {
+            font-family: 'Newsreader-LightItalic';
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #323232;
+        opacity: 0.5;
+        z-index: 1;
+    }
+
+    &__subtitle {
+        color: $secondary-white;
+        font-family: 'Newsreader-Light';
+        @include title-typography;
+        z-index: 3;
+        padding-left: 1rem;
+        margin-top: 2.25rem;
+        text-wrap: none;
+
+        @include tablet {
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+
+        @include desktop {
+            margin-top: 0rem;
+        }
+    }
+
+    &__title {
+        color: $secondary-white;
+        padding-left: 1rem;
+        width: 50%;
+        z-index: 2;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-wrap: none;
+        font-family: 'Outfit-Light';
+        font-weight: 300;
+        @include heading;
+
+        @include tablet {
+            text-wrap: none;
+            padding-left: 0rem;
+            width: 75%;
+        }
+
+        @include desktop {
+            width: 90%;
+            padding-left: 0rem;
+        }
+    }
+}
