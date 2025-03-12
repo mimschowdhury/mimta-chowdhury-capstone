@@ -1,0 +1,22 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.photocard-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 2rem 1.5rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    @include desktop {
+        width: 100%;
+
+        & > * { // Targets each photo card
+            width: calc(33.33% - 1rem); // Ensures 3 photos per row
+        }
+    }
+}
