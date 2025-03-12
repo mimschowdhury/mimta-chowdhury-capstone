@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const PhotoPageHeader = () => {
     return (
-        <header className="header">
-            <Link to="/" className="header__link">
-                <h1 className="header__title">6ixCafes</h1>
+        <header className="photoheader">
+            <Link to="/" className="photoheader__link">
+                <h1 className="photoheader__title">6ixCafes</h1>
             </Link>
-            <Link to="/" className="header__home-link">
-                <img src={arrowIcon} alt="back arrow" className="header__icon" />
+            <Link to="/" className="photoheader__home-link">
+                <img src={arrowIcon} alt="back arrow" className="photoheader__icon" />
                 Home
             </Link>
         </header>

@@ -34,6 +34,10 @@
         }
     }
 
+    &__description {
+        @include body-copy;
+    }
+
     &__details {
         padding: 1rem;
         border-radius: .75rem;
@@ -140,7 +144,7 @@
         }
 
         &:hover {
-            background-color: $primary-blue; 
+            background-color: $secondary-blue; 
         }
     }
 }

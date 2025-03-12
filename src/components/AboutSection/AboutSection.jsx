@@ -53,11 +53,6 @@ function AboutSection() {
         <br />
         Curated with intention, 6ixcafes helps you filter and explore cafés based on what matters most to you — no clutter, no reviews, just the essentials.
       </p>
-
-      <div className="illustration-container">
-        <div className="blue-shape" />
-        <div className="blue-shape" />
-      </div>
     </section>
   );
 };
