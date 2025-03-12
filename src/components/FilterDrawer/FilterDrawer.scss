@@ -1,0 +1,76 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.filter-drawer {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: $background-brown;
+    width: 100vw;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 3.75rem 1.5rem;
+    }
+
+    // @include desktop {
+    //     width: 100%; 
+    //     position: absolute;
+    //     right: 0;
+    //     overflow-y: auto;
+    //     height: 100%;
+    //     padding: 3rem;
+    // }
+
+    &__title {
+        padding-bottom: 1rem;
+        font-family: 'Outfit-Medium';
+        @include heading;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem; 
+
+        @include desktop {
+            gap: .75rem;
+            padding-top: 2rem;
+        }
+    }
+
+    &__button {
+        all: unset;  // Reset default button styles
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        background-color: $secondary-white;
+        color: $secondary-blue;
+        border: .0625rem solid $primary-blue;
+        cursor: pointer;
+        text-align: center;
+        @include body-copy;
+
+        @include mobile {
+            padding: .375rem .5rem;
+            border-radius: .375rem; 
+        }
+
+        @include tablet {
+            padding: .5rem .75rem;
+            border-radius: .75rem;
+        }
+
+        &:hover {
+            background-color: $secondary-blue;
+            color: $secondary-white;
+        }
+
+        &--selected {
+            background-color: $secondary-blue;  // active state stays green
+            color: $secondary-white;
+        }
+    }
+}
