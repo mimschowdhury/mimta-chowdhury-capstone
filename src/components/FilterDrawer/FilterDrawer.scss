@@ -9,8 +9,10 @@
     background-color: $background-brown;
     width: 100vw;
     padding: 1rem;
+    margin-top: 60px;
 
     @include tablet {
+        margin-top: 80px;
         padding: 3.75rem 1.5rem;
     }
 
