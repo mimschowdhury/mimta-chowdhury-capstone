@@ -1,0 +1,16 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.comment-list {
+    @include tablet {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    }
+
+    &__count {
+        padding: 1rem 1rem 0;
+        color: $primary-black;
+        @include body-copy;
+    }
+}
