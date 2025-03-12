@@ -1,0 +1,91 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.photocard {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-radius: .9375rem;
+    overflow: hidden;
+    background-color: $secondary-sage;
+    border: .0625rem solid $primary-blue;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__link {
+        display: flex;
+    }
+
+    @include mobile {
+        width: 100%;  
+    }
+
+    @include tablet {
+        width: calc(50% - .75rem); // 2 cards per row on tablet
+    }
+
+    @include desktop {
+        width: calc(33.33% - .75rem); // Desktop width to match the desired layout in app.scss
+    }
+
+    .photocard__content {
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        img {
+            width: 100%; 
+            height: auto;
+            border-radius: .75rem .75rem 0 0;
+            object-fit: cover;
+        }
+    }
+
+    &__photographer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $secondary-sage;
+        margin-top: 1rem;
+        padding: .5rem;
+        border-radius: .75rem 0rem 0 0;
+        color: $primary-black;
+        text-align: right;
+        @include buttonlabel-text;
+    }
+
+    &__tags {
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap; 
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        width: 100%;
+        padding-left: 1rem;
+
+        .photocard_tag {
+            background-color: $secondary-white;
+            border: .0625rem solid $primary-blue;
+            color: $primary-black;
+            padding: .375rem .5rem;
+            border-radius: .375rem; 
+            text-transform: capitalize;
+            @include buttonlabel-text;
+
+            @include tablet {
+                padding: .5rem .75rem;
+                border-radius: .75rem;
+            }
+            
+            //CTA hover properties
+            &:hover {
+                background-color: $primary-blue;
+            }
+        }
+    }
+}
