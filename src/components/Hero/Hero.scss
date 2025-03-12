@@ -10,15 +10,18 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    margin-top: 60px;
 
     @include tablet {
-        height: 60vh;
+        height: 80vh;
         padding: 24px;
         justify-content: center;
     }
 
     &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 60px;
         z-index: 3;
     }
 
