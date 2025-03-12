@@ -78,5 +78,10 @@
             padding: .5rem 1.5rem;
             border-radius: .75rem;
         }
+
+        &:hover {
+            background-color: white;
+            color: $secondary-blue;
+        }
     }
 }
