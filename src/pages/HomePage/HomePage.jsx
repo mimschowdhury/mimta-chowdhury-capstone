@@ -70,8 +70,8 @@ export default function HomePage() {
                     <AboutSection />
                     <PhotoCardList photos={filteredPhotos} />
                 </div>
-            </div>
             {/* <Footer /> */}
+            </div>
         </>
     );
 }
