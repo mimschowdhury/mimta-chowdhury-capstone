@@ -7,7 +7,7 @@
     border-radius: .9375rem;
     overflow: hidden;
     background-color: $secondary-sage; 
-    border: .125rem solid $primary-blue;
+    border: .125rem solid $secondary-blue;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -131,8 +131,8 @@
 
     &__tag {
         background-color: $secondary-white;
-        border: .0625rem solid $primary-blue;
-        color: $primary-black;
+        border: .0625rem solid $secondary-blue;
+        color: #c38e70;
         padding: .375rem .5rem;
         border-radius: .375rem;
         text-transform: capitalize;
@@ -144,7 +144,8 @@
         }
 
         &:hover {
-            background-color: $secondary-blue; 
+            background-color: $secondary-blue;
+            color: white; 
         }
     }
 }
