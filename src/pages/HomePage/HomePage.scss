@@ -2,18 +2,43 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+// body {
+//     margin: 0;
+//     padding: 0;
+// }
+
+// // handles layout of react components
+// #root {
+//     /* Example: removing any margin or padding applied by default */
+//     margin: 0;
+//     padding: 0;
+//     width: 100%;
+//     height: 100%;
+// }
+
 body {
-    margin: 0;
-    padding: 0;
-    padding-top: 0px;
+    padding-top: 3.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: $primary-pistachio;
+    color: $primary-black;
+    min-height: 100vh;
 }
 
-// handles layout of react components
+  // handles layout of react components
 #root {
-    /* Example: removing any margin or padding applied by default */
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+    flex: 1;
+    min-height: 100vh;
 }
 
+.app__main-content {
+    &--drawer-open {
+      margin-top: 100px;
+      }
+}
