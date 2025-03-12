@@ -4,25 +4,8 @@ import axios from "axios";
 import PhotoCardList from "../components/PhotoCardList/PhotoCardList";
 import FilterDrawer from '../components/FilterDrawer/FilterDrawer';
 import Hero from '../components/Hero/Hero';
-import Header from '../Components/Header/Header';
+import Header from '../components/Header/Header';
 import AboutSection from "../components/AboutSection/AboutSection";
-
-// const cafes = [
-//   {
-//     id: 1,
-//     name: 'Cafe Pamenar',
-//     location: 'Kensington Market',
-//     image: 'https://via.placeholder.com/300',
-//     description: 'Chill vibes with great espresso.',
-//   },
-//   {
-//     id: 2,
-//     name: 'Sam James Coffee Bar',
-//     location: 'Harbord Street',
-//     image: 'https://via.placeholder.com/300',
-//     description: 'Minimalist shop, top-tier coffee.',
-//   },
-// ];
 
 export default function HomePage() {
     const [isOpen, setIsOpen] = useState(false);
