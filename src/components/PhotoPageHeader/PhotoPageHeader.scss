@@ -1,0 +1,43 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $secondary-white;
+    z-index: 20;
+    width: 100%;
+    padding: 1.5rem 1rem;
+
+    @include tablet {
+        padding: 1.5rem;
+    }
+
+    &__title {
+        color: $primary-black;
+        @include wordmark;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    .header__home-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $background-sage;
+        font-family: 'Outfit-Medium';
+        gap: 0.5rem;
+        @include heading;
+    }
+    
+    .header__icon {
+        width: 1rem;
+        height: auto;
+    }
+}
