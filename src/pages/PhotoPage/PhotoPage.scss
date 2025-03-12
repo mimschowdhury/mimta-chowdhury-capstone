@@ -1,0 +1,38 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+body {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: $secondary-white;
+    color: $primary-black;
+    min-height: 100vh;
+    width: 100%;
+
+    @include tablet {
+        padding-top: 120px;
+    }
+}
+
+#root {
+    width: 100%;
+}
+
+.photo-page__content {
+    padding-bottom: 5rem;
+
+    @include desktop {
+        margin-right: 15rem;
+        margin-left: 15rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.footer {
+    margin-top: auto; 
+    width: 100%;
+}
