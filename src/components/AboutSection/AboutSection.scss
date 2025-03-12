@@ -6,12 +6,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 16px;
+    padding: 32px 16px;
     background-color: $primary-brown;
     @include body-copy;
 
     @include tablet {
-        padding: 50px 24px;
+        padding: 40px 24px;
     }
   
     .features-container {
