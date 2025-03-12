@@ -2,7 +2,7 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
-.header {
+.photoheader {
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -26,7 +26,7 @@
         text-decoration: none;
     }
 
-    .header__home-link {
+    .photoheader__home-link {
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -36,7 +36,7 @@
         @include heading;
     }
     
-    .header__icon {
+    .photoheader__icon {
         width: 1rem;
         height: auto;
     }
