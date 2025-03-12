@@ -1,0 +1,82 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use '../../styles/partials/typography' as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @include tablet {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    &__input-label {
+        color: $primary-black;
+        @include body-copy;
+    }
+
+    &__input {
+        width: 100%;
+        min-width: 17.5rem;
+        max-width: 100%;
+        border: .125rem solid $primary-blue;
+        border-radius: .5rem;
+        color: $primary-black;
+        outline: none;
+        padding-bottom: .5rem;
+        @include body-copy;
+
+        @include tablet {
+            height: 2.5rem;
+            padding: .5rem 1rem;
+        }
+
+        @include mobile {
+            height: 1.875rem;
+            padding: .5rem;
+        }
+
+        &:focus {
+            border-color: $primary-blue;
+        }
+
+        &--error {
+            border-color: $error-red;
+        }
+    }
+
+    #comment-box {
+        resize: none;
+        width: 100%;
+        min-width: 17.5rem;
+        height: 7.5rem;
+    }
+
+    &__submit {
+        all: unset;
+        align-self: flex-end;
+        width: 4rem;
+        text-align: center;
+        margin-top: .5rem;
+        background-color: $primary-purple;
+        border: .125rem solid $secondary-blue;
+        color: white;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        padding: .5rem .5rem;
+        @include body-copy;
+
+        @include tablet {
+            padding: .5rem 1.5rem;
+            border-radius: .75rem;
+        }
+    }
+}
