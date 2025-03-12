@@ -17,12 +17,12 @@
 
     &__name {
         margin-bottom: 0.5rem;
-        color: $primary-black;
+        color: #666;
         @include small-body-copy;
     }
 
     &__date {
-        color: $primary-black;
+        color: #666;
         @include small-body-copy;
     }
 
