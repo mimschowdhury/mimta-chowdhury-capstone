@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 // import Footer from '../components/Footer';
-import PhotoCardList from "../components/PhotoCardList/PhotoCardList";
-import FilterDrawer from '../components/FilterDrawer/FilterDrawer';
-import Hero from '../components/Hero/Hero';
-import Header from '../components/Header/Header';
-import AboutSection from "../components/AboutSection/AboutSection";
+import PhotoCardList from "../../components/PhotoCardList/PhotoCardList";
+import FilterDrawer from '../../components/FilterDrawer/FilterDrawer';
+import Hero from '../../components/Hero/Hero';
+import Header from '../../components/Header/Header';
+import AboutSection from "../../components/AboutSection/AboutSection";
 
 export default function HomePage() {
     const [isOpen, setIsOpen] = useState(false);
