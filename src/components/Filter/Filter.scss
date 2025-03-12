@@ -1,0 +1,35 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.filter {
+    &__button {
+        all: unset;  // to reset default button styles
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        background-color: $background-green;
+        color: $primary-black;
+        border: .125rem solid $background-green;
+        border-radius: 6.25rem; 
+        padding: .6875rem 1.375rem;
+        cursor: pointer;
+        text-align: center;
+        @include buttonlabel-text;
+
+        &:hover,
+        &--active {
+            background-color: $background-sage;
+            color: $secondary-white;
+
+            .filter__button-icon {
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        @include mobile {
+            padding: .5rem 1rem; 
+        }
+    }
+}
