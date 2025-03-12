@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    margin-top: 60px;
 
     @include tablet {
         height: 60vh;
