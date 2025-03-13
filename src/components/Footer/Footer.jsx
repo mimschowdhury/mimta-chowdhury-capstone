@@ -15,7 +15,9 @@ function Footer() {
                                 <div>Locations</div>
                             </div>
                             <div className="footer__links">
-                                <div>About</div>
+                                <Link to="/about" className="footer__link">
+                                    About
+                                </Link>
                                 <div>Contact</div>
                             </div>
                         </div>
@@ -23,7 +25,7 @@ function Footer() {
             </div>
 
             <div className="footer__copyright">
-                <p className="footer__info">© 2024 Snaps</p>
+                <p className="footer__info">© 2024 6ixCafes</p>
                 <p className="footer__info">Terms</p>
                 <p className="footer__info">Privacy</p>
                 <p className="footer__info">Cookies</p>

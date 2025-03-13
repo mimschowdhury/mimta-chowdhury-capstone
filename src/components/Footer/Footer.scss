@@ -20,12 +20,19 @@
     &__link {
         text-decoration: none;
         color: $primary-black;
+        @include body-copy;
+
+        &:hover {
+            color: $secondary-blue;
+        }
     }
 
     &__links {
         margin-bottom: 1rem;
 
-        div {
+        div,
+        .footer__link {
+            display: flex;
             margin-bottom: 0.5rem;
             @include body-copy;
         }

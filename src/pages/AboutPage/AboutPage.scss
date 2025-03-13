@@ -1,0 +1,71 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/typography' as *;
+
+.about-page {
+    font-family: 'Outfit-Light', sans-serif;
+    color: #333;
+    padding: 20px;
+    padding-top: 80px;
+  }
+  
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+  
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1.5rem;
+      color: #666;
+    }
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    .about-image {
+      flex: 1;
+      margin-right: 20px;
+  
+      img {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid $secondary-blue;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    }
+  
+    .about-text {
+      flex: 2;
+  
+      p {
+        font-family: 'Outfit-Light';
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+  
+      .about-image {
+        margin-bottom: 20px;
+        margin-right: 0;
+      }
+      
+      .about-text {
+        text-align: center;
+      }
+    }
+  }
+  
