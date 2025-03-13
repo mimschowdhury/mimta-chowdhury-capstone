@@ -25,6 +25,7 @@ function PhotoDetails({ photo }) {
                     <p className="photo-details__rating">⭐️ {photo.googleRating} / 5</p>
                 </div>
                     <p className="photo-details__description">{photo.photoDescription}</p>
+                    <p className="photo-details__favourites">{photo.cafeFavourites}</p>
             </div>
         </div>
     );
