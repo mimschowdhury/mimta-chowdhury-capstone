@@ -3,6 +3,7 @@ import './AboutPage.scss';
 import PhotoPageHeader from '../../components/PhotoPageHeader/PhotoPageHeader';
 import Footer from '../../components/Footer/Footer';
 import BlurbSection from '../../components/Blurb/BlurbSection';
+import CafeGenerator from '../../components/CafeGenerator/CafeGenerator';
 import profileImage from '../../assets/images/mimtainsevilla.jpg';
 
 export default function AboutPage() {
@@ -33,6 +34,7 @@ export default function AboutPage() {
         </section>
       </div>
       <BlurbSection />
+      <CafeGenerator />
       <Footer />
     </>
   );
