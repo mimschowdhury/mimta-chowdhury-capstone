@@ -1,0 +1,23 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/typography' as *;
+
+.favourites {
+    &__page {
+        padding-top: 120px;
+    }
+
+    &__header {
+        text-align: center;
+        color: #A78682;
+        font-family: 'Outfit-Medium';
+        @include heading;
+    }
+
+    &__text {
+        text-align: center;
+        padding-top: 24px;
+        @include body-copy;
+    }
+}
