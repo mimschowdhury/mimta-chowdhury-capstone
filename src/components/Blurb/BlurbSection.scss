@@ -15,10 +15,14 @@
     }
 
     &__heading {
-      font-size: 32px;
+      font-size: 20px;
       margin-bottom: 20px;
       color: #333;
       text-align: center;
+
+      @include tablet {
+        font-size: 32px;
+      }
     }
   
     &__container {
@@ -72,24 +76,29 @@
   
     .story {
       &__heading {
-        font-size: 32px;
+        font-size: 20px;
         margin-bottom: 20px;
         color: #333;
         text-align: center;
 
         @include tablet {
           padding: 32px 0px 0px;
+          font-size: 32px;
         }
       }
       
       &__description {
       font-family: 'Outfit-Light';
-      font-size: 18px;
+      font-size: 16px;
       color: #666;
       line-height: 1.6;
       text-align: center;
       max-width: 800px;
       margin-bottom: 30px;
+
+      @include tablet {
+        font-size: 18px;
+      }
     }
   }
 }
