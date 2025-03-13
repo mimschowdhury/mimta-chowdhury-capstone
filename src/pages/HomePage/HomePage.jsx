@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import Footer from '../components/Footer';
+import Footer from "../../components/Footer/Footer";
 import PhotoCardList from "../../components/PhotoCardList/PhotoCardList";
 import FilterDrawer from '../../components/FilterDrawer/FilterDrawer';
 import Hero from '../../components/Hero/Hero';
@@ -70,7 +70,7 @@ export default function HomePage() {
                     <AboutSection />
                     <PhotoCardList photos={filteredPhotos} />
                 </div>
-            {/* <Footer /> */}
+            <Footer />
             </div>
         </>
     );
