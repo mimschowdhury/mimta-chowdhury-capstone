@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import PhotoPageHeader from "../../components/PhotoPageHeader/PhotoPageHeader";
 import CommentList from "../../components/CommentList/CommentList";
 import PhotoDetails from "../../components/PhotoDetails/PhotoDetails";
@@ -67,7 +67,7 @@ export default function PhotoPage() {
                 <Form id={id} setComments={setComments} handlePostComment={handlePostComment}/> {/* Pass setComments to Form */}
                 <CommentList comments={comments} />
             </div>    
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 }
