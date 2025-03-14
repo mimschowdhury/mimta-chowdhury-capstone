@@ -14,7 +14,9 @@ function Footer() {
                                 <Link to="/favourites" className="footer__link">
                                     My Favourites
                                 </Link>
-                                <div>Locations</div>
+                                <Link to="/locations" className="footer__link">
+                                    Locations
+                                </Link>
                             </div>
                             <div className="footer__links">
                                 <Link to="/about" className="footer__link">

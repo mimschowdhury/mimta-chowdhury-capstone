@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import LikeIcon from "../../assets/images/Like_Outline.svg";
+import LocationIcon from "../../assets/images/Location.svg";
 import axios from 'axios';
 import './CafeGenerator.scss';
 
@@ -35,8 +35,8 @@ function CafeGenerator() {
                 </div>
                 <div className="random-cafe__info">
                     <p className="random-cafe__likes">
-                        <img src={LikeIcon} alt="Like" className="random-cafe__like-icon" />
-                        {cafe.likes} Likes
+                        <img src={LocationIcon} alt="Location" className="random-cafe__like-icon" />
+                        {cafe.likes}
                     </p>
                     <p className="random-cafe__name">{cafe.photographer}</p>
                     <p className="random-cafe__rating">⭐️ {cafe.googleRating} / 5</p>

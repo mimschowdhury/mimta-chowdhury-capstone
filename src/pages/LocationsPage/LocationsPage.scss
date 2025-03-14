@@ -1,0 +1,35 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/typography' as *;
+
+.locationspage {
+    padding-top: 120px;
+
+    &__header {
+        text-align: center;
+        color: #A78682;
+        font-family: 'Outfit-Medium';
+        @include heading;
+        padding-bottom: 24px;
+    }
+}
+
+.filter {
+    text-align: center;
+    color: $primary-black;
+    font-family: 'Outfit-Medium';
+    @include body-copy;
+    padding-bottom: 24px;
+}
+
+.google__map {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+
+    @include tablet {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+}
