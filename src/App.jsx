@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import PhotoPage from './pages/PhotoPage/PhotoPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import FavoritesPage from './pages/FavouritesPage/FavouritesPage';
+import LocationsPage from './pages/LocationsPage/LocationsPage';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/photos/:id" element={<PhotoPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/favourites" element={<FavoritesPage />} />
+        <Route path="/locations" element={<LocationsPage />} />
       </Routes>
     </BrowserRouter>
   )
