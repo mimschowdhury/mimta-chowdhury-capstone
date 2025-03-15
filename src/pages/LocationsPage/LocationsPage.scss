@@ -15,12 +15,11 @@
     }
 }
 
-.filter {
+.dropdown__filter {
     text-align: center;
     color: $primary-black;
     font-family: 'Outfit-Medium';
     @include body-copy;
-    padding-bottom: 24px;
 }
 
 .google__map {
