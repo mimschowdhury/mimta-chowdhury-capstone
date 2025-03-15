@@ -60,13 +60,13 @@ const LocationsPage = () => {
         <h1 className="locationspage__header">Locations of our Cafes 📍</h1>
 
         {/* Filter dropdown */}
-        <div className="filter">
-          <label htmlFor="filter__category">Choose a category: </label>
+        <div className="dropdown__filter">
+          <label htmlFor="dropdown__filter-category">Choose a category: </label>
           <select id="category" value={category} onChange={handleCategoryChange}>
             <option value="all">All</option>
-            <option value="study">Best Study Spots</option>
+            <option value="study spot">Best Study Spots</option>
             <option value="ambiance">Best Ambiance</option>
-            <option value="coffee">Best Coffee</option>
+            <option value="best coffee">Best Coffee</option>
           </select>
         </div>
 
