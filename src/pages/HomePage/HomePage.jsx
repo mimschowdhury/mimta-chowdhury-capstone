@@ -13,48 +13,73 @@ export default function HomePage() {
     const [photos, setPhotos] = useState([]);
     const [tags, setTags] = useState([]);
 
-    // fetch photos
+    // Fetch photos
     useEffect(() => {
         async function fetchPhotos() {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/photos`);
-                console.log("Fetched photos:", response.data);
+                console.log("✅ Fetched photos:", response.data);
                 setPhotos(response.data);
             } catch (error) {
-                console.error("Error fetching photos:", error);
+                console.error("❌ Error fetching photos:", error);
             }
         }
         fetchPhotos();
     }, []);
 
-    // fetch tags
+    // Fetch tags
     useEffect(() => {
         async function fetchTags() {
             try {
                 const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/tags`);
-                console.log("Fetched tags:", response.data);
+                console.log("✅ Fetched tags:", response.data);
                 setTags(response.data);
             } catch (error) {
-                console.error("Error fetching tags:", error);
+                console.error("❌ Error fetching tags:", error);
             }
         }
         fetchTags();
     }, []);
 
     // Handle filter selection
-    const openDrawer = () => setIsOpen(!isOpen);
+    const openDrawer = () => {
+        console.log("🟡 Toggling drawer. Current state:", isOpen);
+        setIsOpen(!isOpen);
+    };
+
     const handleFilterChange = (tag) => {
+        console.log("🔵 Selected tag:", tag); // Log the selected tag
         setSelectedTag((prevTag) => (prevTag === tag ? null : tag));
     };
 
-    // filter photos by selected tag
     const filteredPhotos = selectedTag
-        ? photos.filter((photo) => photo.tags.includes(selectedTag))
-        : photos;
+    ? photos.filter((photo) => {
+        console.log(`📸 Checking Photo ID: ${photo.id}, Tags:`, photo.tags);
+
+        if (!Array.isArray(photo.tags)) {
+            console.warn(`Photo ID ${photo.id} has invalid tags:`, photo.tags);
+            return false;
+        }
+
+        return photo.tags.some((tag) => {
+            // Log tag type
+            console.log(`🔍 Comparing:`, { tag, selectedTag });
+
+            // If tags are stored as objects, check `tag.name`
+            if (typeof tag === "object" && tag.name) {
+                return tag.name === selectedTag;
+            }
+
+            // If tags are stored as strings, check directly
+            return tag === selectedTag;
+        });
+    })
+    : photos;
 
     return (
         <>
             <Header openDrawer={openDrawer} isDrawerOpen={isOpen} />
+            
             <div className="app__content">
                 <div className={`app__filter-drawer ${isOpen ? "app__filter-drawer--open" : ""}`}>
                     {isOpen && (
@@ -68,9 +93,9 @@ export default function HomePage() {
                 <div className={`app__main-content ${isOpen ? "app__main-content--drawer-open" : ""}`}>
                     <Hero />
                     <AboutSection />
-                    <PhotoCardList photos={filteredPhotos} />
+                    <PhotoCardList photos={filteredPhotos} tags={tags} />
                 </div>
-            <Footer />
+                <Footer />
             </div>
         </>
     );
