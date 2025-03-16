@@ -27,9 +27,9 @@
 
     &__content {
         font-family: 'Newsreader-Light';
-        @include title-typography;
         color: $secondary-white;
         padding-left: 16px;
+        @include title-typography;
 
         @include tablet {
             padding-left: 0px;
@@ -58,11 +58,11 @@
     &__subtitle {
         color: $secondary-white;
         font-family: 'Newsreader-Light';
-        @include title-typography;
         z-index: 3;
         padding-left: 1rem;
         margin-top: 2.25rem;
         text-wrap: none;
+        @include title-typography;
 
         @include tablet {
             padding-left: 0rem;
