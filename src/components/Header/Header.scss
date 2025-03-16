@@ -26,4 +26,25 @@
     &__title-link {
         text-decoration: none;
     }
+
+    &__nav {
+        display: flex;
+        align-items: center; // Keeps links and filter vertically aligned
+        gap: 1.5rem; // Space between links and filter
+    }
+
+    &__nav-link {
+        text-decoration: none; // Removes underline
+        transition: color 0.3s ease;
+        color: #333;
+        @include buttonlabel-text;
+
+        @include tablet {
+            font-size: .9725rem;
+        }
+
+        &:hover {
+            color: #e7c6ff; // Hover effect (e.g., blue)
+        }
+    }
 }
