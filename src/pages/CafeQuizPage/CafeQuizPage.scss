@@ -1,0 +1,92 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.cafequiz {
+  &__page {
+    padding-top: 80px;
+
+    @include tablet {
+      text-align: center;
+      padding-top: 120px;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    color: #a78682;
+    font-family: "Outfit-Medium";
+    @include heading;
+  }
+
+  &__text {
+    text-align: center;
+    padding-top: 16px;
+    color: #f49cbb;
+    padding-bottom: 24px;
+    width: 80%;
+    margin: 0 auto;
+    @include body-copy;
+  }
+
+  &__main {
+    text-align: center;
+    // background-color: #f49cbb;
+    background-color: $primary-purple;
+    border-radius: 16px; // Adjust value as needed
+    border: 2px solid $secondary-blue;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 24px;
+    @include body-copy;
+
+    @include tablet {
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+
+    @include desktop {
+      margin-left: 300px;
+      margin-right: 300px;
+    }
+  }
+}
+
+.quiz-complete {
+  text-align: center;
+
+  &__heading {
+    text-align: center;
+    padding-top: 16px;
+    color: $primary-purple;
+    @include body-copy;
+  }
+}
+
+.quiz-results {
+  display: flex; // Makes the container a flex container
+  flex-wrap: wrap; // Allows cards to wrap to the next line
+  padding: 24px;
+  gap: 1rem;
+
+  @include mobile {
+    width: 100%; // Full width on mobile
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.button-container {
+  button {
+    padding: 8px 16px;
+    background-color: $primary-purple;
+    border: 2px solid $secondary-blue;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    @include small-body-copy;
+  }
+}
