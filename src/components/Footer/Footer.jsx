@@ -22,7 +22,9 @@ function Footer() {
                                 <Link to="/about" className="footer__link">
                                     About
                                 </Link>
-                                <div>Contact</div>
+                                <Link to="/quiz" className="footer__link">
+                                    Discover Cafes
+                                </Link>
                             </div>
                         </div>
                 </div>
