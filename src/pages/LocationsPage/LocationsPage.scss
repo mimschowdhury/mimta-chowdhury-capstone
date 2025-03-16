@@ -10,8 +10,8 @@
         text-align: center;
         color: #A78682;
         font-family: 'Outfit-Medium';
-        @include heading;
         padding-bottom: 24px;
+        @include heading;
     }
 }
 

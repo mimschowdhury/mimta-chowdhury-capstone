@@ -8,6 +8,7 @@ import "./FavouritesPage.scss";
 export default function FavouritesPage() {
     const [photos, setPhotos] = useState([]);
     const [favoritePhotos, setFavoritePhotos] = useState([]);
+    const [tags, setTags] = useState([]); // Add state for tags
 
     // Fetch all photos
     useEffect(() => {
@@ -20,8 +21,21 @@ export default function FavouritesPage() {
                 console.error("Error fetching photos:", error);
             }
         }
-
         fetchPhotos();
+    }, []);
+
+    // Fetch all tags
+    useEffect(() => {
+        async function fetchTags() {
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/tags`);
+                console.log("Fetched tags:", response.data);
+                setTags(response.data);
+            } catch (error) {
+                console.error("Error fetching tags:", error);
+            }
+        }
+        fetchTags();
     }, []);
 
     // After photos are fetched, filter the favorites
@@ -37,7 +51,7 @@ export default function FavouritesPage() {
             <div className="favourites__page">
                 <h1 className="favourites__header">My Favourite Cafes ☕️</h1>
                 {favoritePhotos.length > 0 ? (
-                    <PhotoCardList photos={favoritePhotos} />
+                    <PhotoCardList photos={favoritePhotos} tags={tags} /> // Pass fetched tags
                 ) : (
                     <p className="favourites__text">You haven't favourited any cafes yet!</p>
                 )}
