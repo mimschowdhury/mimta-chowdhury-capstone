@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import FavoritesPage from './pages/FavouritesPage/FavouritesPage';
 import LocationsPage from './pages/LocationsPage/LocationsPage';
 import CafeQuizPage from './pages/CafeQuizPage/CafeQuizPage';
+import CafeWeekPage from './pages/CafeoftheWeekPage/CafeoftheWeekPage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/favourites" element={<FavoritesPage />} />
         <Route path="/locations" element={<LocationsPage />} />
         <Route path="/quiz" element={<CafeQuizPage />} />
+        <Route path="/cafeoftheweek" element={<CafeWeekPage />} />
       </Routes>
     </BrowserRouter>
   )
