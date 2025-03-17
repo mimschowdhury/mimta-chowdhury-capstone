@@ -29,12 +29,12 @@
 
     &__nav {
         display: flex;
-        align-items: center; // Keeps links and filter vertically aligned
-        gap: 1.5rem; // Space between links and filter
+        align-items: center; 
+        gap: 1.5rem; 
     }
 
     &__nav-link {
-        text-decoration: none; // Removes underline
+        text-decoration: none; 
         transition: color 0.3s ease;
         color: #333;
         @include buttonlabel-text;
@@ -44,7 +44,7 @@
         }
 
         &:hover {
-            color: #e7c6ff; // Hover effect (e.g., blue)
+            color: #62B6CB;; 
         }
     }
 }
