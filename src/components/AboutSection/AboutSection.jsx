@@ -37,9 +37,8 @@ function AboutSection() {
           <h3 className="feature-title">Cafe Profiles</h3>
           <p className="feature-description">
             Each cafe has a dedicated profile page with essential details like
-            its address, hours of operation and a short description of its vibe
-            or theme. This would give users the info they need to decide which
-            cafe best fits their needs without relying on reviews or ratings.
+            its address, popular menu items and a short description of its vibe
+            or theme. We also encourage users to leave their own reviews as well!
           </p>
         </div>
       </div>
