@@ -1,0 +1,20 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.cafe-week-page {
+&-content {
+    padding-top: 120px;
+}
+
+.cafe-week-page-header {
+    color: #f49cbb;
+    @include heading;
+}
+}
+
+.page-header {
+    font-family: 'Outfit-Medium';
+    text-align: center;
+}
