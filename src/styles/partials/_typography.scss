@@ -33,10 +33,32 @@
     src: url("../../assets/fonts/Outfit-Light.woff") format("woff");
 }
 
+// Chubbo - Light
+@font-face {
+    font-family: "Chubbo-Light";
+    src: url("../../assets/fonts/Chubbo-Light.woff") format("woff");
+}
+
+// Chubbo - Medium
+@font-face {
+    font-family: "Chubbo-Medium";
+    src: url("../../assets/fonts/Chubbo-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Bodoni-Regular";
+    src: url("../../assets/fonts/Bodoni-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Bodoni-Italic";
+    src: url("../../assets/fonts/Bodoni-Italic.ttf");
+}
+
 //section typography mixins
 @mixin wordmark {
-    font-family: 'Newsreader-Regular';
-    font-weight: 400;
+    font-family: 'Bodoni-Italic';
+    font-weight: 600;
     font-size: 2rem; //mobile
     line-height: 2rem;
     @include tablet {
