@@ -1,0 +1,152 @@
+// CafeOfTheWeek.scss
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.cafe-page-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.cafe-content {
+    // flex: 1 0 auto;
+}
+
+.cafeweekly__container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    &-heading {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-family: 'Outfit-Medium';
+        color: #A78682;
+        @include heading;
+    }
+}
+
+.cafe__weekly {
+    display: flex;
+    gap: 2rem;
+    background: $secondary-sage;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+        .cafe-weekly-image {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+
+    &__details {
+        flex: 1;
+    }
+
+    &__tags {
+        .cafe__weekly__tag {
+            background: $secondary-white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            margin-right: 0.5rem;
+            @include buttonlabel-text;
+
+            &:hover {
+                background-color: $secondary-blue;
+            }
+        }
+    }
+
+    &__info {
+        margin-bottom: 1rem;
+        font-family: 'Outfit-Light';
+        font-weight: 600;
+        line-height: .9375rem;
+        font-size: .75rem;
+        @include tablet {
+            font-size: 18px; // Tablet & Desktop
+            line-height: 1.625rem;
+            font-weight: 600;
+        }
+    }
+
+    &__likes {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #666;
+        margin-bottom: 8px;
+    }
+
+    &__name {
+        font-family: 'Outfit-Medium';
+        color: #3c2f2f;
+        margin-bottom: 8px;
+    }
+
+    &__rating {
+        color: #62B6CB;
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        color: #666;
+        margin: 1rem 0;
+        margin-bottom: 1rem;
+        font-family: 'Outfit-Light';
+        font-weight: 600;
+        line-height: .9375rem;
+        font-size: .75rem;
+        @include tablet {
+            font-size: 18px; // Tablet & Desktop
+            line-height: 1.625rem;
+            font-weight: 600;
+        }
+    }
+
+    &__location {
+        color: $secondary-blue;
+        margin-bottom: 1rem;
+        @include small-body-copy;
+        @include tablet {
+            font-size: 18px; // Tablet & Desktop
+            line-height: 1.625rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.cafe__weekly-footer {
+    text-align: center;
+    margin-top: 32px;
+    @include small-body-copy;
+}
+
+.cafe-link {
+    display: block;
+    text-decoration: none;
+    
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.cafe-weekly-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    flex-shrink: 0;
+    width: 100%;
+}

@@ -8,15 +8,19 @@ import "./CafeQuizPage.scss"; // Import the SCSS file
 const CafeQuizPage = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [recommendedCafes, setRecommendedCafes] = useState([]);
+  const [cafePersona, setCafePersona] = useState(""); // New state for persona
 
-  const handleQuizComplete = (cafes = []) => {
+  const handleQuizComplete = ({ cafes = [], persona = "" }) => {
     console.log("Received recommended cafes:", cafes);
+    console.log("Received cafe persona:", persona);
     setRecommendedCafes(cafes);
+    setCafePersona(persona); // Store the persona
     setQuizCompleted(true);
   };
 
   const handleRestart = () => {
     setRecommendedCafes([]);
+    setCafePersona(""); // Reset persona
     setQuizCompleted(false);
   };
 
@@ -25,18 +29,25 @@ const CafeQuizPage = () => {
       <PhotoPageHeader />
       <div className="cafequiz__page">
         <header className="cafequiz__header">
-          <p>Discover Your Cafe 🤎</p>
+          <p>Discover Your Next Cafe 🤎</p>
         </header>
-        <p className="cafequiz__text">
-          Take our quick quiz and let us brew up the perfect cafe match for you!
-          Your next favorite spot in 6ixCafes is just a few clicks away.
-        </p>
+        <div className="cafequiz__text">
+          <p>Take our quick quiz and let us brew up the perfect cafe match for you!</p>
+          <p>Your next favorite spot in 6ixCafes is just a few clicks away.</p>
+        </div>
         <main className={`cafequiz__main ${quizCompleted ? "hidden" : ""}`}>
           {!quizCompleted && <CafeQuiz onQuizComplete={handleQuizComplete} />}
         </main>
         {quizCompleted && (
           <div className="quiz-complete">
             <h2 className="quiz-complete__heading">Explore Your Matches!</h2>
+            {/* Display the cafe persona */}
+            {cafePersona && (
+              <p className="quiz-complete__persona">
+                <p className="quiz__persona">Your Cafe Persona:</p> 
+                <p>{cafePersona}</p>
+              </p>
+            )}
             <div className="quiz-results">
               {recommendedCafes.length > 0 ? (
                 recommendedCafes.map((cafe) => (
@@ -48,7 +59,7 @@ const CafeQuizPage = () => {
                     tags={cafe.tags.map((tag, index) => ({
                       id: index,
                       name: tag,
-                    }))} // ✅ Fixing tag structure
+                    }))} // Fixing tag structure
                     id={cafe.id}
                   />
                 ))

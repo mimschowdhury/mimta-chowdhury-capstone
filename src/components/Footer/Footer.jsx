@@ -12,18 +12,21 @@ function Footer() {
                         <div className="footer__content">
                             <div className="footer__links">
                                 <Link to="/favourites" className="footer__link">
-                                    My Favourites
+                                    My Favourites 🤎
                                 </Link>
                                 <Link to="/locations" className="footer__link">
-                                    Locations
+                                    Locations 📍
+                                </Link>
+                                <Link to="/cafeoftheweek" className="footer__link">
+                                    Cafe of the Week 🥐
                                 </Link>
                             </div>
                             <div className="footer__links">
                                 <Link to="/about" className="footer__link">
-                                    About
+                                    About 👩🏻‍💻
                                 </Link>
                                 <Link to="/quiz" className="footer__link">
-                                    Discover Cafes
+                                    Discover Cafes ☕️
                                 </Link>
                             </div>
                         </div>

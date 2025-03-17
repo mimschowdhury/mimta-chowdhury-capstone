@@ -14,12 +14,13 @@
 
     &__heading {
         padding-bottom: 1.5rem;
+        color: $primary-black;
         @include wordmark;
     }
 
     &__link {
         text-decoration: none;
-        color: $primary-black;
+        color: #62B6CB;
         @include body-copy;
 
         &:hover {
@@ -47,7 +48,7 @@
 
     &__info {
         margin-bottom: 0.5rem;
-        color: $secondary-sage;
+        color: #adb594;
         @include small-body-copy;
     }
 
@@ -64,6 +65,7 @@
     &__content {
         display: flex;
         flex-direction: column;
+        color: #62B6CB;
 
         @include tablet {
             flex-direction: row;

@@ -88,6 +88,22 @@ const CafeQuiz = ({ onQuizComplete }) => {
     }
   };
 
+  const generatePersona = (answers) => {
+    const { vibe, need, craving } = answers;
+
+    if (vibe === "Study Spot" && need !== "Best Baked Goods") {
+      return "The Focused Scholar: You’re all about productivity, sipping on a strong coffee while conquering your to-do list in a quiet, work-friendly nook.";
+    } else if (vibe === "Ambience" && craving === "Best Coffee") {
+      return "The Coffee Connoisseur: You seek the perfect brew in a cozy, aesthetic setting—vibes and caffeine are your top priorities.";
+    } else if (need === "Best Baked Goods" || craving === "Best Baked Goods") {
+      return "The Treat Seeker: You’re on a mission for pastries or savory delights, pairing them with a laid-back cafe atmosphere.";
+    } else if (need === "Both") {
+      return "The Cafe All-Rounder: You want it all—great coffee, tasty treats, and a vibe that suits your mood, whatever it may be.";
+    } else {
+      return "The Chill Wanderer: You’re here for the ambiance, soaking in the cafe’s charm with a drink in hand, no rush, no fuss.";
+    }
+  };
+
   const recommendCafes = (finalAnswers) => {
     console.log("User answers:", finalAnswers);
     console.log("Available cafes:", cafes);
@@ -111,15 +127,19 @@ const CafeQuiz = ({ onQuizComplete }) => {
 
     console.log("Matched cafes:", matchedCafes);
 
+    let recommendedCafes;
     if (matchedCafes.length === 0) {
       const partialMatches = cafes.filter((cafe) =>
         cafe.tags.some((tag) => Object.values(finalAnswers).includes(tag))
       );
       console.log("Partial matches:", partialMatches);
-      onQuizComplete(partialMatches.slice(0, 3));
+      recommendedCafes = partialMatches.slice(0, 3);
     } else {
-      onQuizComplete(matchedCafes.slice(0, 3));
+      recommendedCafes = matchedCafes.slice(0, 3);
     }
+
+    const persona = generatePersona(finalAnswers);
+    onQuizComplete({ cafes: recommendedCafes, persona });
   };
 
   if (loading)
