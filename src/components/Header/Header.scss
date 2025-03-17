@@ -19,12 +19,13 @@
     }
 
     &__title {
-        color: $primary-black;
+        color: #b07d62;
         @include wordmark;
     }
 
     &__title-link {
         text-decoration: none;
+        font-family: 'Sail-Regular';
     }
 
     &__nav {
