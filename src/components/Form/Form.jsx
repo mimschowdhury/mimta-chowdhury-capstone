@@ -45,7 +45,7 @@ function Form({ id, setComments, handlePostComment}) {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
             ></textarea>
-            <button className="form__submit">Submit</button>
+            <button className="form__submit">Spill the Beans 💬</button>
         </form>
     );
 }
