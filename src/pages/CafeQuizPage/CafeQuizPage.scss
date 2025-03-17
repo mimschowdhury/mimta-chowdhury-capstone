@@ -23,7 +23,7 @@
   &__text {
     text-align: center;
     padding-top: 16px;
-    color: #f49cbb;
+    color: $primary-brown;
     padding-bottom: 24px;
     width: 80%;
     margin: 0 auto;
@@ -59,11 +59,23 @@
   &__heading {
     text-align: center;
     padding-top: 16px;
-    color: $primary-purple;
+    color: #333;
+    @include buttonlabel-text;
+  }
+
+  &__persona {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    color: #62B6CB;
     @include body-copy;
   }
 }
 
+.quiz__persona {
+  color: #2a6f97;
+  @include body-copy;
+}
 .quiz-results {
   display: flex; // Makes the container a flex container
   flex-wrap: wrap; // Allows cards to wrap to the next line
