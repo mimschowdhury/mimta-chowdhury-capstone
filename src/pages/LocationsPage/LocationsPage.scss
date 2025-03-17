@@ -16,10 +16,19 @@
 }
 
 .dropdown__filter {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 0.5rem;
     text-align: center;
     color: $primary-black;
     font-family: 'Outfit-Medium';
+    padding-bottom: 24px;
     @include body-copy;
+
+    &-menu {
+        @include buttonlabel-text; 
+    }
 }
 
 .google__map {
