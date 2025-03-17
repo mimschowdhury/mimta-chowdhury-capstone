@@ -46,6 +46,7 @@
             max-height: 350px;
             object-fit: cover;
             border-radius: 8px;
+            border: .0625rem solid $primary-blue;
         }
     }
 
@@ -116,7 +117,7 @@
     }
 
     &__location {
-        color: $secondary-blue;
+        color: #8c97c9;
         margin-bottom: 1rem;
         @include small-body-copy;
         @include tablet {
