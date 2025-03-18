@@ -141,15 +141,16 @@ const LocationsPage = () => {
                     onCloseClick={() => setSelectedCafe(null)}
                   >
                     <div className="map__popup">
-                      <h3>{selectedCafe.photographer}</h3>
+                      <h3 className="map__popup-cafe">{selectedCafe.photographer}</h3>
                       <p>{selectedCafe.photoDescription}</p>
-                      <p>{selectedCafe.googleRating} ⭐️/5</p>
+                      <p>Google Rating: {selectedCafe.googleRating} ⭐️/5</p>
                       <a
                         href={`https://www.google.com/maps/place/?q=place_id:${selectedCafe.placeId}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="map__popup-link"
                       >
-                        View on Google Maps
+                        View on Google Maps📍
                       </a>
                     </div>
                   </InfoWindow>

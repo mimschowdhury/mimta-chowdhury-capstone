@@ -111,6 +111,12 @@
 
     &:hover {
       transform: scale(1.02);
+      background-color: $background-green;
+      opacity: 0.9;
+    }
+
+    &:active {
+      background-color: $background-green;
       opacity: 0.9;
     }
   }
@@ -145,7 +151,7 @@
     border-radius: 50%; /* Makes it circular */
     object-fit: cover; /* Ensures the image fits without distortion */
     display: flex; /* Ensures proper centering */
-    border: 2px solid #62B6CB; /* Optional: adds a border */
+    border: 2px solid #62B6CB; 
   }
 
   &__no-results {
@@ -157,5 +163,21 @@
 }
 
 .map__popup {
-    background-color: #62B6CB !important;
+    font-family: "Outfit-Medium";
+    background-color: transparent !important;
+    @include buttonlabel-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+
+    &-cafe {
+        color: #4d93a4;
+    }
+
+    a {
+        color: #4d93a4 !important;
+        text-decoration: underline;
+        @include buttonlabel-text;
+    }
 }
