@@ -53,7 +53,9 @@
     .feature-title {
       font-size: 20px;
       margin-bottom: 10px;
-      color: #333;
+      color: whitesmoke;
+
+    font-family: 'Jua-Regular';
     }
   
     .feature-description {
@@ -66,8 +68,10 @@
     .main-heading {
       font-size: 32px;
       margin-bottom: 20px;
-      color: #333;
+      color: $secondary-white;
       text-align: center;
+
+    font-family: 'Jua-Regular';
 
       @include tablet {
         padding: 32px 0px 0px;
@@ -76,7 +80,7 @@
   
     .main-description {
       font-family: 'Outfit-Light';
-      font-size: 18px;
+      font-size: 16px;
       color: #666;
       line-height: 1.6;
       text-align: center;

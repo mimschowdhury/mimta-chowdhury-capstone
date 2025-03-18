@@ -17,8 +17,9 @@
     &__heading {
       font-size: 20px;
       margin-bottom: 20px;
-      color: #333;
+      color: #62B6CB;
       text-align: center;
+      font-family: 'Jua-Regular';
 
       @include tablet {
         font-size: 32px;
@@ -65,6 +66,7 @@
       font-size: 20px;
       margin-bottom: 10px;
       color: #333;
+      font-family: 'Jua-Regular';
     }
     
     &__description {
@@ -78,8 +80,9 @@
       &__heading {
         font-size: 20px;
         margin-bottom: 20px;
-        color: #333;
+        color: #62B6CB;
         text-align: center;
+        font-family: 'Jua-Regular';
 
         @include tablet {
           padding: 32px 0px 0px;

@@ -11,7 +11,9 @@
   &__question {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #333;
     @include body-copy;
+    font-family: "Jua-Regular";
   }
   
   &__options {

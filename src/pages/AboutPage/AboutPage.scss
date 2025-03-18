@@ -8,20 +8,28 @@
     color: #333;
     padding: 20px;
     padding-top: 80px;
+
+    @include tablet {
+      padding-top: 120px;
+    }
   }
   
   .about-header {
     text-align: center;
     margin-bottom: 40px;
+    color: $secondary-blue;
   
     h1 {
-      font-size: 3rem;
+      font-family: "Jua-Regular";
       margin-bottom: 10px;
+      @include heading;
     }
   
     p {
       font-size: 1.5rem;
       color: #666;
+      font-family: "Jua-Regular" !important;
+      @include body-copy;
     }
   }
   
@@ -47,7 +55,7 @@
   
       p {
         font-family: 'Outfit-Light';
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.6;
         margin-bottom: 20px;
       }

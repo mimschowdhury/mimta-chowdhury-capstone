@@ -4,9 +4,15 @@
 @use "../../styles/partials/typography" as *;
 
 .locationspage {
+    background: url('../../assets/images/coffeebackground.png');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    
   padding-top: 120px;
 
   @include tablet {
+    background-image: none;
     padding-left: 8px;
     padding-right: 8px;
   }
@@ -28,9 +34,13 @@
   &__header {
     text-align: center;
     color: #a78682;
-    font-family: "Outfit-Medium";
+    font-family: 'Jua-Regular';
     padding-bottom: 24px;
     @include heading;
+
+    @include mobile {
+        color: whitesmoke
+    }
   }
 }
 
@@ -40,13 +50,14 @@
   align-content: center;
   gap: 0.5rem;
   text-align: center;
-  color: $primary-black;
-  font-family: "Outfit-Medium";
+  color: #333;
   padding-bottom: 24px;
   @include body-copy;
+  font-family: "Jua-Regular";
 
   &-menu {
     @include buttonlabel-text;
+    font-family: "Jua-Regular";
   }
 }
 
@@ -86,7 +97,7 @@
   &__heading {
     text-align: center;
     margin-bottom: 1.5rem;
-    font-family: "Outfit-Medium";
+    font-family: "Jua-Regular";
     color: #a78682;
     @include heading;
   }
