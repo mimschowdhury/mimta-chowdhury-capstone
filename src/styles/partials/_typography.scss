@@ -55,6 +55,11 @@
     src: url("../../assets/fonts/Bodoni-Italic.ttf");
 }
 
+@font-face {
+    font-family: "Jua-Regular";
+    src: url("../../assets/fonts/Jua-Regular.ttf");
+}
+
 //section typography mixins
 @mixin wordmark {
     font-family: 'Bodoni-Italic';
