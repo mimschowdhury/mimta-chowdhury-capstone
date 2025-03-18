@@ -4,11 +4,11 @@
 @use "../../styles/partials/typography" as *;
 
 .locationspage {
-    background: url('../../assets/images/coffeebackground.png');
-    background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-    
+  background: url("../../assets/images/cafeoftheweekbackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   padding-top: 120px;
 
   @include tablet {
@@ -20,9 +20,6 @@
   &__content {
     display: flex;
     flex-direction: column;
-    // gap: 2rem;
-    // margin: 2rem 0;
-    // width: 100%;
 
     @include tablet {
       flex-direction: row;
@@ -34,13 +31,9 @@
   &__header {
     text-align: center;
     color: #a78682;
-    font-family: 'Jua-Regular';
+    font-family: "Jua-Regular";
     padding-bottom: 24px;
     @include heading;
-
-    @include mobile {
-        color: whitesmoke
-    }
   }
 }
 
@@ -51,7 +44,7 @@
   gap: 0.5rem;
   text-align: center;
   color: #333;
-  padding-bottom: 24px;
+  padding-bottom: 8px;
   @include body-copy;
   font-family: "Jua-Regular";
 
@@ -62,9 +55,9 @@
 }
 
 .google__map {
-  flex: 1; // Allow it to take remaining space in flex container
-  width: 140%; // Prevent flex item from overflowing
-  height: 500px; // Match mapContainerStyle height explicitly
+  flex: 1;
+  width: 140%;
+  height: 500px;
   padding-left: 16px;
   padding-right: 16px;
   padding-bottom: 24px;
@@ -88,6 +81,9 @@
 
   @include tablet {
     width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
   }
 
   @include desktop {
@@ -133,8 +129,7 @@
   }
 
   &__cafe-text {
-    // flex: 1; /* Allows text container to take available space */
-    text-align: left; /* Align text to the left */
+    text-align: left;
   }
 
   &__cafe-name {
@@ -157,12 +152,12 @@
   }
 
   &__cafe-photo {
-    width: 85px; /* Adjust size as needed */
+    width: 85px;
     height: 85px;
-    border-radius: 50%; /* Makes it circular */
-    object-fit: cover; /* Ensures the image fits without distortion */
-    display: flex; /* Ensures proper centering */
-    border: 2px solid #62B6CB; 
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    border: 2px solid #62b6cb;
   }
 
   &__no-results {
@@ -174,21 +169,35 @@
 }
 
 .map__popup {
-    font-family: "Outfit-Medium";
-    background-color: transparent !important;
+  font-family: "Outfit-Medium";
+  background-color: transparent !important;
+  @include buttonlabel-text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+
+  &-cafe {
+    color: #4d93a4;
+  }
+
+  a {
+    color: #4d93a4 !important;
+    text-decoration: underline;
     @include buttonlabel-text;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
+  }
+}
 
-    &-cafe {
-        color: #4d93a4;
-    }
+.heatmap__toggle {
+  @include body-copy;
+  font-family: "Jua-Regular";
+  text-align: center;
+  padding-bottom: 24px;
+  color: #f7b267;
 
-    a {
-        color: #4d93a4 !important;
-        text-decoration: underline;
-        @include buttonlabel-text;
+  label {
+    input[type="checkbox"] {
+      margin-right: 8px;
     }
+  }
 }

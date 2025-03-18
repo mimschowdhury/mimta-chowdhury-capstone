@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow, HeatmapLayer } from '@react-google-maps/api';
 import PhotoPageHeader from '../../components/PhotoPageHeader/PhotoPageHeader';
 import Footer from '../../components/Footer/Footer';
 import './LocationsPage.scss';
@@ -11,6 +11,7 @@ const LocationsPage = () => {
   const [cafes, setCafes] = useState([]);
   const [filteredCafes, setFilteredCafes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showHeatmap, setShowHeatmap] = useState(false);
   const mapRef = useRef();
 
   // Fetch cafe data from API
@@ -57,12 +58,33 @@ const LocationsPage = () => {
     setSelectedCafe(cafe);
   };
 
-  const mapContainerStyle = { height: '500px', width: '70%' };
-  const initialCenter = { lat: 43.651070, lng: -79.347015 };
-
   const handleMarkerClick = (cafe) => {
     setSelectedCafe(cafe);
   };
+
+  const toggleHeatmap = () => {
+    setShowHeatmap((prev) => !prev);
+    setSelectedCafe(null); 
+  };
+
+  // Insert Heat Map
+  const heatmapData = filteredCafes
+    .filter((cafe) => cafe.lat && cafe.lng) 
+    .map((cafe) => {
+      try {
+        return {
+          location: new window.google.maps.LatLng(cafe.lat, cafe.lng),
+          weight: Number(cafe.likes) || 1, 
+        };
+      } catch (error) {
+        console.error(`Error processing cafe ${cafe.id} for heatmap:`, error);
+        return null;
+      }
+    })
+    .filter(Boolean);
+
+  const mapContainerStyle = { height: '500px', width: '70%' };
+  const initialCenter = { lat: 43.651070, lng: -79.347015 };
 
   if (loading) return <div>Loading...</div>;
 
@@ -88,9 +110,20 @@ const LocationsPage = () => {
           </select>
         </div>
 
+        {/* Heatmap toggle */}
+        <div className="heatmap__toggle">
+          <label>
+            <input
+              type="checkbox"
+              checked={showHeatmap}
+              onChange={toggleHeatmap}
+            />
+              Show Heatmap (Business Level)
+          </label>
+        </div>
+
         {/* Main content with sidebar and map */}
         <div className="locationspage__content">
-          {/* Sidebar */}
           <div className="sidebar">
             <h2 className="sidebar__heading">Filtered Cafes</h2>
             {filteredCafes.length > 0 ? (
@@ -104,7 +137,7 @@ const LocationsPage = () => {
                     <div className="sidebar__cafe-text">
                       <h3 className="sidebar__cafe-name">{cafe.photographer}</h3>
                       <p className="sidebar__cafe-rating">⭐️ {cafe.googleRating} / 5</p>
-                      <p className="sidebar__cafe-description">{cafe.likes}</p>
+                      <p className="sidebar__cafe-description">{cafe.likes} likes</p>
                     </div>
                     <img
                       src={cafe.photo}
@@ -121,21 +154,38 @@ const LocationsPage = () => {
 
           {/* Google Map */}
           <div className="google__map">
-            <LoadScript googleMapsApiKey="AIzaSyDXFf7ZDhWCXFriQ_OcNYIp50fhvYXOtbo">
+            <LoadScript
+              googleMapsApiKey="AIzaSyDXFf7ZDhWCXFriQ_OcNYIp50fhvYXOtbo"
+              libraries={['visualization']}
+              loadingElement={<div>Loading Map...</div>}
+              onError={(error) => console.error('LoadScript Error:', error)}
+            >
               <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 center={initialCenter}
                 zoom={12}
                 onLoad={(map) => (mapRef.current = map)}
               >
-                {filteredCafes.map((cafe) => (
-                  <Marker
-                    key={cafe.id}
-                    position={{ lat: cafe.lat, lng: cafe.lng }}
-                    onClick={() => handleMarkerClick(cafe)}
+                {showHeatmap && heatmapData.length > 0 ? (
+                  <HeatmapLayer
+                    data={heatmapData}
+                    options={{
+                      radius: 20,
+                      opacity: 0.6,
+                    }}
                   />
-                ))}
-                {selectedCafe && (
+                ) : (
+                  filteredCafes.map((cafe) =>
+                    cafe.lat && cafe.lng ? (
+                      <Marker
+                        key={cafe.id}
+                        position={{ lat: cafe.lat, lng: cafe.lng }}
+                        onClick={() => handleMarkerClick(cafe)}
+                      />
+                    ) : null
+                  )
+                )}
+                {selectedCafe && !showHeatmap && selectedCafe.lat && selectedCafe.lng && (
                   <InfoWindow
                     position={{ lat: selectedCafe.lat, lng: selectedCafe.lng }}
                     onCloseClick={() => setSelectedCafe(null)}
