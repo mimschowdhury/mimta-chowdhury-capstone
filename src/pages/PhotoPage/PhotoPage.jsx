@@ -13,13 +13,11 @@ export default function PhotoPage() {
     const [photo, setPhoto] = useState(null);
     const [comments, setComments] = useState(null);
 
-    // fetch photo and comments data when component mounts
     useEffect(() => {
         fetchPhoto();
         fetchComments();
-    }, []);
+    }, [id]);
 
-    // fetch photo details from API
     async function fetchPhoto() {
         try {
             const { data } = await axios.get(`http://localhost:8080/photos/${id}`);
@@ -30,7 +28,6 @@ export default function PhotoPage() {
         }
     }
 
-    // fetch and sort comments from API
     async function fetchComments() {
         try {
             const { data } = await axios.get(`http://localhost:8080/photos/${id}/comments`);
@@ -41,7 +38,6 @@ export default function PhotoPage() {
         }
     }
 
-    // post comments (when submitting) and fetch comments after posting
     const handlePostComment = (comment) => {
         async function postComment(comment) {
             try {
@@ -63,10 +59,10 @@ export default function PhotoPage() {
         <div className="photo-page">
             <PhotoPageHeader />
             <div className="photo-page__content">
-                <PhotoDetails photo={photo} comments={comments} />
-                <Form id={id} setComments={setComments} handlePostComment={handlePostComment}/> {/* Pass setComments to Form */}
+                <PhotoDetails photo={photo} />
+                <Form id={id} setComments={setComments} handlePostComment={handlePostComment} />
                 <CommentList comments={comments} />
-            </div>    
+            </div>
             <Footer />
         </div>
     );
