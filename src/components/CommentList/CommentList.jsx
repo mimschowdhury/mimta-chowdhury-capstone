@@ -8,8 +8,8 @@ function CommentList({ comments }) {
         <div className="comment-list">
             <h3 className="comment-list__count">
                 {commentCount === 0 
-                    ? "No Comments" 
-                    : `${commentCount} ${commentCount === 1 ? 'Comment' : 'Comments'}`}
+                    ? "No Reviews" 
+                    : `${commentCount} ${commentCount === 1 ? 'Review' : 'Reviews'}`}
             </h3>
             {commentCount > 0 && comments.map((comment) => (
                 <Comment key={comment.id} comment={comment} />

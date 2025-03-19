@@ -38,7 +38,7 @@ function Form({ id, setComments, handlePostComment}) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
-            <label className="form__input-label">Comment</label>
+            <label className="form__input-label">Review</label>
             <textarea
                 id="comment-box"
                 className={`form__input ${submitted && !comment ? "form__input--error" : ""}`}
