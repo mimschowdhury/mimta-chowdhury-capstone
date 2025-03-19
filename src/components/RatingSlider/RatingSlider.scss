@@ -1,0 +1,89 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.rating-slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding-top: 32px;
+        flex: 0 1 40%; /* Doesn’t grow or shrink, takes natural width */
+        // max-width: 300px; /* Limits its width */
+
+    @include mobile {
+        width: 60%;
+        align-items: center;
+        padding-top: 40px;
+    }
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Slider width */
+}
+
+.rating-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px; /* Track thickness */
+    background: #ddd; /* Light gray track */
+    border-radius: 5px; /* Rounded edges */
+    outline: none;
+    margin-top: 6px;
+}
+
+.rating-slider-text {
+        padding-top: 6px;;
+        text-decoration: none;
+        color: $primary-purple;
+        font-family: 'Jua-Regular' !important;
+        font-size: 12px;
+
+        @include tablet {
+        font-size: 16px;
+        }
+}
+
+.rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* Thumb size */
+    height: 20px;
+    background: $primary-purple;;; /* Blue thumb */
+    border-radius: 50%; /* Circular thumb */
+    cursor: pointer;
+}
+
+.rating-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: $primary-purple;;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Emoji with raindrop background */
+.emoji {
+    position: absolute;
+    top: -40px; 
+    font-size: 24px; 
+    transition: left 0.1s ease;
+    z-index: 2; 
+
+    /* Raindrop background */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%; /* Center vertically */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%) rotate(180deg); /* Center and flip for raindrop */
+        width: 30px; /* Raindrop width */
+        height: 40px; /* Raindrop height */
+        background: whitesmoke; /* White background */
+        border: 2px solid $secondary-blue;
+        border-radius: 50% 50% 30% 30%; /* Rounded bottom, pointed top */
+        z-index: -1; /* Behind the emoji */
+    }
+}
