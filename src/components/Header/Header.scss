@@ -31,7 +31,15 @@
     &__nav {
         display: flex;
         align-items: center; 
-        gap: 1.5rem; 
+        gap: 8px; 
+
+        @include tablet {
+            gap: 16px;
+        }
+
+        @include desktop {
+            gap: 1.5rem;
+        }
     }
 
     &__nav-link {
@@ -46,7 +54,66 @@
         }
 
         &:hover {
-            color: #62B6CB;; 
+            color: #62B6CB;
         }
     }
 }
+
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  
+    input {
+      display: none;
+    }
+  
+    .slider {
+      width: 50px;
+      height: 25px;
+      background: #ddd;
+      border-radius: 20px;
+      position: relative;
+      transition: background 0.3s ease;
+    }
+  
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      transition: all 0.3s ease;
+    }
+  
+    input:checked + .slider {
+      background: #62B6CB;
+    }
+  
+    input:checked + .slider::before {
+      left: 26px;
+    }
+  
+    .mode-label {
+        color: #333;
+        @include buttonlabel-text;
+        font-family: 'Jua-Regular' !important;
+
+        @include tablet {
+            font-size: .9725rem;
+        }
+
+        &:hover {
+            color: #62B6CB;
+        }
+    }
+  }
+  
