@@ -3,7 +3,7 @@ import axios from "axios";
 import PhotoPageHeader from '../../components/PhotoPageHeader/PhotoPageHeader';
 import Footer from "../../components/Footer/Footer";
 import "./FavouritesPage.scss";
-import PhotoCardFavourites from "../../components/PhotoCardFavourites/PhotoCardFavourites";
+import PhotoQuiz from "../../components/PhotoQuiz/PhotoQuiz"; // Import PhotoQuiz
 
 export default function FavouritesPage() {
     const [photos, setPhotos] = useState([]);
@@ -51,7 +51,29 @@ export default function FavouritesPage() {
             <div className="favourites__page">
                 <h1 className="favourites__header">My Favourite Cafes ☕️</h1>
                 {favoritePhotos.length > 0 ? (
-                    <PhotoCardFavourites photos={favoritePhotos} tags={tags} /> // Pass fetched tags
+                    <div className="favourites__results">
+                        {favoritePhotos.map((photo) => {
+                            const photoTags = Array.isArray(photo.tags)
+                                ? photo.tags
+                                : photo.tags.split(",");
+
+                            return (
+                                <PhotoQuiz
+                                    key={photo.id}
+                                    url={photo.photo}
+                                    alt={photo.photoDescription}
+                                    photographer={photo.photographer}
+                                    tags={photoTags.map(
+                                        (tagName, index) => ({
+                                            id: index,
+                                            name: tagName.trim(),
+                                        })
+                                    )}
+                                    id={photo.id}
+                                />
+                            );
+                        })}
+                    </div>
                 ) : (
                     <p className="favourites__text">You haven't favourited any cafes yet!</p>
                 )}

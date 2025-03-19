@@ -21,3 +21,108 @@
         @include body-copy;
     }
 }
+
+// FavouritesPage.scss
+
+.favourites__results {
+    display: flex; // Makes the container a flex container
+    flex-wrap: wrap; // Allows cards to wrap to the next line
+    gap: 1rem; // Adds space between cards
+    padding: 16px; // Adjust padding to suit your design
+    justify-content: flex-start; // Centers the cards horizontally
+
+    @include tablet {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    @include desktop {
+        padding: 24px;
+        gap: 18px;
+    }
+
+}
+
+.photoquiz {
+    position: relative;
+    width: 100%; // Ensure photo quiz takes full width inside the container
+    max-width: 100%;
+    border-radius: .9375rem;
+    overflow: hidden;
+    background-color: $secondary-sage;
+    border: .0625rem solid $primary-blue;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mobile {
+        width: 100%;  // 1 card per row on mobile devices
+    }
+
+    @include tablet {
+        width: calc(50% - .75rem); // 2 cards per row on tablet devices
+    }
+
+    @include desktop {
+        width: calc(33.33% - .75rem); // 3 cards per row on desktop devices
+    }
+
+    .photoquiz__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: .75rem .75rem 0 0;
+            object-fit: cover;
+        }
+    }
+
+    &__photographer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $secondary-sage;
+        margin-top: 1rem;
+        padding: .5rem;
+        border-radius: .75rem 0rem 0 0;
+        color: $primary-black;
+        text-align: right;
+        @include buttonlabel-text;
+    }
+
+    &__tags {
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        width: 100%;
+        padding-left: 1rem;
+
+        .photoquiz_tag {
+            background-color: $secondary-white;
+            border: .0625rem solid $primary-blue;
+            color: $primary-black;
+            padding: .375rem .5rem;
+            border-radius: .375rem;
+            text-transform: capitalize;
+            @include buttonlabel-text;
+
+            @include tablet {
+                padding: .5rem .75rem;
+                border-radius: .75rem;
+            }
+
+            // CTA hover properties
+            &:hover {
+                background-color: $secondary-blue;
+            }
+        }
+    }
+}
