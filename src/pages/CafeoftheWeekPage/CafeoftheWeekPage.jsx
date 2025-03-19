@@ -24,6 +24,7 @@ function CafeWeekPage() {
                     <p className="cafe-week-page-text">Week {getWeekNumber()} of {currentYear}</p>
                     <p className="cafe-week-page-text">Each week, we spotlight a cozy gem where coffee whispers secrets and pastries tell tales.</p>
                     <p className="cafe-week-page-text">Craving the full scoop? Click the image below to dive into the delicious details!</p>
+                    <p className="cafe-week-page-text">You can also click the address to be redirected to the cafe's Google Maps!</p>
                 </header>
 
                 <main className="page-content">
