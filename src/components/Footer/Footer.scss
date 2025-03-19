@@ -22,6 +22,7 @@
         text-decoration: none;
         color: #62B6CB;
         @include body-copy;
+        font-family: 'Jua-Regular' !important;
 
         &:hover {
             color: $secondary-blue;
@@ -50,6 +51,7 @@
         margin-bottom: 0.5rem;
         color: #adb594;
         @include small-body-copy;
+        font-family: 'Jua-Regular' !important;
     }
 
     &__tablet-wrapper {

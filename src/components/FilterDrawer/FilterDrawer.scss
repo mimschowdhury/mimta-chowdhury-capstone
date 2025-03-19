@@ -16,18 +16,9 @@
         padding: 3.75rem 1.5rem;
     }
 
-    // @include desktop {
-    //     width: 100%; 
-    //     position: absolute;
-    //     right: 0;
-    //     overflow-y: auto;
-    //     height: 100%;
-    //     padding: 3rem;
-    // }
-
     &__title {
         padding-bottom: 1rem;
-        font-family: 'Outfit-Medium';
+        font-family: 'Jua-Regular';
         @include heading;
     }
 
@@ -38,7 +29,7 @@
 
         @include desktop {
             gap: .75rem;
-            padding-top: 2rem;
+            padding-top: 1rem;
         }
     }
 
@@ -54,6 +45,7 @@
         cursor: pointer;
         text-align: center;
         @include body-copy;
+        font-family: 'Jua-Regular';
 
         @include mobile {
             padding: .375rem .5rem;
