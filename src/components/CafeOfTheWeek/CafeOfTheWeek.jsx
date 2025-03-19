@@ -58,8 +58,17 @@ function CafeOfTheWeek() {
                         <div className="cafe__weekly__details">
                             <div className="cafe__weekly__info">
                                 <p className="cafe__weekly__likes">
-                                    <img src={LocationIcon} alt="Location" className="cafe__weekly__like-icon" />
+                                <a
+                                    href={`https://www.google.com/maps/place/?q=place_id:${cafe.placeId}`}
+                                    className="cafe__weekly__address"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src={LocationIcon} 
+                                    alt="Location" 
+                                    className="cafe__weekly__like-icon" />
                                     {cafe.likes}
+                                </a>
                                 </p>
                                 <p className="cafe__weekly__name">{cafe.photographer}</p>
                                 <p className="cafe__weekly__rating">⭐️ {cafe.googleRating} / 5</p>

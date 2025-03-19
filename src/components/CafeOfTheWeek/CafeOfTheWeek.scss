@@ -88,6 +88,10 @@
         gap: 0.5rem;
         color: #666;
         margin-bottom: 8px;
+
+        &:hover {
+            color: $background-green;
+        }
     }
 
     &__name {
@@ -115,6 +119,26 @@
             font-weight: 600;
         }
     }
+
+    &__address {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: #62B6CB;
+        @include small-body-copy;
+        @include tablet {
+            font-size: 18px; // Tablet & Desktop
+            line-height: 1.625rem;
+            font-weight: 600;
+        }
+
+        &:hover {
+            color: #8c97c9;
+            text-decoration: underline;
+        }
+    }
+    
 
     &__location {
         color: #8c97c9;
