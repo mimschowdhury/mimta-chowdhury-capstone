@@ -48,9 +48,10 @@
 
     &__favourites {
         color: #48b0c9;
-        font-family: 'Outfit-Medium';
+        font-family: 'Jua-Regular';
         font-size: 12px;
         align-self: flex-end;
+        width: 50%;
 
         @include tablet {
         font-size: 16px;
@@ -182,5 +183,33 @@
         &:hover {
             transform: scale(1.1);
         }
+    }
+}
+
+.photo-details__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.photo-details__favourites {
+    flex: 0 1 50%; // Takes max 60% space
+    min-width: 0;
+
+    @include tablet {
+        align-self: center
+    }
+
+    @include desktop {
+        align-self: flex-end;
+    }
+
+    @include mobile {
+        width: 100%;
     }
 }
