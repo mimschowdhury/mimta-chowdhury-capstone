@@ -1,88 +1,84 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
 
-// .photocard-list {
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 1rem;
-//     padding: 1rem;
-
-//     @include tablet {
-//         padding: 2rem 1.5rem 1.5rem;
-//         gap: 1.5rem;
-//     }
-
-//     @include desktop {
-//         width: 100%;
-
-//         & > * { // Targets each photo card
-//             width: calc(33.33% - 1rem); // Ensures 3 photos per row
-//         }
-//     }
-// }
-
+// Base styles for the container
 .photocard-list {
+  padding: 1rem;
+
+  // Scroll Mode
+  &.scroll-mode {
     display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &.dragging {
+      cursor: grabbing;
+    }
+
+    > * {
+      flex: 0 0 auto;
+      margin-right: 20px;
+    }
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: 768px) {
+      padding-left: 10px;
+      padding-right: 10px;
+      > * {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // Grid Mode (from your commented-out code)
+  &.grid-mode {
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    cursor: grab;
-
-    // Hide scrollbar
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    &:active {
-        cursor: grabbing;
-    }
-
-    @include mobile {
-        flex-direction: column; // Switch to vertical scrolling
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
 
     @include tablet {
-        flex-direction: row; // Back to horizontal scrolling
-        padding: 2rem 24px 24px;
+        padding: 2rem 1.5rem 1.5rem;
         gap: 1.5rem;
     }
 
-    // @include desktop {
-    // }
-}
-
-.photocard {
-    scroll-snap-align: center;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-
-    &:hover {
-        transform: scale(1.05);
-    }
-
-    @include mobile {
-        flex: 1 1 auto; // Ensures each photocard takes full width in column mode
+    @include desktop {
         width: 100%;
-        max-width: none;
 
-        // Hover effect for mobile (shrink instead of grow)
-        &:hover {
-            transform: scale(0.95); // Shrink effect on hover
+        & > * { 
+            width: calc(33.33% - 1rem); 
         }
     }
+}
+}
 
-    @include tablet {
-        flex: 0 0 calc(50% - 1rem); // Two cards per row
-        max-width: none;
-    }
+// Photocard styles (for both modes)
+.photocard {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 
-    @include desktop {
-        flex: 0 0 calc(33.33% - 1rem); // Three cards per row
-    }
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include mobile {
+    &:hover {
+        transform: scale(0.975); // Shrink effect on hover
+      }
+  }
 }
