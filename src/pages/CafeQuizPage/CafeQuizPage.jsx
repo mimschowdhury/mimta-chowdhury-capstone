@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import CafeQuiz from "../../components/CafeQuiz/CafeQuiz";
-import PhotoCard from "../../components/PhotoCard/PhotoCard";
+import PhotoQuiz from "../../components/PhotoQuiz/PhotoQuiz";
 import PhotoPageHeader from "../../components/PhotoPageHeader/PhotoPageHeader";
 import Footer from "../../components/Footer/Footer";
-import "./CafeQuizPage.scss"; // Import the SCSS file
+import "./CafeQuizPage.scss";
 
 const CafeQuizPage = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [recommendedCafes, setRecommendedCafes] = useState([]);
-  const [cafePersona, setCafePersona] = useState(""); // New state for persona
+  const [cafePersona, setCafePersona] = useState(""); 
 
   const handleQuizComplete = ({ cafes = [], persona = "" }) => {
     console.log("Received recommended cafes:", cafes);
@@ -20,7 +20,7 @@ const CafeQuizPage = () => {
 
   const handleRestart = () => {
     setRecommendedCafes([]);
-    setCafePersona(""); // Reset persona
+    setCafePersona("");
     setQuizCompleted(false);
   };
 
@@ -41,7 +41,6 @@ const CafeQuizPage = () => {
         {quizCompleted && (
           <div className="quiz-complete">
             <h2 className="quiz-complete__heading">Explore Your Matches!</h2>
-            {/* Display the cafe persona */}
             {cafePersona && (
               <p className="quiz-complete__persona">
                 <p className="quiz__persona">Your Cafe Persona:</p> 
@@ -51,7 +50,7 @@ const CafeQuizPage = () => {
             <div className="quiz-results">
               {recommendedCafes.length > 0 ? (
                 recommendedCafes.map((cafe) => (
-                  <PhotoCard
+                  <PhotoQuiz
                     key={cafe.id}
                     url={cafe.photo}
                     alt={cafe.photoDescription}
@@ -59,7 +58,7 @@ const CafeQuizPage = () => {
                     tags={cafe.tags.map((tag, index) => ({
                       id: index,
                       name: tag,
-                    }))} // Fixing tag structure
+                    }))}
                     id={cafe.id}
                   />
                 ))

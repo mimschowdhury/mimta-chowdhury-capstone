@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PhotoPageHeader from '../../components/PhotoPageHeader/PhotoPageHeader';
 import Footer from "../../components/Footer/Footer";
-import PhotoCardList from "../../components/PhotoCardList/PhotoCardList";
 import "./FavouritesPage.scss";
+import PhotoCardFavourites from "../../components/PhotoCardFavourites/PhotoCardFavourites";
 
 export default function FavouritesPage() {
     const [photos, setPhotos] = useState([]);
@@ -51,7 +51,7 @@ export default function FavouritesPage() {
             <div className="favourites__page">
                 <h1 className="favourites__header">My Favourite Cafes ☕️</h1>
                 {favoritePhotos.length > 0 ? (
-                    <PhotoCardList photos={favoritePhotos} tags={tags} /> // Pass fetched tags
+                    <PhotoCardFavourites photos={favoritePhotos} tags={tags} /> // Pass fetched tags
                 ) : (
                     <p className="favourites__text">You haven't favourited any cafes yet!</p>
                 )}
