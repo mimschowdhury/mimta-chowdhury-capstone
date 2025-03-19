@@ -79,15 +79,23 @@
   @include body-copy;
   font-family: "Jua-Regular";
 }
+
 .quiz-results {
   display: flex; // Makes the container a flex container
-  flex-wrap: wrap; // Allows cards to wrap to the next line
-  padding: 24px;
-  gap: 1rem;
+    flex-wrap: wrap; // Allows cards to wrap to the next line
+    gap: 1rem; // Adds space between cards
+    padding: 16px; // Adjust padding to suit your design
+    justify-content: flex-start; // Centers the cards horizontally
 
-  @include mobile {
-    width: 100%; // Full width on mobile
-  }
+    @include tablet {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    @include desktop {
+        padding: 24px;
+        gap: 18px;
+    }
 }
 
 .hidden {
