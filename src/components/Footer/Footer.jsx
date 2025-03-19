@@ -28,6 +28,9 @@ function Footer() {
                                 <Link to="/quiz" className="footer__link">
                                     Discover Cafes ☕️
                                 </Link>
+                                <Link to="/collage" className="footer__link">
+                                    Cafe Roulette 🎲
+                                </Link>
                             </div>
                         </div>
                 </div>

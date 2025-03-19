@@ -1,0 +1,32 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.collage {
+  &__page {
+    padding-top: 80px;
+
+    &-header {
+      text-align: center;
+      color: $secondary-brown;
+      font-family: "Jua-Regular";
+      @include heading;
+    }
+
+    &-text {
+        text-align: center;
+        padding-top: 16px;
+        color: #CC7FA3;
+        padding-bottom: 24px;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 16px;
+        font-family: "Jua-Regular";
+    }
+
+    @include tablet {
+      padding-top: 120px;
+    }
+  }
+}

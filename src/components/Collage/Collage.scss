@@ -1,0 +1,188 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.collage-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 100px 100px 100px 0px; // Added a 0px row 5 to allow spanning
+  gap: 10px; // Consistent gap between items
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px 20px 10px 20px;
+  background-color: #de8ab2;
+  border: 2px solid #CCBEDF;
+  border-radius: 20px;
+
+  @include tablet {
+    width: 95%;
+  }
+
+  @include desktop {
+    width: 90%;
+  }
+}
+
+.collage-item {
+  border-radius: 20px;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+.cafe-placeholder,
+.text-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include body-copy;
+  color: white;
+  text-align: center;
+  font-family: 'Jua-Regular' !important;
+}
+
+.cafe-placeholder {
+  position: relative;
+
+  .cafe-link {
+    display: block; // Ensure the Link takes up the full space
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    position: absolute; // Position the image absolutely to fill the container
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensure the image fills the space without distortion
+  }
+
+  p {
+    position: absolute;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.5); // Semi-transparent background for readability
+    color: white;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 1rem;
+    border-radius: 5px;
+    z-index: 1; // Ensure the text is above the image
+  }
+}
+
+.text-box p {
+  @include body-copy;
+  font-family: 'Jua-Regular' !important;
+}
+
+// Overlay Styles
+.overlay-image {
+    width: 70px; // Adjust size as needed
+    height: auto;
+    justify-self: center; // Center within the grid cell
+    align-self: center;
+    z-index: 10; // Above other content
+    @include tablet {
+      width: 100px; // Slightly larger on tablet
+    }
+    @include desktop {
+      width: 150px; // Larger on desktop
+    }
+
+    &:hover {
+        transform: scale(0.98);
+      }
+  }
+
+//blocks
+.item-1 { 
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2; 
+  .cafe-placeholder {
+    background-color: #CC7FA3;
+  }
+}
+
+.item-2 { 
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2; 
+  .text-box {
+    background-color: $primary-brown;
+  }
+}
+
+.item-3 { 
+  grid-column: 3 / 5; 
+  grid-row: 1 / 2; 
+  position: relative; 
+  .cafe-placeholder {
+    background-color: #D4BFFF;
+  }
+}
+
+.item-4 { 
+  grid-column: 1 / 2; 
+  grid-row: 2 / 5; 
+  .cafe-placeholder {
+    background-color: #BFF5FF;
+  }
+}
+
+.item-5 { 
+  grid-column: 2 / 3; 
+  grid-row: 2 / 3; 
+  .text-box {
+    background-color: #CCBEDF;
+  }
+}
+
+.item-6 { 
+  grid-column: 3 / 4; 
+  grid-row: 2 / 5; 
+  .cafe-placeholder {
+    background-color: #FFD4CC;
+  }
+}
+
+.item-7 { 
+  grid-column: 4 / 5; 
+  grid-row: 2 / 3; 
+  .text-box {
+    background-color: #E2BAC7;
+  }
+}
+
+.item-9 {
+  grid-column: 2 / 3; 
+  grid-row: 3 / 5; 
+  .text-box {
+    background-color: #8ED0DC;
+  }
+}
+
+.item-9 .text-box {
+    padding: 24px;
+}
+
+.item-10 { 
+  grid-column: 4 / 5; 
+  grid-row: 3 / 4; 
+  .text-box {
+    background-color: #D6D5B3;
+  }
+}
+
+.item-11 { 
+  grid-column: 4 / 5; 
+  grid-row: 4 / 5; 
+  .cafe-placeholder {
+    background-color: #E2BAC7;
+  }
+}

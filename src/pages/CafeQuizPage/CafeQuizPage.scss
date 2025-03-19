@@ -15,7 +15,7 @@
 
   &__header {
     text-align: center;
-    color: #a78682;
+    color: $secondary-brown;
     font-family: "Jua-Regular";
     @include heading;
   }
@@ -28,6 +28,7 @@
     width: 80%;
     margin: 0 auto;
     @include body-copy;
+    font-family: "Jua-Regular";
   }
 
   &__main {
@@ -129,5 +130,10 @@
     cursor: pointer;
     transition: background-color 0.3s;
     @include small-body-copy;
+    
+
+    &:hover {
+      background-color: #dacee4;
+    }
   }
 }

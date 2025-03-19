@@ -10,7 +10,7 @@
 
     &__header {
         text-align: center;
-        color: #A78682;
+        color: $secondary-brown;
         font-family: 'Jua-Regular';
         @include heading;
     }

@@ -2,90 +2,113 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  background-color: $primary-brown;
+  @include body-copy;
+
+  @include tablet {
+    padding: 40px 24px;
+  }
+
+  .features-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .feature-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 32px 16px;
-    background-color: $primary-brown;
-    @include body-copy;
+    width: 30%;
+    text-align: center;
+    opacity: 0; /* Hidden until scrolled into view */
 
-    @include tablet {
-        padding: 40px 24px;
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards; /* Animate only when visible */
     }
-  
-    .features-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      margin-bottom: 50px;
-  
-    @include mobile {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  
-    .feature-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 30%;
-      text-align: center;
-  
-      @media (max-width: 920px) {
-        width: 80%;
-        margin-bottom: 40px;
-      }
-    }
-  
-    .icon-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-  
-    .feature-title {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: whitesmoke;
 
-    font-family: 'Jua-Regular';
-    }
-  
-    .feature-description {
-      font-family: 'Outfit-Light';
-      font-size: 16px;
-      color: #666;
-      line-height: 1.6;
-    }
-  
-    .main-heading {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: $secondary-white;
-      text-align: center;
-
-    font-family: 'Jua-Regular';
-
-      @include tablet {
-        padding: 32px 0px 0px;
-      }
-    }
-  
-    .main-description {
-      font-family: 'Outfit-Light';
-      font-size: 16px;
-      color: #666;
-      line-height: 1.6;
-      text-align: center;
-      max-width: 800px;
-      margin-bottom: 30px;
+    @media (max-width: 920px) {
+      width: 80%;
+      margin-bottom: 40px;
     }
   }
-  
+
+  .icon-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .feature-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    font-family: 'Jua-Regular';
+  }
+
+  .feature-description {
+    font-family: 'Outfit-Light';
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .main-heading {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: $secondary-white;
+    text-align: center;
+    font-family: 'Jua-Regular';
+    opacity: 0; /* Hidden until scrolled into view */
+
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @include tablet {
+      padding: 32px 0px 0px;
+    }
+  }
+
+  .main-description {
+    font-family: 'Outfit-Light';
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 30px;
+    opacity: 0; /* Hidden until scrolled into view */
+
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  }
+}

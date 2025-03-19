@@ -69,3 +69,4 @@ function PhotoDetails({ photo }) {
 }
 
 export default PhotoDetails;
+

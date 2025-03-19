@@ -4,7 +4,7 @@
 
 // Base styles for the container
 .photocard-list {
-  padding: 1rem;
+//   padding: 1rem;
 
   // Scroll Mode
   &.scroll-mode {
@@ -32,14 +32,16 @@
       margin-right: 20px;
     }
 
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 32px;
 
-    @media (max-width: 768px) {
-      padding-left: 10px;
-      padding-right: 10px;
+    @include mobile {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 16px;
       > * {
-        margin-right: 10px;
+        margin-right: 16px;
       }
     }
   }
@@ -82,3 +84,4 @@
       }
   }
 }
+  
