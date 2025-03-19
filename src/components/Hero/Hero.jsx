@@ -7,13 +7,16 @@ function Hero() {
       className="hero"
       style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover' }}
     >
-        <div className="hero__text">
-          <h4 className="hero__title">Our mission:</h4>
-          <p className="hero__content">
-            Find Toronto’s Best Cafes — <span className="hero__content-italics">all in one place</span>.
-          </p>
-        </div>
       <div className="hero__overlay"></div>
+      <div className="hero__text">
+        <h4 className="hero__title slide-in-from-left">Our mission:</h4>
+        <p className="hero__content slide-in-from-right">
+          Find Toronto’s Best Cafes —{" "}
+          <span className="hero__content-italics">all in one place</span>.
+        </p>
+        {/* Add subtitle if you want it animated too */}
+        {/* <p className="hero__subtitle slide-in-from-left">Your subtitle here</p> */}
+      </div>
     </section>
   );
 }
