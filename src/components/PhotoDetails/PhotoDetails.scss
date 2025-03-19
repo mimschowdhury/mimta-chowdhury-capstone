@@ -6,7 +6,7 @@
     max-width: 100%;
     border-radius: .9375rem;
     overflow: hidden;
-    background-color: $secondary-sage; 
+    background: linear-gradient(135deg, #f5e7f5, #e7e9f5);
     border: .125rem solid $secondary-blue;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,6 @@
     }
 
     &__photographer {
-        background: $secondary-sage;
         text-align: left;
         order: 1;
 
@@ -213,3 +212,4 @@
         width: 100%;
     }
 }
+
