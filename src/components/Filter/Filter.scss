@@ -84,14 +84,15 @@
         cursor: pointer;
         @include buttonlabel-text;
         font-family: 'Jua-Regular';
+        
 
         &:hover {
-            background-color: #9bceda;
+            background-color: $secondary-white;
+            color: #39a6c2;
         }
 
         &--selected {
-            background-color: #9bceda;
-            font-weight: 600;
+            background-color: #69c4d8;
         }
     }
 }

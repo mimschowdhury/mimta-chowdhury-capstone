@@ -31,7 +31,7 @@ function Filter({ tags, selectedTag, onFilterChange }) {
                             className={`filter__dropdown-item ${!selectedTag ? "filter__dropdown-item--selected" : ""}`}
                             onClick={() => handleSelectChange("all")}
                         >
-                            All Categories
+                            All Cafes
                         </button>
                         {tags.map((tag) => (
                             <button
