@@ -6,6 +6,10 @@
 .favourites {
     &__page {
         padding-top: 120px;
+
+        @include mobile {
+            padding-top: 80px;
+        }
     }
 
     &__header {
