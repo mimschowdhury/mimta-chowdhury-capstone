@@ -1,119 +1,123 @@
-@use '../../styles/partials/typography' as *;
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .header {
+  display: flex;
+  padding: 1rem 1rem;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: $secondary-white;
+  z-index: 20;
+  width: 100%;
+
+  @include tablet {
+    padding: 24px;
+  }
+
+  &__title {
+    color: #b07d62;
+    @include wordmark;
+  }
+
+  &__title-link {
+    text-decoration: none;
+    font-family: "Sail-Regular";
+  }
+
+  &__nav {
     display: flex;
-    padding: 1rem 1rem;
-    justify-content: space-between;
-    position: fixed;
     align-items: center;
-    top: 0;
-    left: 0;
-    background-color: $secondary-white;
-    z-index: 20;
-    width: 100%;
+    gap: 8px;
 
     @include tablet {
-        padding: 24px;
+      gap: 16px;
     }
 
-    &__title {
-        color: #b07d62;
-        @include wordmark;
+    @include desktop {
+      gap: 1.5rem;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #333;
+    @include buttonlabel-text;
+    font-family: "Jua-Regular" !important;
+
+    @include tablet {
+      font-size: 0.9725rem;
     }
 
-    &__title-link {
-        text-decoration: none;
-        font-family: 'Sail-Regular';
+    &:hover {
+      color: #62b6cb;
     }
-
-    &__nav {
-        display: flex;
-        align-items: center; 
-        gap: 8px; 
-
-        @include tablet {
-            gap: 16px;
-        }
-
-        @include desktop {
-            gap: 1.5rem;
-        }
-    }
-
-    &__nav-link {
-        text-decoration: none; 
-        transition: color 0.3s ease;
-        color: #333;
-        @include buttonlabel-text;
-        font-family: 'Jua-Regular' !important;
-
-        @include tablet {
-            font-size: .9725rem;
-        }
-
-        &:hover {
-            color: #62B6CB;
-        }
-    }
+  }
 }
 
 .toggle-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    user-select: none;
-    margin-bottom: 20px;
-    margin: 0 auto;
-  
-    input {
-      display: none;
-    }
-  
-    .slider {
-      width: 50px;
-      height: 25px;
-      background: #ddd;
-      border-radius: 20px;
-      position: relative;
-      transition: background 0.3s ease;
-    }
-  
-    .slider::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 20px;
+  margin: 0 auto;
+
+  input {
+    opacity: 0; // Hide the checkbox input (matches your preferred toggle)
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: relative;
+    width: 45px; // Matches the preferred toggle's width
+    height: 20px; // Matches the preferred toggle's height
+    background-color: #ccc; // Off state, matching preferred toggle
+    border-radius: 20px; // Rounded ends
+    // margin-right: 10px; // Adds spacing like the preferred toggle
+    transition: background-color 0.3s; // Smooth background transition
+
+    &::before {
       content: "";
       position: absolute;
-      width: 20px;
-      height: 20px;
-      background: white;
+      width: 16px; // Matches preferred toggle's circle size
+      height: 16px; // Matches preferred toggle's circle size
+      background-color: white;
       border-radius: 50%;
-      top: 50%;
-      left: 5px;
-      transform: translateY(-50%);
-      transition: all 0.3s ease;
-    }
-  
-    input:checked + .slider {
-      background: #62B6CB;
-    }
-  
-    input:checked + .slider::before {
-      left: 26px;
-    }
-  
-    .mode-label {
-        color: #333;
-        @include buttonlabel-text;
-        font-family: 'Jua-Regular' !important;
-
-        @include tablet {
-            font-size: .9725rem;
-        }
-
-        &:hover {
-            color: #62B6CB;
-        }
+      left: 2px; // Starting position (matches preferred toggle)
+      top: 2px; // Vertically centered within 20px height
+      transition: transform 0.3s; // Smooth movement (matches preferred toggle)
     }
   }
-  
+
+  input:checked + .slider {
+    background-color: #62b6cb; // On state (use your variable or #62B6CB)
+  }
+
+  input:checked + .slider::before {
+    transform: translateX(
+      25px
+    ); // Moves circle 20px right (matches preferred toggle)
+  }
+
+  .mode-label {
+    color: #333;
+    @include buttonlabel-text;
+    font-family: "Jua-Regular" !important;
+
+    @include tablet {
+      font-size: 0.9725rem;
+    }
+
+    &:hover {
+      color: #62b6cb;
+    }
+  }
+}
