@@ -1,3 +1,95 @@
+// @use '../../styles/partials/typography' as *;
+// @use '../../styles/partials/variables' as *;
+// @use '../../styles/partials/mixins' as *;
+
+// .photocard {
+//     position: relative;
+//     width: 100%;
+//     max-width: 100%;
+//     border-radius: .9375rem;
+//     overflow: hidden;
+//     background-color: $secondary-sage;
+//     border: .0625rem solid $primary-blue;
+//     padding-bottom: 1rem;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+
+//     &__link {
+//         display: flex;
+//     }
+
+//     @include mobile {
+//         width: 100%;  
+//     }
+
+//     @include tablet {
+//         width: calc(50% - .75rem); // 2 cards per row on tablet
+//     }
+
+//     @include desktop {
+//         width: calc(33.33% - .75rem); // Desktop width to match the desired layout in app.scss
+//     }
+
+//     .photocard__content {
+//         position: relative; 
+//         display: flex;
+//         flex-direction: column;
+//         overflow: hidden;
+
+//         img {
+//             width: 100%; 
+//             height: auto;
+//             border-radius: .75rem .75rem 0 0;
+//             object-fit: cover;
+//         }
+//     }
+
+//     &__photographer {
+//         position: absolute;
+//         bottom: 0;
+//         right: 0;
+//         background: $secondary-sage;
+//         margin-top: 1rem;
+//         padding: .5rem;
+//         border-radius: .75rem 0rem 0 0;
+//         color: $primary-black;
+//         text-align: right;
+//         @include buttonlabel-text;
+//     }
+
+//     &__tags {
+//         list-style: none;
+//         display: flex;
+//         flex-wrap: nowrap; 
+//         gap: 0.5rem;
+//         justify-content: flex-start;
+//         margin-top: 1rem;
+//         width: 100%;
+//         padding-left: 1rem;
+
+//         .photocard_tag {
+//             background-color: $secondary-white;
+//             border: .0625rem solid $primary-blue;
+//             color: $primary-black;
+//             padding: .375rem .5rem;
+//             border-radius: .375rem; 
+//             text-transform: capitalize;
+//             @include buttonlabel-text;
+
+//             @include tablet {
+//                 padding: .5rem .75rem;
+//                 border-radius: .75rem;
+//             }
+            
+//             //CTA hover properties
+//             &:hover {
+//                 background-color: $secondary-blue;
+//             }
+//         }
+//     }
+// }
+
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
@@ -8,8 +100,10 @@
     max-width: 100%;
     border-radius: .9375rem;
     overflow: hidden;
-    background-color: $secondary-sage;
-    border: .0625rem solid $primary-blue;
+    // background-color: $secondary-sage;
+    // background-color: #e6d0d7;
+    background: linear-gradient(to bottom right, #f4e6eb, #e6d0d7);
+    border: .0625rem solid #E8B2D2;
     padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -47,15 +141,18 @@
 
     &__photographer {
         position: absolute;
-        bottom: 0;
-        right: 0;
-        background: $secondary-sage;
-        margin-top: 1rem;
-        padding: .5rem;
-        border-radius: .75rem 0rem 0 0;
+        top: 0;
+        left: 0;
+        background-color: $secondary-white;
+        border-bottom-right-radius: 0.75rem; // Creates the curved effect
+        padding: 0.55rem; // Adjust padding to fit the curve
         color: $primary-black;
-        text-align: right;
+        text-align: left;
         @include buttonlabel-text;
+        font-weight: bold !important;
+        // text-shadow:
+        // 0px 0px 0 black;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Optional: subtle shadow for depth
     }
 
     &__tags {
@@ -75,6 +172,7 @@
             padding: .375rem .5rem;
             border-radius: .375rem; 
             text-transform: capitalize;
+            font-weight: 300 !important;
             @include buttonlabel-text;
 
             @include tablet {
@@ -82,10 +180,16 @@
                 border-radius: .75rem;
             }
             
-            //CTA hover properties
+            // CTA hover properties
             &:hover {
                 background-color: $secondary-blue;
             }
         }
     }
+}
+
+.photocard__link {
+    text-decoration: none; // Remove default underline
+    color: inherit; // Ensure it uses the parent's color
+    // font-weight: 1000 !important; // Apply bold style
 }
