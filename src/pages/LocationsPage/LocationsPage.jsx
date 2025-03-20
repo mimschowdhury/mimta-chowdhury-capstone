@@ -132,6 +132,7 @@ const LocationsPage = () => {
                             <option value="Ambience">Best Ambiance</option>
                             <option value="Best Baked Goods">Best Baked Goods</option>
                             <option value="Best Coffee">Best Coffee</option>
+                            <option value="Brunch">Brunch</option>
                             <option value="Study Spot">Best Study Spots</option>
                             <option value="Downtown Toronto">Downtown Toronto</option>
                             <option value="East York">East York</option>
