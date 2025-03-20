@@ -34,3 +34,65 @@
         }
     }
 }
+
+// Filter.scss
+.filter {
+    position: relative;
+
+    &__container {
+        position: relative;
+    }
+
+    &__button-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0px;
+        min-width: 185px;
+        background-color: $secondary-sage;
+        border: 1px solid $background-green;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        // margin-top: 0.25rem;
+        overflow: hidden;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        opacity: 0;
+        transform: translateY(-20px); // Start 10px above its final position
+
+        // When the dropdown is visible (controlled by JSX)
+        &.visible {
+            opacity: 0.78;
+            transform: translateY(0); // Slide down to its natural position
+        }
+
+        @include mobile {
+            min-width: 150px;
+        }
+    }
+
+    &__dropdown-item {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: $secondary-white;
+        text-align: right;
+        cursor: pointer;
+        @include buttonlabel-text;
+        font-family: 'Jua-Regular';
+
+        &:hover {
+            background-color: #9bceda;
+        }
+
+        &--selected {
+            background-color: #9bceda;
+            font-weight: 600;
+        }
+    }
+}
+
