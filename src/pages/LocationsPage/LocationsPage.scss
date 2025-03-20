@@ -220,14 +220,70 @@
   }
 }
 
+// .google__map {
+//   width: 100%;
+//   height: 600px; // Taller to match BlogTO’s map
+//   margin: 0;
+
+//   @include tablet {
+//     width: 60%; // Complements sidebar width
+//     padding: 0;
+//   }
+// }
+
+// .map__popup {
+//   font-family: "Outfit-Medium";
+//   @include buttonlabel-text;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 4px;
+
+//   &-cafe {
+//     color: #4d93a4;
+//   }
+
+//   a {
+//     color: #4d93a4 !important;
+//     text-decoration: underline;
+//     @include buttonlabel-text;
+//   }
+// }
+
 .google__map {
   width: 100%;
-  height: 600px; // Taller to match BlogTO’s map
+  height: 600px;
   margin: 0;
+  position: relative; // For absolute positioning of search bar
 
   @include tablet {
-    width: 60%; // Complements sidebar width
+    width: 60%;
     padding: 0;
+  }
+}
+
+.map-search-container {
+  position: relative;
+  height: 100%;
+}
+
+.map-search-input {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10; // Above map
+  font-family: "Outfit-Medium";
+  font-size: 1rem;
+  background: white;
+
+  &:focus {
+    outline: none;
+    border-color: $background-green;
   }
 }
 
