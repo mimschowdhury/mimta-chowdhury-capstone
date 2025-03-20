@@ -4,112 +4,161 @@
 @use "../../styles/partials/typography" as *;
 
 .locationspage {
-  background: url("../../assets/images/cafeoftheweekbackground.png");
-  background-size: cover;
+  background: url("../../assets/images/locationsbackground.svg");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
   padding-top: 120px;
 
-  @include tablet {
-    background-image: none;
-    padding-left: 8px;
-    padding-right: 8px;
+  @include mobile {
+    background: none;
+    padding-top: 80px;
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-
-    @include tablet {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
+  @include tablet {
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &__header {
     text-align: center;
     color: $secondary-brown;
     font-family: "Jua-Regular";
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     @include heading;
+  }
+
+  &__content {
+    padding-right: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1400px; // Matches BlogTO's constrained width
+
+    @include tablet {
+      flex-direction: row;
+      gap: 0; // No gap between sidebar and map
+    }
+
+    @include mobile {
+      padding-left: 16px;
+    }
+  }
+}
+
+.controls__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
 .dropdown__filter {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  align-items: center;
   gap: 0.5rem;
-  text-align: center;
   color: #333;
-  padding-bottom: 8px;
-  @include body-copy;
   font-family: "Jua-Regular";
 
   &-menu {
     @include buttonlabel-text;
     font-family: "Jua-Regular";
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
   }
 }
 
-.google__map {
-  flex: 1;
-  width: 140%;
-  height: 500px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 24px;
-  display: flex;
-  justify-content: center;
-  align-self: center;
+.heatmap__toggle {
+  @include body-copy;
+  font-family: "Jua-Regular";
+  color: #f7b267;
+}
 
-  @include mobile {
-    width: 120%;
-    display: flex;
-    justify-content: center;
-    align-self: center;
+.toggle__label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.toggle__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle__slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  transition: background-color 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
   }
+}
+
+.toggle__input:checked + .toggle__slider {
+  background-color: $background-green;
+}
+
+.toggle__input:checked + .toggle__slider::before {
+  transform: translateX(20px);
 }
 
 .sidebar {
   width: 100%;
   padding: 1rem;
+  background: transparent;
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 600px; // Matches map height
 
   @include tablet {
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
+    width: 40%; // Slightly wider than before for balance
+    padding: 1rem;
+    margin: 0;
   }
 
   @include desktop {
-    width: 30%;
+    width: 35%;
   }
 
   &__heading {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-family: "Jua-Regular";
-    color: $secondary-brown;
-    @include heading;
+    display: none; // BlogTO omits a sidebar heading
   }
 
   &__cafes {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem; // Tighter spacing like BlogTO
   }
 
   &__cafe-card {
-    background: $background-sage;
+    background: #e2bac7;
     border-radius: 8px;
     border: 2px solid $background-green;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem;
     cursor: pointer;
     transition: transform 0.2s ease, opacity 0.2s ease;
     display: flex;
@@ -118,30 +167,33 @@
 
     &:hover {
       transform: scale(1.02);
-      background-color: $background-green;
-      opacity: 0.9;
-    }
-
-    &:active {
-      background-color: $background-green;
+      background-color: #d6d5b3;
       opacity: 0.9;
     }
   }
 
   &__cafe-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     text-align: left;
   }
 
   &__cafe-name {
     font-family: "Outfit-Medium";
     color: #3c2f2f;
-    margin-bottom: 0.5rem;
     @include buttonlabel-text;
+    font-weight: 1000;
+    line-height: .75rem !important;
+
+    @include tablet {
+      line-height: .9375rem !important;
+  }
+
   }
 
   &__cafe-rating {
     color: $secondary-white;
-    margin-bottom: 0.5rem;
     font-size: 0.875rem;
     @include small-body-copy;
   }
@@ -152,11 +204,10 @@
   }
 
   &__cafe-photo {
-    width: 85px;
-    height: 85px;
+    width: 70px; // Slightly smaller for BlogTO’s compact look
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
-    display: flex;
     border: 2px solid #62b6cb;
   }
 
@@ -165,16 +216,26 @@
     color: #666;
     font-family: "Outfit-Light";
     font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+.google__map {
+  width: 100%;
+  height: 600px; // Taller to match BlogTO’s map
+  margin: 0;
+
+  @include tablet {
+    width: 60%; // Complements sidebar width
+    padding: 0;
   }
 }
 
 .map__popup {
   font-family: "Outfit-Medium";
-  background-color: transparent !important;
   @include buttonlabel-text;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 4px;
 
   &-cafe {
@@ -185,19 +246,5 @@
     color: #4d93a4 !important;
     text-decoration: underline;
     @include buttonlabel-text;
-  }
-}
-
-.heatmap__toggle {
-  @include body-copy;
-  font-family: "Jua-Regular";
-  text-align: center;
-  padding-bottom: 24px;
-  color: #f7b267;
-
-  label {
-    input[type="checkbox"] {
-      margin-right: 8px;
-    }
   }
 }
