@@ -12,36 +12,36 @@
     @include tablet {
       padding-top: 120px;
     }
-  }
-  
-  .about-header {
+}
+
+.about-header {
     text-align: center;
     margin-bottom: 40px;
     color: $secondary-blue;
-  
+
     h1 {
       font-family: "Jua-Regular";
       margin-bottom: 10px;
       @include heading;
     }
-  
+
     p {
       font-size: 1.5rem;
       color: #666;
       font-family: "Jua-Regular" !important;
       @include body-copy;
     }
-  }
-  
-  .about-content {
+}
+
+.about-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+
     .about-image {
       flex: 1;
       margin-right: 20px;
-  
+
       img {
         width: 100%;
         border-radius: 10px;
@@ -49,10 +49,10 @@
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       }
     }
-  
+
     .about-text {
       flex: 2;
-  
+
       p {
         font-family: 'Outfit-Light';
         font-size: 16px;
@@ -60,12 +60,26 @@
         margin-bottom: 20px;
       }
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+// Scroll animation styles
+.scroll-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    visibility: hidden; // Hide elements initially
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+@media (max-width: 768px) {
     .about-content {
       flex-direction: column;
-  
+
       .about-image {
         margin-bottom: 20px;
         margin-right: 0;
@@ -75,5 +89,4 @@
         text-align: center;
       }
     }
-  }
-  
+}
