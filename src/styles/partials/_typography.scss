@@ -35,14 +35,14 @@
 
 // Chubbo - Light
 @font-face {
-    font-family: "Chubbo-Light";
-    src: url("../../assets/fonts/Chubbo-Light.woff") format("woff");
+    font-family: "Questa-Regular";
+    src: url("../../assets/fonts/Questa-Regular.otf") format("otf");
 }
 
-// Chubbo - Medium
+// Como - Bold
 @font-face {
-    font-family: "Chubbo-Medium";
-    src: url("../../assets/fonts/Chubbo-Medium.woff") format("woff");
+    font-family: "Como-ExtraBold";
+    src: url("../../assets/fonts/Como-ExtraBold.woff") format("woff");
 }
 
 @font-face {
@@ -62,7 +62,7 @@
 
 //section typography mixins
 @mixin wordmark {
-    font-family: 'Bodoni-Italic';
+    font-family: 'Como-ExtraBold';
     font-weight: 600;
     font-size: 2rem; //mobile
     line-height: 2rem;
