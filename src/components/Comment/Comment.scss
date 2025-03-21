@@ -19,15 +19,21 @@
         margin-bottom: 0.5rem;
         color: #666;
         @include small-body-copy;
+        font-family: "Jua-Regular";
     }
 
     &__date {
         color: #666;
         @include small-body-copy;
+        font-family: "Jua-Regular";
     }
 
     &__comment {
         color: $primary-black;
         @include body-copy;
+
+        @include tablet {
+        font-size: 15px !important;
+        }
     }
 }
