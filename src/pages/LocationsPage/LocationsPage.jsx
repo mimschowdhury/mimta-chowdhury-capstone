@@ -168,7 +168,7 @@ const LocationsPage = () => {
                                         <div className="sidebar__cafe-text">
                                             <h3 className="sidebar__cafe-name">{cafe.photographer}</h3>
                                             <p className="sidebar__cafe-rating">⭐️ {cafe.googleRating} / 5</p>
-                                            <p className="sidebar__cafe-description">{cafe.likes} Likes</p>
+                                            <p className="sidebar__cafe-description">{cafe.likes}</p>
                                         </div>
                                         <img
                                             src={cafe.photo}
