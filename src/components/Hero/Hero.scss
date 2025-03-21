@@ -1,137 +1,141 @@
 // Hero.scss
-@use '../../styles/partials/typography' as *;
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .hero {
-    position: relative;
-    height: 48vh;
-    width: 100%;
+  position: relative;
+  height: 48vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+
+  @include tablet {
+    height: 80vh;
+    padding: 24px;
+    justify-content: center;
+  }
+
+  &__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
+    padding-top: 60px;
+    z-index: 3;
+  }
+
+  &__content {
+    font-family: "Jua-Regular";
+    color: $secondary-white;
+    padding-left: 16px;
+    @include title-typography;
+    text-shadow: -1px -1px 0 #d6c0b3d9, 1px -1px 0 #d6c0b3d9, -1px 1px 0 #d6c0b3d9,
+      1px 1px 0 #d6c0b3d9;
+    opacity: 0; // Initial state for animation
 
     @include tablet {
-        height: 80vh;
-        padding: 24px;
-        justify-content: center;
+      padding-left: 0px;
     }
 
-    &__text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 60px;
-        z-index: 3;
+    @include desktop {
+      width: 49%;
     }
 
-    &__content {
-        font-family: 'Jua-Regular';
-        color: $secondary-white;
-        padding-left: 16px;
-        @include title-typography;
-        opacity: 0; // Initial state for animation
+    &-italics {
+      font-family: "Newsreader-LightItalic";
+      text-shadow: none;
+      // font-weight: 500 !important;
+    }
+  }
 
-        @include tablet {
-            padding-left: 0px;
-        }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #323232;
+    opacity: 0.5;
+    z-index: 1;
+  }
 
-        @include desktop {
-            width: 49%;
-        }
+  &__subtitle {
+    color: $secondary-white;
+    font-family: "Newsreader-Light";
+    z-index: 3;
+    padding-left: 1rem;
+    margin-top: 2.25rem;
+    text-wrap: none;
+    @include title-typography;
+    opacity: 0; // Initial state for animation
 
-        &-italics {
-            font-family: 'Newsreader-LightItalic';
-        }
+    @include tablet {
+      padding-left: 0rem;
+      padding-right: 0rem;
     }
 
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #323232;
-        opacity: 0.5;
-        z-index: 1;
+    @include desktop {
+      margin-top: 0rem;
+    }
+  }
+
+  &__title {
+    color: $secondary-white;
+    padding-left: 1rem;
+    width: 50%;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-wrap: none;
+    font-family: "Outfit-Light";
+    font-weight: 300;
+    @include heading;
+    opacity: 0; // Initial state for animation
+
+    @include tablet {
+      text-wrap: none;
+      padding-left: 0rem;
+      width: 75%;
     }
 
-    &__subtitle {
-        color: $secondary-white;
-        font-family: 'Newsreader-Light';
-        z-index: 3;
-        padding-left: 1rem;
-        margin-top: 2.25rem;
-        text-wrap: none;
-        @include title-typography;
-        opacity: 0; // Initial state for animation
-
-        @include tablet {
-            padding-left: 0rem;
-            padding-right: 0rem;
-        }
-
-        @include desktop {
-            margin-top: 0rem;
-        }
+    @include desktop {
+      width: 90%;
+      padding-left: 0rem;
     }
-
-    &__title {
-        color: $secondary-white;
-        padding-left: 1rem;
-        width: 50%;
-        z-index: 2;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        text-wrap: none;
-        font-family: 'Outfit-Light';
-        font-weight: 300;
-        @include heading;
-        opacity: 0; // Initial state for animation
-
-        @include tablet {
-            text-wrap: none;
-            padding-left: 0rem;
-            width: 75%;
-        }
-
-        @include desktop {
-            width: 90%;
-            padding-left: 0rem;
-        }
-    }
+  }
 }
 
 // Animation keyframes
 @keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInFromRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 // Animation classes
 .slide-in-from-left {
-    animation: slideInFromLeft 1s ease-out forwards;
+  animation: slideInFromLeft 1s ease-out forwards;
 }
 
 .slide-in-from-right {
-    animation: slideInFromRight 1s ease-out forwards;
-    animation-delay: 0.3s; // Slight delay for staggered effect
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 0.3s; // Slight delay for staggered effect
 }
