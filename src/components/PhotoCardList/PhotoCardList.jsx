@@ -2,12 +2,12 @@ import React, { useRef, useState } from "react";
 import PhotoCard from "../PhotoCard/PhotoCard";
 import "./PhotoCardList.scss";
 
-function PhotoCardList({ photos, tags, isGridView }) {
+function PhotoCardList({ photos, tags, isGridView, onFilterChange }) {
   const scrollRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Start dragging (only for scroll mode)
   const handleMouseDown = (event) => {
@@ -52,32 +52,34 @@ function PhotoCardList({ photos, tags, isGridView }) {
     setIsDragging(false);
   };
 
-  // Handle search input change
+  // Handle search input change and reset filter
   const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
+    const newQuery = event.target.value;
+    setSearchQuery(newQuery);
+    if (newQuery.trim() !== "") {
+      onFilterChange(null); // Reset filter to "all" when search is used
+    }
   };
 
-  // Filter photos based on search query (matches photographer or tags)
-  const filteredPhotos = photos.filter((photo) => {
-    const query = searchQuery.toLowerCase().trim();
-    if (!query) return true; // If no query, show all photos
-
-    // Check if the photographer (cafe name) matches the query
-    const photographerMatch = photo.photographer
-      .toLowerCase()
-      .includes(query);
-
-    // Check if any tag matches the query
-    const photoTags = Array.isArray(photo.tags)
-      ? photo.tags
-      : photo.tags.split(",");
-    const tagMatch = photoTags.some((tag) =>
-      tag.toLowerCase().trim().includes(query)
-    );
-
-    // Return true if either the photographer or any tag matches
-    return photographerMatch || tagMatch;
-  });
+  // Filter photos based on search query
+  const filteredPhotos = searchQuery.trim()
+    ? photos.filter((photo) => {
+        const query = searchQuery.toLowerCase().trim();
+        const photographerMatch = photo.photographer
+          .toLowerCase()
+          .includes(query);
+        const photoTags = Array.isArray(photo.tags)
+          ? photo.tags
+          : photo.tags.split(",");
+        const tagMatch = photoTags.some((tag) =>
+          (typeof tag === "object" ? tag.name : tag)
+            .toLowerCase()
+            .trim()
+            .includes(query)
+        );
+        return photographerMatch || tagMatch;
+      })
+    : photos; // Use the filtered photos from HomePage when no search query
 
   return (
     <div className="photocard-list-container">
@@ -85,7 +87,7 @@ function PhotoCardList({ photos, tags, isGridView }) {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Search cafes or tags..."
+          placeholder="Search all cafes or tags..."
           value={searchQuery}
           onChange={handleSearchChange}
           className="search-bar__input"
@@ -119,8 +121,8 @@ function PhotoCardList({ photos, tags, isGridView }) {
                 photographer={photo.photographer}
                 tags={photoTags.map(
                   (tagName) =>
-                    tags.find((t) => t.name === tagName.trim()) || {
-                      name: tagName.trim(),
+                    tags.find((t) => t.name === (typeof tagName === "object" ? tagName.name : tagName.trim())) || {
+                      name: typeof tagName === "object" ? tagName.name : tagName.trim(),
                     }
                 )}
                 id={photo.id}
