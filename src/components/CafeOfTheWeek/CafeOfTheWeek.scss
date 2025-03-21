@@ -30,7 +30,7 @@
     display: flex;
     gap: 2rem;
     background: $secondary-sage;
-    border-radius: 8px;
+    border-radius: 20px;
     border: 2px solid $background-green;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -45,7 +45,7 @@
             width: 100%;
             max-height: 350px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 20px;
             border: .0625rem solid $primary-blue;
         }
     }
@@ -55,13 +55,24 @@
     }
 
     &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        @include mobile {
+            gap: 8px;
+        }
+
         .cafe__weekly__tag {
             background: $secondary-white;
             padding: 0.3rem 0.8rem;
             border-radius: 12px;
-            margin-right: 0.5rem;
+            // margin-right: 0.5rem;
             border: .0625rem solid $primary-blue;
             @include buttonlabel-text;
+            display: flex;
+            // gap: 1rem;
+            // width: max-content;
 
             &:hover {
                 background-color: $secondary-blue;
@@ -95,7 +106,7 @@
     }
 
     &__name {
-        font-family: 'Outfit-Medium';
+        font-family: "Jua-Regular";
         color: #3c2f2f;
         margin-bottom: 8px;
     }
@@ -103,6 +114,8 @@
     &__rating {
         color: #62B6CB;
         margin-bottom: 8px;
+        @include buttonlabel-text;
+        font-family: "Outfit-Medium";
     }
 
     &__description {
@@ -114,7 +127,7 @@
         line-height: .9375rem;
         font-size: .75rem;
         @include tablet {
-            font-size: 18px; // Tablet & Desktop
+            font-size: 14px; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -127,15 +140,15 @@
         gap: 4px;
         color: #62B6CB;
         @include small-body-copy;
+        font-family: "Jua-Regular";
         @include tablet {
-            font-size: 18px; // Tablet & Desktop
+            font-size: 14px; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
 
         &:hover {
             color: #8c97c9;
-            text-decoration: underline;
         }
     }
     
@@ -144,8 +157,9 @@
         color: #8c97c9;
         margin-bottom: 1rem;
         @include small-body-copy;
+        font-family: "Jua-Regular";
         @include tablet {
-            font-size: 18px; // Tablet & Desktop
+            font-size: 14px; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
