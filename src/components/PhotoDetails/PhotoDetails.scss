@@ -1,214 +1,207 @@
+// PhotoDetails.scss
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/mixins' as *;
 
 .photo-details {
-    max-width: 100%;
-    border-radius: .9375rem;
-    overflow: hidden;
-    background: linear-gradient(135deg, #f5e7f5, #e7e9f5);
-    border: .125rem solid $secondary-blue;
+    // max-width: 1100px;
+    margin: 2rem auto;
+    margin: 16px;
+    padding: 1rem;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    gap: 2rem;
+    background: linear-gradient(135deg, #f5e7f5, #e7e9f5); // Keeping your original gradient
+    border: 2px solid $secondary-blue; // Keeping your original border color
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
     @include tablet {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin: 24px;
+    }
+
+    @include mobile {
+        flex-direction: column;
     }
 
     &__content {
-        position: relative;
+        flex: 1;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
-        width: 100%;
-
+        gap: 16px;
+        
         img {
             width: 100%;
-            height: auto;
-            border-radius: .75rem .75rem 0 0;
+            max-height: 450px;
             object-fit: cover;
-        }
-    }
-
-    &__description {
-        font-family: 'Outfit-Light';
-        font-weight: 600;
-        line-height: .9375rem;
-        font-size: .75rem;
-    @include tablet {
-        font-size: 18px; // Tablet & Desktop
-        line-height: 1.625rem;
-        font-weight: 600;
-    }
-    }
-
-    &__favourites {
-        color: #48b0c9;
-        font-family: 'Jua-Regular';
-        font-size: 12px;
-        align-self: flex-end;
-        width: 50%;
-
-        @include tablet {
-        font-size: 16px;
+            border-radius: 20px;
+            border: .0625rem solid $primary-blue; // Keeping your original border color
         }
     }
 
     &__details {
-        padding: 1rem;
-        border-radius: .75rem;
-        width: 100%;
+        flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-
-        @include tablet {
-            flex-direction: column;
-            padding: 1.5rem;
-        }
-    }
-
-    &__info {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        @include mobile {
-            .photo-details__photographer {
-                flex-basis: 100%;
-                text-align: center;
-                margin-top: .5rem;
-            }
-        }
-
-        @include tablet {
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            width: 100%;
-            gap: 1rem;
-        }
-    }
-
-    &__likes-date {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    &__likes,
-    &__rating,
-    &__photographer {
-        color: $primary-black;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        @include body-copy;
-    }
-
-    &__likes {
-        @include tablet {
-            justify-self: start;
-        }
-    }
-
-    &__photographer {
-        text-align: left;
-        order: 1;
-
-        @include tablet {
-            text-align: center;
-            grid-column: 2;
-            order: 0;
-        }
-    }
-
-    &__rating {
-        @include tablet {
-            justify-self: end;
-        }
+        justify-content: center;
+        
     }
 
     &__tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: flex-start;
-        width: 100%;
+        gap: 8px;
 
-        @include tablet {
-            gap: 1.5rem;
+        @include mobile {
+            gap: 8px;
+        }
+
+        .photo-details__tag {
+            background: $secondary-white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            border: .0625rem solid $secondary-blue; // Keeping your original border color
+            color: #c38e70; // Keeping your original tag color
+            @include buttonlabel-text;
+
+            &:hover {
+                background-color: $secondary-blue;
+                color: white; // Keeping your original hover behavior
+            }
         }
     }
 
-    &__tag {
-        background-color: $secondary-white;
-        border: .0625rem solid $secondary-blue;
-        color: #c38e70;
-        padding: .375rem .5rem;
-        border-radius: .375rem;
-        text-transform: capitalize;
-        @include body-copy;
+    &__info {
+        margin-bottom: 8px;
+        font-family: 'Outfit-Light';
+        font-weight: 600;
+        line-height: .9375rem;
+        font-size: .75rem;
+        @include tablet {
+            font-size: 18px;
+            line-height: 1.625rem;
+            font-weight: 600;
+        }
+    }
+
+    &__likes {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #c99ab6; // Keeping your original color
+        margin-bottom: 8px;
+        @include buttonlabel-text;
+        font-family: 'Jua-Regular';
 
         @include tablet {
-            padding: .5rem 1rem;
-            border-radius: .75rem;
+            font-size: 14px;
         }
 
         &:hover {
-            background-color: $secondary-blue;
-            color: white; 
+            .photo-details__favorite-icon {
+                transform: scale(1.1);
+            }
+            .photo-details__favorite-text {
+                color: #b199cd; // Matching CafeGenerator's hover color
+            }
         }
     }
 
     &__favorite-icon {
-        // width: 24px;
-        // height: 24px;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
-    
+
         &.favorited {
             transform: scale(1.2);
-            fill: $primary-blue;
+            fill: $primary-blue; // Keeping your original filled color
         }
-    
+    }
+
+    &__favorite-text {
+        transition: color 0.2s ease-in-out;
+    }
+
+    &__photographer {
+        font-family: 'Jua-Regular';
+        color: $primary-black; // Keeping your original color
+        margin-bottom: 8px;
+
+        @include mobile {
+            @include buttonlabel-text;
+            font-family: 'Jua-Regular';
+        }
+    }
+
+    &__location {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: #b199cd;
+        margin-bottom: 8px;
+        @include buttonlabel-text;
+        font-family: 'Jua-Regular';
+
         &:hover {
-            transform: scale(1.1);
+            color: #de8ab2;
+        }
+    }
+
+    &__location-icon {
+        display: block;
+        height: 17px;
+    }
+
+    &__rating {
+        color: $primary-black; // Keeping your original color
+        margin-bottom: 8px;
+        @include buttonlabel-text;
+    }
+
+    &__description {
+        color: #666; // Matching CafeGenerator
+        // margin: 1rem 0;
+        margin-bottom: 1rem;
+        font-family: 'Outfit-Light';
+        font-weight: 600;
+        line-height: .9375rem;
+        font-size: .75rem;
+        @include tablet {
+            font-size: 15px;
+            line-height: 1.25rem;
+            font-weight: 600;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include desktop {
+            gap: 16px;
+        }
+    }
+
+    &__favourites {
+        color: #48b0c9; // Keeping your original color
+        margin-bottom: 1rem;
+        @include small-body-copy;
+        font-family: 'Jua-Regular';
+        @include tablet {
+            font-size: 14px;
+            font-weight: 600;
         }
     }
 }
 
-.photo-details__footer {
+.photo-details__container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-
-    @include mobile {
-        flex-direction: column;
-    }
-}
-
-.photo-details__favourites {
-    flex: 0 1 50%; // Takes max 60% space
-    min-width: 0;
-
-    @include tablet {
-        align-self: center
-    }
-
-    @include desktop {
-        align-self: flex-end;
-    }
-
-    @include mobile {
-        width: 100%;
-    }
+    gap: 2rem;
+    background: linear-gradient(135deg, #f5e7f5, #e7e9f5); // Keeping your original gradient
+    border-radius: 20px; // Keeping your original border color
+    padding: 1.5rem;
 }

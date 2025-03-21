@@ -3,9 +3,11 @@ import LikeOutlineIcon from "../../assets/images/Like_Outline.svg";
 import LikeFilledIcon from "../../assets/images/Like_Filled.svg";
 import RatingSlider from "../RatingSlider/RatingSlider";
 import "./PhotoDetails.scss";
+import { useNavigate } from "react-router-dom"; // Add this import
 
 function PhotoDetails({ photo }) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const navigate = useNavigate(); // Add navigation hook
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -24,6 +26,11 @@ function PhotoDetails({ photo }) {
     setIsFavorite(!isFavorite);
   };
 
+  // Function to handle location click and navigate to LocationsPage
+  const handleLocationClick = (photoId) => {
+    navigate(`/locations?cafeId=${photoId}`);
+  };
+
   return (
     <div className="photo-details">
       <div className="photo-details__content">
@@ -32,8 +39,6 @@ function PhotoDetails({ photo }) {
           alt={photo.photoDescription}
           className="photo-details__image"
         />
-      </div>
-      <div className="photo-details__details">
         <div className="photo-details__tags">
           {photo.tags.map((tag, index) => (
             <span key={index} className="photo-details__tag">
@@ -41,12 +46,17 @@ function PhotoDetails({ photo }) {
             </span>
           ))}
         </div>
+      </div>
+      <div className="photo-details__details">
         <div className="photo-details__info">
-          <p className="photo-details__likes">
+          <p
+            className="photo-details__likes"
+            onClick={toggleFavorite} // Move click handler to p
+            style={{ cursor: "pointer" }} // Apply cursor to whole element
+          >
             <img
               src={isFavorite ? LikeFilledIcon : LikeOutlineIcon}
               alt={isFavorite ? "Remove from favorites" : "Add to favorites"}
-              onClick={toggleFavorite}
               className={`photo-details__favorite-icon ${
                 isFavorite ? "favorited" : ""
               }`}
@@ -56,6 +66,13 @@ function PhotoDetails({ photo }) {
             </span>
           </p>
           <p className="photo-details__photographer">{photo.photographer}</p>
+          <p
+            className="photo-details__location" // Changed class name to avoid confusion with likes
+            onClick={() => handleLocationClick(photo.id)}
+            style={{ cursor: "pointer" }}
+          >
+            {photo.likes}
+          </p>
           <p className="photo-details__rating">⭐️ {photo.googleRating} / 5</p>
         </div>
         <p className="photo-details__description">{photo.photoDescription}</p>
@@ -69,4 +86,3 @@ function PhotoDetails({ photo }) {
 }
 
 export default PhotoDetails;
-
