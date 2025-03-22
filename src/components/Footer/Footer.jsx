@@ -7,7 +7,7 @@ function Footer() {
             <div className="footer__desktop-wrapper">
                 <div className="footer__tablet-wrapper">
                 <Link to="/" className="footer__link">
-                    <h1 className="footer__heading">6ixCafes</h1>
+                    <h1 className="footer__heading">6ixCafes co.</h1>
                 </Link>
                         <div className="footer__content">
                             <div className="footer__links">
@@ -37,7 +37,7 @@ function Footer() {
             </div>
 
             <div className="footer__copyright">
-                <p className="footer__info">© 2024 6ixCafes</p>
+                <p className="footer__info">© 2024 6ixCafes co.</p>
                 <p className="footer__info">Terms</p>
                 <p className="footer__info">Privacy</p>
                 <p className="footer__info">Cookies</p>
