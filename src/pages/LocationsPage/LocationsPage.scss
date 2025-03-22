@@ -35,11 +35,11 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1400px; // Matches BlogTO's constrained width
+    max-width: 1400px;
 
     @include tablet {
       flex-direction: row;
-      gap: 0; // No gap between sidebar and map
+      gap: 0;
     }
 
     @include mobile {
@@ -128,7 +128,6 @@
   transform: translateX(20px);
 }
 
-//hover properties
 .sidebar {
   width: 100%;
   padding: 1rem;
@@ -152,15 +151,14 @@
     gap: 0.75rem;
 
     @include mobile {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
   &__cafe-card {
     width: 100%;
-    // height: 260px; // Set fixed height
     background: #e2bac7;
     border-radius: 20px;
     border: 2px solid $background-green;
@@ -171,32 +169,61 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative; // For layering
+    position: relative;
 
     @include mobile {
       width: 150px;
       height: 150px;
     }
 
-    &:hover {
-      transform: scale(1.02);
-      opacity: 0.9;
+    &.selected {
       background-color: transparent; // Clear default background
-      background-size: cover; // Photo covers the card
+      background-size: cover; // Photo spans the card
       background-position: center;
       background-repeat: no-repeat;
+      transform: scale(1.02); // Slight scale like hover
+      opacity: 0.9;
 
       .sidebar__cafe-photo {
-        opacity: 0; // Hide the circular photo on hover
+        opacity: 0; // Hide circular photo when selected
       }
 
       .sidebar__cafe-text {
         color: $secondary-white; // White text for readability
         position: relative;
-        z-index: 1; // Ensure text is above background
-        background: rgba(0, 0, 0, 0.75); // Optional: semi-transparent backdrop for text
-        padding: 0.25rem 0.5rem; // Optional: padding for backdrop
-        border-radius: 10px; // Optional: rounded backdrop
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.75); // Semi-transparent backdrop
+        padding: 0.25rem 0.5rem;
+        border-radius: 10px;
+
+        .sidebar__cafe-name,
+        .sidebar__cafe-rating,
+        .sidebar__cafe-description {
+          color: $secondary-white;
+          font-family: "Jua-Regular";
+        }
+      }
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      opacity: 0.9;
+      background-color: transparent; // Clear default background on hover
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      .sidebar__cafe-photo {
+        opacity: 0; // Hide circular photo on hover
+      }
+
+      .sidebar__cafe-text {
+        color: $secondary-white;
+        position: relative;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 0.25rem 0.5rem;
+        border-radius: 10px;
 
         .sidebar__cafe-name,
         .sidebar__cafe-rating,
@@ -213,7 +240,7 @@
     flex-direction: column;
     gap: 8px;
     text-align: left;
-    transition: color 0.2s ease; // Smooth color transition
+    transition: color 0.2s ease;
   }
 
   &__cafe-name {
@@ -245,7 +272,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #62b6cb;
-    transition: opacity 0.2s ease; // Smooth fade-out
+    transition: opacity 0.2s ease;
   }
 
   &__no-results {
@@ -261,7 +288,7 @@
   width: 100%;
   height: 600px;
   margin: 0;
-  position: relative; // For absolute positioning of search bar
+  position: relative;
 
   @include tablet {
     width: 60%;
@@ -284,7 +311,7 @@
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10; // Above map
+  z-index: 10;
   font-family: "Outfit-Medium";
   font-size: 1rem;
   background: white;
