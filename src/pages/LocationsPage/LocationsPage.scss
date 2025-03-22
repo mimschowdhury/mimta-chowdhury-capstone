@@ -128,15 +128,16 @@
   transform: translateX(20px);
 }
 
+//hover properties
 .sidebar {
   width: 100%;
   padding: 1rem;
   background: transparent;
   overflow-y: auto;
-  max-height: 600px; // Matches map height
+  max-height: 600px;
 
   @include tablet {
-    width: 40%; // Slightly wider than before for balance
+    width: 40%;
     padding: 1rem;
     margin: 0;
   }
@@ -145,31 +146,65 @@
     width: 35%;
   }
 
-  &__heading {
-    display: none; // BlogTO omits a sidebar heading
-  }
-
   &__cafes {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem; // Tighter spacing like BlogTO
+    gap: 0.75rem;
+
+    @include mobile {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
   }
 
   &__cafe-card {
+    width: 100%;
+    // height: 260px; // Set fixed height
     background: #e2bac7;
     border-radius: 20px;
     border: 2px solid $background-green;
     padding: 0.75rem;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative; // For layering
+
+    @include mobile {
+      width: 150px;
+      height: 150px;
+    }
 
     &:hover {
       transform: scale(1.02);
-      background-color: #d6d5b3;
       opacity: 0.9;
+      background-color: transparent; // Clear default background
+      background-size: cover; // Photo covers the card
+      background-position: center;
+      background-repeat: no-repeat;
+
+      .sidebar__cafe-photo {
+        opacity: 0; // Hide the circular photo on hover
+      }
+
+      .sidebar__cafe-text {
+        color: $secondary-white; // White text for readability
+        position: relative;
+        z-index: 1; // Ensure text is above background
+        background: rgba(0, 0, 0, 0.75); // Optional: semi-transparent backdrop for text
+        padding: 0.25rem 0.5rem; // Optional: padding for backdrop
+        border-radius: 10px; // Optional: rounded backdrop
+
+        .sidebar__cafe-name,
+        .sidebar__cafe-rating,
+        .sidebar__cafe-description {
+          color: $secondary-white;
+          font-family: "Jua-Regular";
+        }
+      }
     }
   }
 
@@ -178,6 +213,7 @@
     flex-direction: column;
     gap: 8px;
     text-align: left;
+    transition: color 0.2s ease; // Smooth color transition
   }
 
   &__cafe-name {
@@ -185,12 +221,11 @@
     color: #3c2f2f;
     @include buttonlabel-text;
     font-weight: 1000;
-    line-height: .75rem !important;
+    line-height: 0.75rem !important;
 
     @include tablet {
-      line-height: .9375rem !important;
-  }
-
+      line-height: 0.9375rem !important;
+    }
   }
 
   &__cafe-rating {
@@ -205,11 +240,12 @@
   }
 
   &__cafe-photo {
-    width: 70px; // Slightly smaller for BlogTO’s compact look
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #62b6cb;
+    transition: opacity 0.2s ease; // Smooth fade-out
   }
 
   &__no-results {
@@ -220,35 +256,6 @@
     padding: 1rem;
   }
 }
-
-// .google__map {
-//   width: 100%;
-//   height: 600px; // Taller to match BlogTO’s map
-//   margin: 0;
-
-//   @include tablet {
-//     width: 60%; // Complements sidebar width
-//     padding: 0;
-//   }
-// }
-
-// .map__popup {
-//   font-family: "Outfit-Medium";
-//   @include buttonlabel-text;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 4px;
-
-//   &-cafe {
-//     color: #4d93a4;
-//   }
-
-//   a {
-//     color: #4d93a4 !important;
-//     text-decoration: underline;
-//     @include buttonlabel-text;
-//   }
-// }
 
 .google__map {
   width: 100%;

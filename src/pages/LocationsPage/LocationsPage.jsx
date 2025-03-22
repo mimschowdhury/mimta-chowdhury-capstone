@@ -6,6 +6,8 @@
 //5. Maintains all existing functionality (heatmap, search, filters, etc.)
 //6. Shows the InfoWindow automatically for the cafe specified by cafeId
 
+// //Google Maps APIKEY=AIzaSyAD6rYOh-u5BF7QXauP1FdKpuEW9WXqHw8
+
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import {
@@ -33,6 +35,8 @@ const LocationsPage = () => {
   const autocompleteRef = useRef();
   const location = useLocation();
 
+  const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
   useEffect(() => {
     async function fetchCafes() {
       try {
@@ -42,7 +46,6 @@ const LocationsPage = () => {
         setCafes(response.data);
         setFilteredCafes(response.data);
 
-        // Check for cafeId from CafeGenerator
         const params = new URLSearchParams(location.search);
         const cafeId = params.get("cafeId");
         if (cafeId) {
@@ -108,6 +111,14 @@ const LocationsPage = () => {
     setSelectedCafe(null);
   };
 
+  const handleMouseEnter = (e, photoUrl) => {
+    e.currentTarget.style.backgroundImage = `url(${photoUrl})`;
+  };
+
+  const handleMouseLeave = (e) => {
+    e.currentTarget.style.backgroundImage = ""; // Reset to SCSS default
+  };
+
   const mapContainerStyle = { height: "600px", width: "100%" };
   const initialCenter = { lat: 43.65107, lng: -79.347015 };
 
@@ -144,7 +155,6 @@ const LocationsPage = () => {
       });
     });
 
-    // Center map on selected cafe if coming from CafeGenerator
     const params = new URLSearchParams(location.search);
     const cafeId = params.get("cafeId");
     if (cafeId) {
@@ -213,6 +223,8 @@ const LocationsPage = () => {
                     key={cafe.id}
                     className="sidebar__cafe-card"
                     onClick={() => handleCafeClick(cafe)}
+                    onMouseEnter={(e) => handleMouseEnter(e, cafe.photo)}
+                    onMouseLeave={handleMouseLeave}
                   >
                     <div className="sidebar__cafe-text">
                       <h3 className="sidebar__cafe-name">
@@ -237,7 +249,7 @@ const LocationsPage = () => {
           </div>
           <div className="google__map">
             <LoadScript
-              googleMapsApiKey="AIzaSyAD6rYOh-u5BF7QXauP1FdKpuEW9WXqHw8"
+              googleMapsApiKey={googleMapsApiKey}
               libraries={["visualization", "places"]}
             >
               <div className="map-search-container">
