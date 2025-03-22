@@ -51,11 +51,11 @@ export default function AboutPage() {
               Hey there! I’m Mimta – your friendly, coffee-obsessed explorer in Toronto. As a self-proclaimed coffee connoisseur, I’ve spent countless hours researching the best cafes in this vibrant city. And let’s be honest, it’s a journey in itself to find the perfect cup of joe!
             </p>
             <p className="scroll-element"> 
-              After a lot of Googling, hopping from one café to the next, and a fair amount of trial and error, I decided to create <strong>6ixcafes</strong>.
+              After a lot of Googling, hopping from one cafe to the next, and a fair amount of trial and error, I decided to create <strong>6ixcafes</strong>.
               This platform is my love letter to coffee lovers, tourists, locals, and especially students who just want to find a cozy spot to sip, study, or simply escape the hustle of Toronto.
             </p>
             <p className="scroll-element">
-              When I’m not curating the best cafés, you can find me trying out new cuisines (because why not add food to the mix?), traveling to new places, or creating stunning wedding content. I hope 6ixcafes can bring a little joy and a lot of caffeine to your day!
+              When I’m not curating the best cafes, you can find me trying out new cuisines (because why not add food to the mix?), traveling to new places, or creating stunning wedding content. I hope 6ixcafes can bring a little joy and a lot of caffeine to your day!
             </p>
           </div>
         </section>

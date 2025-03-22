@@ -96,10 +96,10 @@ function AboutSection() {
         The story behind 6ixCafes
       </h2>
       <p className="main-description" ref={descriptionRef}>
-        Tired of endlessly searching for the perfect café? 6ixcafes makes it simple to discover the best coffee spots in Toronto, whether you’re looking for a cozy study nook, the perfect ambiance, or the ultimate brew. We’ve done the searching so you don’t have to.
+        Tired of endlessly searching for the perfect cafe? 6ixcafes makes it simple to discover the best coffee spots in Toronto, whether you’re looking for a cozy study nook, the perfect ambiance, or the ultimate brew. We’ve done the searching so you don’t have to.
         <br />
         <br />
-        Curated with intention, 6ixcafes helps you filter and explore cafés based on what matters most to you — no clutter, no reviews, just the essentials.
+        Curated with intention, 6ixcafes helps you filter and explore cafes based on what matters most to you — no clutter, no reviews, just the essentials.
       </p>
     </section>
   );
