@@ -196,6 +196,7 @@ const LocationsPage = () => {
               <option value="Downtown Toronto">Downtown Toronto</option>
               <option value="East York">East York</option>
               <option value="North York">North York</option>
+              <option value="Markham">Markham</option>
               <option value="Scarborough">Scarborough</option>
               <option value="West End Toronto">West End Toronto</option>
             </select>
