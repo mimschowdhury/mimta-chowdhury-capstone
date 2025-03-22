@@ -65,6 +65,7 @@ function PhotoDetails({ photo }) {
               {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
             </span>
           </p>
+          <div className="photo-details__context">
           <p className="photo-details__photographer">{photo.photographer}</p>
           <p
             className="photo-details__location" // Changed class name to avoid confusion with likes
@@ -74,6 +75,7 @@ function PhotoDetails({ photo }) {
             {photo.likes}
           </p>
           <p className="photo-details__rating">⭐️ {photo.googleRating} / 5</p>
+          </div>
         </div>
         <p className="photo-details__description">{photo.photoDescription}</p>
         <div className="photo-details__footer">

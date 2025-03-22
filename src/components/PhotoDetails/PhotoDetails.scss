@@ -83,6 +83,14 @@
         }
     }
 
+    &__context {
+        @include mobile {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
     &__likes {
         display: flex;
         align-items: center;
@@ -128,6 +136,7 @@
         @include mobile {
             @include buttonlabel-text;
             font-family: 'Jua-Regular';
+            font-size: 14px !important;
         }
     }
 
