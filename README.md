@@ -1,49 +1,49 @@
 # Project Title
-6ixcafes - your guide to the best cafés in Toronto!
+6ixcafes - your guide to the best cafes in Toronto!
 
 ## Overview ☕️
 
-6ixCafes is a platform designed for coffee lovers in Toronto to easily find and keep track of the best cafés in the city. It addresses the pain point of having to look up multiple resources (Google Maps, blogTO, Instagram, etc.) to find a good café. 
+6ixCafes is a platform designed for coffee lovers in Toronto to easily find and keep track of the best cafes in the city. It addresses the pain point of having to look up multiple resources (Google Maps, blogTO, Instagram, etc.) to find a good cafe. 
 
-This website simplifies café hunting by consolidating information from Google Maps, blogTO, and Instagram into one cozy place—helping you save time and focus on what really matters: enjoying your coffee.
+This website simplifies cafe hunting by consolidating information from Google Maps, blogTO, and Instagram into one cozy place—helping you save time and focus on what really matters: enjoying your coffee.
 
 ### Problem Space
 
-Finding a good café can be a tedious process involving multiple websites and reviews. People often search through Google Maps, blogs, and social media to find cafes, but there isn’t a single platform that consolidates this information and lets users filter cafés by study-friendly spaces, great ambiance, and quality coffee.
+Finding a good cafe can be a tedious process involving multiple websites and reviews. People often search through Google Maps, blogs, and social media to find cafes, but there isn’t a single platform that consolidates this information and lets users filter cafes by study-friendly spaces, great ambiance, and quality coffee.
 
 
 6ixCafes solves this problem by:
-✅ Consolidating reliable café data into one easy-to-use platform.
+✅ Consolidating reliable cafe data into one easy-to-use platform.
 ✅ Letting users filter based on study spots, ambiance, and coffee quality.
-✅ Helping users keep track of cafés they’ve visited and want to visit.
+✅ Helping users keep track of cafes they’ve visited and want to visit.
 ✅ Offering simple, visual ratings for quick decision-making.
 
 ### User Profile
 
 🎯 Target Audience
 - Coffee drinkers who:
-	- Are looking for a café close to their current or future location
+	- Are looking for a cafe close to their current or future location
     - Want to find the best places for studying or relaxing
-	- Want to track cafés they have visited and rate them
+	- Want to track cafes they have visited and rate them
 	- Tourists & locals exploring Toronto's cafe scene.
 
 💡 How They’ll Use It:
-   - Search & filter cafés based on study spots, ambiance, and coffee quality.
-   - Track cafés they’ve visited and rate them.
-   - Plan coffee dates or study sessions based on café attributes.
-   - Explore nearby cafés based on their current location.
+   - Search & filter cafes based on study spots, ambiance, and coffee quality.
+   - Track cafes they’ve visited and rate them.
+   - Plan coffee dates or study sessions based on cafe attributes.
+   - Explore nearby cafes based on their current location.
 
 🌿 Special Considerations
    - The platform should be simple and intuitive, without overwhelming the user.
-   - The aesthetic should reflect cozy café vibes—neutral colors, soft design, and smooth UX.
+   - The aesthetic should reflect cozy cafe vibes—neutral colors, soft design, and smooth UX.
    - Provide consistent and accurate data—no fake ratings or reviews.
 
 ### Features
 
-	- Find nearby cafés based on the user’s current or provided location
-	- Filter cafés based on criteria such as study spots, ambiance, and coffee quality
-	- Favourites cafés to create a user-based favourite list
-	- View and filter visited cafés by rating, location, etc.
+	- Find nearby cafes based on the user’s current or provided location
+	- Filter cafes based on criteria such as study spots, ambiance, and coffee quality
+	- Favourites cafes to create a user-based favourite list
+	- View and filter visited cafes by rating, location, etc.
 
 ## Implementation
 
@@ -79,16 +79,16 @@ Finding a good café can be a tedious process involving multiple websites and re
 
 ### Sitemap 🗺️
 
-1️⃣ Home Page – Browse cafés and explore filters.
-2️⃣ Café Details Page – View detailed information about a café.
-3️⃣ Visited Cafés Page – Your personalized café list and favourites.
+1️⃣ Home Page – Browse cafes and explore filters.
+2️⃣ Cafe Details Page – View detailed information about a cafe.
+3️⃣ Visited Cafes Page – Your personalized cafe list and favourites.
 4️⃣ About Page – Info about 6ixCafes and how it works.
 
 ### Mockups
 
-	• Home Page: Displays a list of nearby cafés with filtering options.
+	• Home Page: Displays a list of nearby cafes with filtering options.
 	• About Page: Detailed information about the website.
-	• Café Page: Detailed information and ratings for individual cafés.
+	• Cafe Page: Detailed information and ratings for individual cafes.
 
 Home Page: Displays nearby cafes and offers quick filtering
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
@@ -100,7 +100,7 @@ About Page: Learn about the platform's mission.
 
 **GET /cafes**
 
-- Get cafés, with an optional "visited" if the user is logged in or not
+- Get cafes, with an optional "visited" if the user is logged in or not
 - Filter: Filter by ambience, study_spots, or best_coffee (comma-separated if multiple)
 
 Response:
@@ -120,10 +120,10 @@ Response:
 ```
 
 **GET /cafes/:id**
-- Get detailed information about a single café.
+- Get detailed information about a single cafe.
 
 Parameters:
-- id: Café id as number
+- id: Cafe id as number
 
 Response:
 ```
@@ -147,13 +147,13 @@ Response:
 
 ## Database & Relationships 🗄️
 The app’s database consists of:
-	•	Users → who can track and rate cafés.
-	•	Cafés → each with multiple attributes (ambience, location, study-friendliness).
-	•	Favourites → users’ favourite ratings of cafés.
+	•	Users → who can track and rate cafes.
+	•	Cafes → each with multiple attributes (ambience, location, study-friendliness).
+	•	Favourites → users’ favourite ratings of cafes.
 
 🔗 Relationships
-	•	Users ↔ Favourites ↔ Cafés – Users favourite cafés they’ve visited.
-	•	Users ↔ Visited Cafés – Track where they’ve been.
+	•	Users ↔ Favourites ↔ Cafes – Users favourite cafes they’ve visited.
+	•	Users ↔ Visited Cafes – Track where they’ve been.
 
 ## Roadmap
 Week 1: Project Setup + Core Infrastructure
@@ -162,45 +162,45 @@ Goal: Set up the foundational client and server, and gather data to seed the app
 1.	Create Client
 	- Initialize React project
 	- Set up basic routing
-	- Create boilerplate pages (Home, Café List, Café Details)
+	- Create boilerplate pages (Home, Cafe List, Cafe Details)
 2.	Create Server
 	- Set up Express project
 	- Add routing structure with placeholder 200 responses
 3.	Create Migrations
 	- Design database schema
-	- Set up migrations for cafés table and any additional fields (ambience, study spots, geolocation, etc.)
+	- Set up migrations for cafes table and any additional fields (ambience, study spots, geolocation, etc.)
 4.	Gather Sample Data
-	- Research and gather data for 20+ cafés
+	- Research and gather data for 20+ cafes
 	- Include geolocations, ambience descriptions, study spot status, and coffee ratings
 
 ⸻
 
 Week 2: Data + Basic API Integration
 
-Goal: Seed the database, deploy the project, and create endpoints for listing and viewing cafés.
+Goal: Seed the database, deploy the project, and create endpoints for listing and viewing cafes.
 1.	Create Seeds with Sample Data
-	- Insert café data into the database
+	- Insert cafe data into the database
 	- Test database seeding works in dev and production environments
 2.	Deploy Projects
 	- Deploy React client
 	- Deploy Express server.
 	- Connect deployed front-end with back-end
-3.	Feature: List Cafés from a Given Location
-	- Implement List Cafés page in React
+3.	Feature: List Cafes from a Given Location
+	- Implement List Cafes page in React
 	- Add location form to enter/select user location
-	- Integrate Google Maps API to display café pins
+	- Integrate Google Maps API to display cafe pins
 	- Create and connect to GET /cafes endpoint
-	- Filter cafés based on proximity to the given location
+	- Filter cafes based on proximity to the given location
 
 ⸻
 
-Week 3: Viewing Café Details + Polish
+Week 3: Viewing Cafe Details + Polish
 
-Goal: Implement café details page, fine-tune the user experience, and QA before wrap-up.
-1.	Feature: View Café
-	- Implement View Café page in React
+Goal: Implement cafe details page, fine-tune the user experience, and QA before wrap-up.
+1.	Feature: View Cafe
+	- Implement View Cafe page in React
 	- Create and connect to GET /cafes/:id endpoint
-	- Display all café details (ambience, study spot availability, coffee rating, location on map)
+	- Display all cafe details (ambience, study spot availability, coffee rating, location on map)
 2.	Polish & Testing
 	- Test all features on mobile & desktop
 	- Ensure map interactions are smooth
@@ -236,7 +236,7 @@ http://localhost:5183
 
 🔸 Google Maps API – Enhanced location-based search.
 🔸 User Profiles – Custom avatars & personalized themes.
-🔸 Friend Lists – Share café lists with friends.
-🔸 Café Submission – Users can recommend new cafés.
+🔸 Friend Lists – Share cafe lists with friends.
+🔸 Cafe Submission – Users can recommend new cafes.
 🔸 Mobile App – Bring 6ixCafes to iOS & Android.
 🔸 Advanced Filters – Filter by Wi-Fi quality, plug availability, etc.
