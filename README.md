@@ -209,6 +209,29 @@ Goal: Implement café details page, fine-tune the user experience, and QA before
 
 ---
 
+## Installation 🖱️
+
+1. Clone the repository:
+git clone https://github.com/mimschowdhury/mimta-chowdhury-capstone.git
+cd mimta-chowdhury capstone
+
+2. Install dependencies
+npm install
+
+3. Create a .env file in the root directory with the provided Google Maps API Key and other variables:
+VITE_GOOGLE_MAPS_API_KEY=AIzaSyAD6rYOh-u5BF7QXauP1FdKpuEW9WXqHw8
+
+4. Install required packages if not already included in package.json.
+npm install react react-dom axios @react-google-maps/api react-router-dom
+
+5. Start the development server:
+npm run dev
+
+6. Open your browser and navigate to:
+http://localhost:5183
+
+---
+
 ## Future Implementations 🌱
 
 🔸 Google Maps API – Enhanced location-based search.
