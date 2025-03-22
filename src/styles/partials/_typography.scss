@@ -33,10 +33,10 @@
     src: url("../../assets/fonts/Outfit-Light.woff") format("woff");
 }
 
-// Chubbo - Light
+// Chalmers - Typeface
 @font-face {
-    font-family: "Questa-Regular";
-    src: url("../../assets/fonts/Questa-Regular.otf") format("otf");
+    font-family: "Chalmers";
+    src: url("../../assets/fonts/Chalmers-Typeface.otf");
 }
 
 // Como - Bold
@@ -62,7 +62,7 @@
 
 //section typography mixins
 @mixin wordmark {
-    font-family: 'Como-ExtraBold';
+    font-family: 'Chalmers';
     font-weight: 600;
     font-size: 2rem; //mobile
     line-height: 2rem;
