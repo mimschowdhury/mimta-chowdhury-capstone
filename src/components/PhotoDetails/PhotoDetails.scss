@@ -130,13 +130,13 @@
 
     &__photographer {
         font-family: 'Jua-Regular';
-        color: $primary-black; // Keeping your original color
+        color: $primary-black; 
         margin-bottom: 8px;
 
         @include mobile {
-            @include buttonlabel-text;
-            font-family: 'Jua-Regular';
+            font-family: 'Jua-Regular' !important;
             font-size: 14px !important;
+            @include buttonlabel-text;
         }
     }
 
@@ -146,8 +146,8 @@
         gap: 4px;
         color: #b199cd;
         margin-bottom: 8px;
+        font-family: 'Jua-Regular' !important;
         @include buttonlabel-text;
-        font-family: 'Jua-Regular';
 
         &:hover {
             color: #de8ab2;

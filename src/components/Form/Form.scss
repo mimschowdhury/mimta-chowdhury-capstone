@@ -20,6 +20,7 @@
 
     &__input-label {
         color: $primary-black;
+        font-family: 'Outfit-Medium';
         @include body-copy;
     }
 
@@ -32,6 +33,7 @@
         color: $primary-black;
         outline: none;
         padding-bottom: .5rem;
+        font-family: 'Outfit-Medium';
         @include body-copy;
 
         @include tablet {
@@ -72,6 +74,7 @@
         border-radius: 40px;
         cursor: pointer;
         padding: .5rem .5rem;
+        font-family: 'Outfit-Medium';
         @include body-copy;
 
         @include tablet {

@@ -20,8 +20,8 @@
 
   &__title {
     color: #b07d62;
-    @include wordmark;
     font-family: 'Chalmers';
+    @include wordmark;
   }
 
   &__title-link {

@@ -18,8 +18,8 @@
     &__name {
         margin-bottom: 0.5rem;
         color: #666;
+        font-family: "Jua-Regular" !important;
         @include small-body-copy;
-        font-family: "Jua-Regular";
     }
 
     &__date {
@@ -30,6 +30,7 @@
 
     &__comment {
         color: $primary-black;
+        font-family: 'Outfit-Medium';
         @include body-copy;
 
         @include tablet {

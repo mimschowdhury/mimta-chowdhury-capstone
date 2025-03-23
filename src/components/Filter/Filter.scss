@@ -82,8 +82,8 @@
         background-color: $secondary-white;
         text-align: right;
         cursor: pointer;
+        font-family: 'Jua-Regular' !important;
         @include buttonlabel-text;
-        font-family: 'Jua-Regular';
         
 
         &:hover {

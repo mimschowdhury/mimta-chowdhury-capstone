@@ -100,12 +100,12 @@
   padding: 10px 15px;
   border: 2px solid #db98b8;
   border-radius: 25px;
-  font-family: 'Jua-Regular';
-  @include small-body-copy;
-  color: $primary-black;
   background-color: whitesmoke;
   outline: none;
   transition: border-color 0.3s ease;
+  color: $primary-black;
+  font-family: 'Jua-Regular';
+  @include small-body-copy;
 
   &:focus {
     border-color: $secondary-blue;
@@ -129,8 +129,8 @@
   text-align: center;
   margin: 0 auto;
   width: 100%;
+  padding: 1.25rem;
   color: $primary-black;
   font-family: 'Jua-Regular';
   @include body-copy;
-  padding: 20px;
 }

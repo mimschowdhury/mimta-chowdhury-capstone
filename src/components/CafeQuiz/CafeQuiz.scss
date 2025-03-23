@@ -12,8 +12,8 @@
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #333;
+    font-family: "Jua-Regular" !important;
     @include body-copy;
-    font-family: "Jua-Regular";
   }
   
   &__options {
@@ -42,6 +42,7 @@
     border-radius: 20px;
     border: 2px solid $secondary-blue;
     width: 100%; // Makes buttons full-width within the container
+    font-family: 'Outfit-Medium';
     @include small-body-copy;
   }
   
@@ -53,6 +54,7 @@
   &__error {
     font-size: 1.2rem;
     color: #666; // Subtle color for loading/error states
-    @include body-copy
+    font-family: 'Outfit-Medium';
+    @include body-copy;
   }
 }

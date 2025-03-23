@@ -83,13 +83,13 @@
 
   .cafe-overlay__name {
     color: white !important; // Ensure the text is visible
-    font-family: 'Jua-Regular' !important;
-    @include body-copy;
     font-size: 1.25rem; // Adjust size as needed
     text-align: center;
     padding: 10px;
     margin: 0;
-    z-index: 3; // Ensure the text is above the overlay background
+    z-index: 3;
+    font-family: 'Jua-Regular' !important;
+    @include body-copy;
   }
 
   .cafe-link:hover .cafe-overlay {

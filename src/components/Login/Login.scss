@@ -24,9 +24,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
-    @include body-copy;
-    font-family: 'Jua-Regular';
+    font-family: 'Jua-Regular' !important;
     color: $background-blue;
+    @include body-copy;
     
   }
   
