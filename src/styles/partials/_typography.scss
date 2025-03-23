@@ -95,7 +95,7 @@
 }
 
 @mixin body-copy {
-    font-family: 'Outfit-Medium';
+    // change font family in scss
     //change font weight light 300 or default medium 500
     line-height: .9375rem;
     font-size: .75rem; // Mobile
@@ -106,7 +106,7 @@
 }
 
 @mixin small-body-copy {
-    font-family: 'Outfit-Medium';
+    // font-family: change in code
     font-weight: 500;
     line-height: .75rem;
     font-size: .625rem; // Mobile
