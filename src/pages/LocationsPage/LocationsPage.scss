@@ -258,11 +258,13 @@
   &__cafe-rating {
     color: $secondary-white;
     font-size: 0.875rem;
+    font-family: 'Outfit-Medium';
     @include small-body-copy;
   }
 
   &__cafe-description {
     color: #666;
+    font-family: 'Outfit-Medium';
     @include small-body-copy;
   }
 
