@@ -13,10 +13,10 @@ Finding a good cafe can be a tedious process involving multiple websites and rev
 
 
 6ixCafes solves this problem by:
-✅ Consolidating reliable cafe data into one easy-to-use platform.
-✅ Letting users filter based on study spots, ambiance, and coffee quality.
-✅ Helping users keep track of cafes they’ve visited and want to visit.
-✅ Offering simple, visual ratings for quick decision-making.
+<br>✅ Consolidating reliable cafe data into one easy-to-use platform.
+<br>✅ Letting users filter based on study spots, ambiance, and coffee quality.
+<br>✅ Helping users keep track of cafes they’ve visited and want to visit.
+<br>✅ Offering simple, visual ratings for quick decision-making.
 
 ### User Profile
 
@@ -79,17 +79,15 @@ Finding a good cafe can be a tedious process involving multiple websites and rev
 
 ### Sitemap 🗺️
 
-1️⃣ Home Page – Browse cafes and explore filters.
-2️⃣ Cafe Details Page – View detailed information about a cafe.
-3️⃣ Visited Cafes Page – Your personalized cafe list and favourites.
-4️⃣ About Page – Info about 6ixCafes and how it works.
+<br>1️⃣ Home Page – Browse cafes and explore filters.
+<br>2️⃣ Cafe Details Page – View detailed information about a cafe.
+<br>3️⃣ Favourite Cafes Page – Your personalized cafe list and favourites.
+<br>4️⃣ About Page – Info about 6ixCafes and how it works.
+<br>5️⃣ Locations Page – Discover cafes near you/in your neighbourhood.
+<br>6️⃣ Cafe of the Week Page – Read more on the Cafe of the Week.
+<br>7️⃣ Cafe Roulette – Generate a random cafe & coffee-related quotes!.
 
 ### Mockups
-
-	• Home Page: Displays a list of nearby cafes with filtering options.
-	• About Page: Detailed information about the website.
-	• Cafe Page: Detailed information and ratings for individual cafes.
-
 Original Mockups
 Home Page: Displays nearby cafes and offers quick filtering
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
@@ -120,7 +118,7 @@ Cafe of the Week Page: Read more on the Cafe of the Week.
 Cafe Roulette: Generate a random cafe & coffee-related quotes!.
 ![Sitemap](./src/assets/mockups/Cafe%20Roulette.png)
 
-Photo Details: When a cafe is clicked, a Cafe Details Page is shown with the ability to favourite, rate, and review.
+Cafe Details: When a cafe is clicked, a Cafe Details Page is shown with the ability to favourite, rate, and review.
 ![Sitemap](./src/assets/mockups/PhotoDetails.png)
 
 ### API Endpoints
@@ -261,9 +259,9 @@ http://localhost:5183
 
 ## Future Implementations 🌱
 
-🔸 Google Maps API – Enhanced location-based search.
-🔸 User Profiles – Custom avatars & personalized themes.
-🔸 Friend Lists – Share cafe lists with friends.
-🔸 Cafe Submission – Users can recommend new cafes.
-🔸 Mobile App – Bring 6ixCafes to iOS & Android.
-🔸 Advanced Filters – Filter by Wi-Fi quality, plug availability, etc.
+<br>🔸 Google Maps API – Enhanced location-based search.
+<br>🔸 User Profiles – Custom avatars & personalized themes.
+<br>🔸 Friend Lists – Share cafe lists with friends.
+<br>🔸 Cafe Submission – Users can recommend new cafes.
+<br>🔸 Mobile App – Bring 6ixCafes to iOS & Android.
+<br>🔸 Advanced Filters – Filter by Wi-Fi quality, plug availability, etc.
