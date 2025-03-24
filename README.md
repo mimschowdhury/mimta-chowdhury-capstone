@@ -90,11 +90,38 @@ Finding a good cafe can be a tedious process involving multiple websites and rev
 	• About Page: Detailed information about the website.
 	• Cafe Page: Detailed information and ratings for individual cafes.
 
+Original Mockups
 Home Page: Displays nearby cafes and offers quick filtering
 ![Sitemap](./src/assets/mockups/Beige%20Minimalist%20Creative%20Agency%20Website%20Desktop%20Prototype.png)
 
 About Page: Learn about the platform's mission.
 ![Sitemap](./src/assets/mockups/about.png)
+
+Theme Colours: Define variables and colours used througout site
+![Sitemap](./src/assets/mockups/pastel%20palette.png)
+![Sitemap](./src/assets/mockups/coffee%20palette.png)
+
+**Final Site Pages**
+Landing Page: Welcome User Page
+![Sitemap](./src/assets/mockups/Landing%20Page.png)
+
+Home Page: Displays nearby cafes and offers quick filtering
+![Sitemap](./src/assets/mockups/HomePage.png)
+
+About Page: Learn about the platform's mission.
+![Sitemap](./src/assets/mockups/AboutPage.png)
+
+Locations Page: Discover cafes near you/in your neighbourhood.
+![Sitemap](./src/assets/mockups/Locations.png)
+
+Cafe of the Week Page: Read more on the Cafe of the Week.
+![Sitemap](./src/assets/mockups/CafeOfTheWeek.png)
+
+Cafe Roulette: Generate a random cafe & coffee-related quotes!.
+![Sitemap](./src/assets/mockups/Cafe%20Roulette.png)
+
+Photo Details: When a cafe is clicked, a Cafe Details Page is shown with the ability to favourite, rate, and review.
+![Sitemap](./src/assets/mockups/PhotoDetails.png)
 
 ### API Endpoints
 
