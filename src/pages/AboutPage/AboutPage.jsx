@@ -15,14 +15,12 @@ export default function AboutPage() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Optional: uncomment next line to stop observing after animation
-            // observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.3, // Increased threshold so elements need to be more in view
-        rootMargin: '0px 0px -10% 0px', // Trigger slightly before fully in view
+        threshold: 0.3, 
+        rootMargin: '0px 0px -10% 0px',
       }
     );
 
