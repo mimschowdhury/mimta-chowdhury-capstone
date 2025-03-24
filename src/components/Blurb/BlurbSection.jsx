@@ -43,7 +43,7 @@ function BlurbSection() {
           <h3 className="blurb__subtitle">Discover Cafes in Toronto</h3>
           <p className="blurb__description">
             Explore an ever-growing list of Toronto's best cafes. 
-            Feel free to favourite the cafe's you love and refer back to them in the Favourites List!
+            Feel free to favourite (and rate!) the cafes you love and refer back to them in the Favourites List!
           </p>
         </div>
         <div className="blurb__box scroll-element">
