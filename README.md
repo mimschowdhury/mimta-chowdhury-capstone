@@ -74,8 +74,7 @@ Finding a good cafe can be a tedious process involving multiple websites and rev
 
 ### APIs & Integrations 🔗
 
-- No external APIs will be used in the first sprint.
-- Future sprints may include Google Maps API for geolcation enhancements
+- External API: Google Maps API for geolcation enhancements
 
 ### Sitemap 🗺️
 
