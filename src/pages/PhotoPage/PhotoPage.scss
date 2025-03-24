@@ -18,11 +18,11 @@ body {
 }
 
 .photo-page__content {
-    padding-top: 80px;
+    padding-top: 5rem;
     padding-bottom: 5rem;
 
     @include tablet {
-        padding-top: 90px;
+        padding-top: 5.625rem;
     }
 
     @include desktop {

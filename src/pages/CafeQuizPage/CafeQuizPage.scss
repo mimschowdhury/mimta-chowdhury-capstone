@@ -5,11 +5,11 @@
 
 .cafequiz {
   &__page {
-    padding-top: 80px;
+    padding-top: 5rem;
 
     @include tablet {
       text-align: center;
-      padding-top: 120px;
+      padding-top: 7.5rem;
     }
   }
 
@@ -22,34 +22,33 @@
 
   &__text {
     text-align: center;
-    padding-top: 16px;
+    padding-top: 1rem;
     color: $primary-brown;
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
     width: 80%;
     margin: 0 auto;
-    @include body-copy;
     font-family: "Jua-Regular";
+    @include body-copy;
   }
 
   &__main {
     text-align: center;
-    // background-color: #f49cbb;
     background-color: #dacee4;
-    border-radius: 16px; // Adjust value as needed
-    border: 2px solid $secondary-blue;
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-bottom: 24px;
+    border-radius: 1rem; 
+    border: .125rem solid $secondary-blue;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
     @include body-copy;
 
     @include tablet {
-      margin-left: 150px;
-      margin-right: 150px;
+      margin-left: 9.375rem;
+      margin-right: 9.375rem;
     }
 
     @include desktop {
-      margin-left: 300px;
-      margin-right: 300px;
+      margin-left: 18.75rem;
+      margin-right: 18.75rem;
     }
   }
 }
@@ -59,7 +58,7 @@
 
   &__heading {
     text-align: center;
-    padding-top: 16px;
+    padding-top: 1rem;
     color: #333;
     font-family: "Jua-Regular" !important;
     @include buttonlabel-text;
@@ -70,33 +69,18 @@
     margin: 0 auto;
     text-align: center;
     color: #62B6CB;
-    @include body-copy;
     font-family: "Jua-Regular";
+    @include body-copy;
   }
 }
 
 .quiz__persona {
   color: #2a6f97;
-  @include body-copy;
   font-family: "Jua-Regular";
+  @include body-copy;
 }
 
 .quiz-results {
-  // display: flex; // Makes the container a flex container
-  //   flex-wrap: wrap; // Allows cards to wrap to the next line
-  //   gap: 1rem; // Adds space between cards
-  //   padding: 16px; // Adjust padding to suit your design
-  //   justify-content: flex-start; // Centers the cards horizontally
-
-  //   @include tablet {
-  //       padding: 24px;
-  //       gap: 24px;
-  //   }
-
-  //   @include desktop {
-  //       padding: 24px;
-  //       gap: 18px;
-  //   }
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -123,10 +107,10 @@
 
 .button-container {
   button {
-    padding: 8px 16px;
+    padding: .5rem 1rem;
     background-color: $primary-purple;
-    border: 2px solid $secondary-blue;
-    border-radius: 20px;
+    border: .125rem solid $secondary-blue;
+    border-radius: 1.25rem;
     cursor: pointer;
     transition: background-color 0.3s;
     font-family: 'Outfit-Medium';

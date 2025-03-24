@@ -4,11 +4,9 @@
 @use "../../styles/partials/typography" as *;
 
 body {
-  // padding-top: 3.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // gap: 1.5rem;
   background-color: $secondary-white;
   color: $primary-black;
   min-height: 100vh;
@@ -16,7 +14,6 @@ body {
 
 // handles layout of react components
 #root {
-  // padding-top: 2rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -63,15 +60,15 @@ body {
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 15px 30px;
+  padding: .9375rem 1.875rem;
   color: #fff;
   background-color: rgba(167, 134, 130, 0.9);
-  border: 2px solid #c2a2b1;
-  border-radius: 50px;
+  border: .125rem solid #c2a2b1;
+  border-radius: 3.125rem;
   cursor: pointer;
-  @include buttonlabel-text;
   font-weight: bold !important;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  @include buttonlabel-text;
 
   //fix dont include mixins define by width
   @include desktop {
@@ -80,7 +77,7 @@ body {
 
   &:hover {
     background-color: rgba(175, 125, 145, 0.8);
-    border: 2px solid $secondary-brown;
+    border: .125rem solid $secondary-brown;
     transform: translate(-50%, -50%) scale(1.05); // Slight scale-up
   }
 }

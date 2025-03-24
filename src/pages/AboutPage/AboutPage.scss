@@ -4,33 +4,33 @@
 @use '../../styles/partials/typography' as *;
 
 .about-page {
-    font-family: 'Outfit-Light', sans-serif;
+    font-family: 'Outfit-Light';
     color: #333;
-    padding: 16px;
-    padding-top: 80px;
+    padding: 1rem;
+    padding-top: 5rem;
 
     @include tablet {
-      padding-top: 120px;
-      padding-left: 24px;
-      padding-right: 24px;
+      padding-top: 7.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
 }
 
 .about-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     color: $secondary-blue;
 
     h1 {
       font-family: "Jua-Regular";
-      margin-bottom: 10px;
+      margin-bottom: .625rem;
       @include heading;
     }
 
     p {
       font-size: 1.5rem;
       color: #666;
-      font-family: "Jua-Regular" !important;
+      font-family: "Jua-Regular";
       @include body-copy;
     }
 }
@@ -42,13 +42,13 @@
 
     .about-image {
       flex: 1;
-      margin-right: 20px;
+      margin-right: 1.25rem;
 
       img {
         width: 100%;
-        border-radius: 10px;
-        border: 2px solid $secondary-blue;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: .625rem;
+        border: .125rem solid $secondary-blue;
+        box-shadow: 0rem .25rem .375rem rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -57,19 +57,19 @@
 
       p {
         font-family: 'Outfit-Light';
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 1.6;
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
       }
     }
 }
 
-// Scroll animation styles
+// Scroll animation 
 .scroll-element {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(1.875rem);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    visibility: hidden; // Hide elements initially
+    visibility: hidden; 
 
     &.visible {
         opacity: 1;
@@ -78,12 +78,12 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .about-content {
       flex-direction: column;
 
       .about-image {
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
         margin-right: 0;
       }
       

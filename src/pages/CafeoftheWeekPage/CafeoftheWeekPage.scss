@@ -7,31 +7,31 @@
 
 &-content {
     background: url('../../assets/images/cafeoftheweekbackground.png');
-    background-size: cover; /* Ensures the image covers the entire area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents tiling */
-    padding-top: 120px;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding-top: 7.5rem;
 
     @include mobile {
-        padding-top: 80px;
+        padding-top: 5rem;
     }
 }
 
 &-header {
     color: #f49cbb;
-    padding-bottom: 8px;
-    @include heading;
+    padding-bottom: .5rem;
     font-family: 'Jua-Regular';
+    @include heading;
 }
 }
 
 .cafe-week-page-text {
     color: $secondary-brown;
     font-family: 'Jua-Regular';
-    font-size: 12px;
+    font-size: .75rem;
 
     @include tablet {
-    font-size: 16px;
+    font-size: 1rem;
     }
 }
 

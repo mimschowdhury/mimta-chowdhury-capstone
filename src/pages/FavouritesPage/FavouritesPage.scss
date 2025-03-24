@@ -5,10 +5,10 @@
 
 .favourites {
     &__page {
-        padding-top: 120px;
+        padding-top: 7.5rem;
 
         @include mobile {
-            padding-top: 80px;
+            padding-top: 5rem;
         }
     }
 
@@ -21,28 +21,12 @@
 
     &__text {
         text-align: center;
-        padding-top: 24px;
+        padding-top: 1.5rem;
         @include body-copy;
     }
 }
 
 .favourites__results {
-    // display: flex; 
-    // flex-wrap: wrap; 
-    // gap: 1rem; 
-    // padding: 16px; 
-    // justify-content: flex-start; 
-
-    // @include tablet {
-    //     padding: 24px;
-    //     gap: 24px;
-    // }
-
-    // @include desktop {
-    //     padding: 24px;
-    //     gap: 18px;
-    // }
-
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -56,7 +40,7 @@
 
     @include desktop {
         width: 100%;
-        gap: 18px;
+        gap: 1.125rem;
 
         & > * { // Targets each photo card
             width: calc(33.33% - 1rem); // Ensures 3 photos per row

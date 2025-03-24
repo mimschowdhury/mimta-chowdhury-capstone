@@ -130,9 +130,10 @@
 // Animation classes
 .slide-in-from-left {
   animation: slideInFromLeft 1s ease-out forwards;
+  animation-delay: 0.5s;
 }
 
 .slide-in-from-right {
   animation: slideInFromRight 1s ease-out forwards;
-  animation-delay: 0.3s; // Slight delay for staggered effect
+  animation-delay: 1s; // Slight delay for staggered effect
 }
