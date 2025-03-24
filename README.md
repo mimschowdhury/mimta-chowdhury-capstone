@@ -74,8 +74,7 @@ Finding a good cafe can be a tedious process involving multiple websites and rev
 
 ### APIs & Integrations 🔗
 
-- No external APIs will be used in the first sprint.
-- Future sprints may include Google Maps API for geolcation enhancements
+- External API: Google Maps API for geolcation enhancements
 
 ### Sitemap 🗺️
 
@@ -170,15 +169,20 @@ Response:
 ]
 ```
 
-## Database & Relationships 🗄️
-The app’s database consists of:
-	<br>•	Users → who can track and rate cafés.
-	<br>•	Cafés → each with multiple attributes (ambience, location, study-friendliness).
-	<br>•	Favourites → users’ favourite ratings of cafés.
+## 📊 Database & Relationships
 
-🔗 Relationships
-	<br>•	Users ↔ Favourites ↔ Cafés – Users favourite cafés they’ve visited.
-	<br>•	Users ↔ Visited Cafés – Track where they’ve been.
+The app’s database consists of the following entities:
+
+- **Users** → Can track, rate, and comment on cafes.
+- **Cafes** → Each cafe has multiple attributes (e.g., ambience, location, study-friendliness).
+- **Favourites** → Stores users' favorite cafes and ratings.
+- **Comments** → Users can leave comments on cafes, sharing their experiences.
+
+### 🔗 Relationships
+
+- **Users ↔ Favourites ↔ Cafes** → Users can mark cafes as their favorites.
+- **Users ↔ Visited Cafes** → Tracks which cafes users have visited.
+- **Users ↔ Comments ↔ Cafes** → Users can leave and view comments on cafes.
 
 ## Roadmap
 Week 1: Project Setup + Core Infrastructure
@@ -249,7 +253,7 @@ VITE_GOOGLE_MAPS_API_KEY=AIzaSyAD6rYOh-u5BF7QXauP1FdKpuEW9WXqHw8
 4. Install required packages if not already included in package.json.
 npm install react react-dom axios @react-google-maps/api react-router-dom
 
-5. Start the development server:
+5. Start the development server (clone the git repository for the backend-API; more detailed instructions for the back-end server installation can be found in the ReadME.md of mimta-chowdhury-capstone-api):
 npm run dev
 
 6. Open your browser and navigate to:
