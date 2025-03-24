@@ -4,7 +4,6 @@
 
 // Base styles for the container
 .photocard-list {
-//   padding: 1rem;
 
   // Scroll Mode
   &.scroll-mode {
@@ -29,17 +28,17 @@
 
     > * {
       flex: 0 0 auto;
-      margin-right: 20px;
+      margin-right: 1.25rem;
     }
 
-    padding: 32px 24px 24px 24px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
 
     @include mobile {
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-top: 16px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 1rem;
       > * {
-        margin-right: 16px;
+        margin-right: 1rem;
       }
     }
   }
@@ -85,21 +84,21 @@
 
 // Search bar styles
 .search-bar {
-  margin-top: 32px;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 
   @include mobile {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 }
 
 .search-bar__input {
   width: 100%;
-  max-width: 250px; // Limit the width for larger screens
-  padding: 10px 15px;
-  border: 2px solid #db98b8;
-  border-radius: 25px;
+  max-width: 15.625rem; // Limit the width for larger screens
+  padding: .625rem .9375rem;
+  border: .125rem solid #db98b8;
+  border-radius: 1.5625rem;
   background-color: whitesmoke;
   outline: none;
   transition: border-color 0.3s ease;
@@ -117,11 +116,11 @@
   }
 
   @include tablet {
-    padding: 8px 16px;
+    padding: .5rem 1rem;
   }
 
   @include desktop {
-    padding: 8px 16px;
+    padding: .5rem 1rem;
   }
 }
 

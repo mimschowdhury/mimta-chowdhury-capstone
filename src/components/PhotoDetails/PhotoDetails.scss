@@ -4,19 +4,18 @@
 @use '../../styles/partials/mixins' as *;
 
 .photo-details {
-    // max-width: 1100px;
     margin: 2rem auto;
-    margin: 16px;
+    margin: 1rem;
     padding: 1rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     display: flex;
     gap: 2rem;
     background: linear-gradient(135deg, #f5e7f5, #e7e9f5); // Keeping your original gradient
-    border: 2px solid $secondary-blue; // Keeping your original border color
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: .125rem solid $secondary-blue; // Keeping your original border color
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,0.1);
 
     @include tablet {
-        margin: 24px;
+        margin: 1.5rem;
     }
 
     @include mobile {
@@ -27,13 +26,13 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 1rem;
         
         img {
             width: 100%;
-            max-height: 450px;
+            max-height: 28.125rem;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 1.25rem;
             border: .0625rem solid $primary-blue; // Keeping your original border color
         }
     }
@@ -49,16 +48,16 @@
     &__tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: .5rem;
 
         @include mobile {
-            gap: 8px;
+            gap: .5rem;
         }
 
         .photo-details__tag {
             background: $secondary-white;
             padding: 0.3rem 0.8rem;
-            border-radius: 12px;
+            border-radius: .75rem;
             border: .0625rem solid $secondary-blue; // Keeping your original border color
             color: #c38e70; // Keeping your original tag color
             @include buttonlabel-text;
@@ -71,13 +70,14 @@
     }
 
     &__info {
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         font-family: 'Outfit-Light';
         font-weight: 600;
         line-height: .9375rem;
         font-size: .75rem;
+
         @include tablet {
-            font-size: 18px;
+            font-size: 1.125rem;
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -94,14 +94,14 @@
     &__likes {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: .5rem;
         color: #c99ab6; // Keeping your original color
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
+        font-family: 'Jua-Regular' !important;
         @include buttonlabel-text;
-        font-family: 'Jua-Regular';
 
         @include tablet {
-            font-size: 14px;
+            font-size: .875rem;
         }
 
         &:hover {
@@ -131,11 +131,11 @@
     &__photographer {
         font-family: 'Jua-Regular';
         color: $primary-black; 
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
 
         @include mobile {
             font-family: 'Jua-Regular' !important;
-            font-size: 14px !important;
+            font-size: .875rem !important;
             @include buttonlabel-text;
         }
     }
@@ -143,9 +143,9 @@
     &__location {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: .25rem;
         color: #b199cd;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         font-family: 'Jua-Regular' !important;
         @include buttonlabel-text;
 
@@ -156,12 +156,12 @@
 
     &__location-icon {
         display: block;
-        height: 17px;
+        height: 1.0625rem;
     }
 
     &__rating {
         color: $primary-black; // Keeping your original color
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include buttonlabel-text;
     }
 
@@ -173,8 +173,9 @@
         font-weight: 600;
         line-height: .9375rem;
         font-size: .75rem;
+
         @include tablet {
-            font-size: 15px;
+            font-size: .9375rem;
             line-height: 1.25rem;
             font-weight: 600;
         }
@@ -184,24 +185,25 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 10px;
+        gap: .625rem;
 
         @include mobile {
             flex-direction: column;
         }
 
         @include desktop {
-            gap: 16px;
+            gap: 1rem;
         }
     }
 
     &__favourites {
         color: #48b0c9; // Keeping your original color
         margin-bottom: 1rem;
-        @include small-body-copy;
         font-family: 'Jua-Regular';
+        @include small-body-copy;
+
         @include tablet {
-            font-size: 14px;
+            font-size: .875rem;
             font-weight: 600;
         }
     }
@@ -211,6 +213,6 @@
     display: flex;
     gap: 2rem;
     background: linear-gradient(135deg, #f5e7f5, #e7e9f5); // Keeping your original gradient
-    border-radius: 20px; // Keeping your original border color
+    border-radius: 1.25rem; // Keeping your original border color
     padding: 1.5rem;
 }

@@ -19,12 +19,12 @@
   
   .login-modal {
     background: $secondary-sage;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.1);
+    width: 18.75rem;
     text-align: center;
-    font-family: 'Jua-Regular' !important;
+    font-family: 'Jua-Regular';
     color: $background-blue;
     @include body-copy;
     
@@ -33,42 +33,42 @@
   .login-input {
     display: block;
     width: 100%;
-    margin: 10px 0;
-    padding: 8px;
+    margin: .625rem 0;
+    padding: .5rem;
     box-sizing: border-box;
-    @include small-body-copy;
     font-family: 'Jua-Regular';
+    @include small-body-copy;
   }
   
   .login-button {
     width: 100%;
-    padding: 10px;
+    padding: .625rem;
     background-color: $background-blue;
     color: white;
-    border: 2px solid $secondary-white;
-    border-radius: 50px;
+    border: .125rem solid $secondary-white;
+    border-radius: 3.125rem;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: .625rem;
     font-family: 'Jua-Regular';
     @include buttonlabel-text;
   
     &:hover {
       background-color: $secondary-white;
       color: $background-blue;
-      border: 2px solid $background-blue;
+      border: .125rem solid $background-blue;
     }
   }
   
   .toggle-mode-button {
     width: 100%;
-    padding: 10px;
+    padding: .625rem;
     background: none;
     border: none;
     color: #b07d62;
     cursor: pointer;
-    margin-top: 10px;
-    @include buttonlabel-text;
+    margin-top: .625rem;
     font-weight: bold !important;
+    @include buttonlabel-text;
   
     &:hover {
       text-decoration: underline;
@@ -77,31 +77,31 @@
   
   .close-button {
     width: 100%;
-    padding: 10px;
+    padding: .625rem;
     background-color: #ccc;
     border: none;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: .625rem;
     font-family: 'Jua-Regular';
     @include buttonlabel-text;
   
     &:hover {
       background-color: $secondary-white;
-      border: 2px solid #ccc;
+      border: .125rem solid #ccc;
     }
   }
   
   .login-error {
     color: $error-red;
-    margin: 10px 0;
-    @include small-body-copy;
+    margin: .625rem 0;
     font-family: 'Jua-Regular';
+    @include small-body-copy;
   }
   
   .login-success {
-    color: #CCBEDF;
-    margin: 10px 0;
-    @include small-body-copy;
+    color: #bba3de;
+    margin: .625rem 0;
     font-family: 'Jua-Regular';
+    @include small-body-copy;
   }

@@ -8,14 +8,13 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    // margin: 2rem auto;
     margin: 1rem;
     padding: 1rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 
     @include tablet {
-        padding: 24px;
-        margin: 24px;
+        padding: 1.5rem;
+        margin: 1.5rem;
     }
 
     &-heading {
@@ -28,27 +27,27 @@
 }
 
 .random-cafe {
-    max-width: 900px;
+    max-width: 56.25rem;
     margin: 2rem auto;
     display: flex;
     gap: 2rem;
     background: #e3c1cb;
-    border-radius: 20px;
-    border: 2px solid #CCBEDF;
+    border-radius: 1.25rem;
+    border: .125rem solid #CCBEDF;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,0.1);
 
     &__content {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 1.5rem;
         
         img {
             width: 100%;
-            max-height: 350px;
+            max-height: 21.875rem;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 1.25rem;
             border: .0625rem solid $primary-blue;
         }
     }
@@ -60,17 +59,16 @@
     &__tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: .5rem;
 
         @include mobile {
-            gap: 8px;
+            gap: .5rem;
         }
 
         .random-cafe__tag {
             background: $secondary-white;
             padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            // margin-right: 0.5rem;
+            border-radius: .75rem;
             border: .0625rem solid $primary-blue;
             @include buttonlabel-text;
 
@@ -87,7 +85,7 @@
         line-height: .9375rem;
         font-size: .75rem;
         @include tablet {
-            font-size: 18px;
+            font-size: 1.125rem;
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -96,9 +94,9 @@
     &__likes {
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: .25rem;
         color: white;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include buttonlabel-text;
         font-family: 'Jua-Regular';
 
@@ -110,17 +108,17 @@
     &__name {
         font-family: 'Jua-Regular';
         color: $primary-black;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
 
         @include mobile {
+            font-family: 'Jua-Regular' !important;
             @include buttonlabel-text;
-            font-family: 'Jua-Regular';
         }
     }
 
     &__rating {
         color: $secondary-white;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include buttonlabel-text;
     }
 
@@ -133,7 +131,7 @@
         line-height: .9375rem;
         font-size: .75rem;
         @include tablet {
-            font-size: 14px;
+            font-size: .875rem;
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -145,7 +143,7 @@
         @include small-body-copy;
         font-family: 'Jua-Regular';
         @include tablet {
-            font-size: 14px;
+            font-size: .875rem;
             line-height: 1.625rem;
             font-weight: 600;
         }

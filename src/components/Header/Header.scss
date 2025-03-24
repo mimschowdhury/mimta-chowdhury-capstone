@@ -15,7 +15,7 @@
   width: 100%;
 
   @include tablet {
-    padding: 24px;
+    padding: 1.5rem;
   }
 
   &__title {
@@ -31,10 +31,10 @@
   &__nav {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: .5rem;
 
     @include tablet {
-      gap: 16px;
+      gap: 1rem;
     }
 
     @include desktop {
@@ -46,8 +46,8 @@
     text-decoration: none;
     transition: color 0.3s ease;
     color: #333;
-    @include buttonlabel-text;
     font-family: "Jua-Regular" !important;
+    @include buttonlabel-text;
 
     @include tablet {
       font-size: 0.9725rem;
@@ -63,37 +63,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: .625rem;
   cursor: pointer;
   user-select: none;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   margin: 0 auto;
 
   input {
-    opacity: 0; // Hide the checkbox input (matches your preferred toggle)
+    opacity: 0; 
     width: 0;
     height: 0;
   }
 
   .slider {
     position: relative;
-    width: 45px; // Matches the preferred toggle's width
-    height: 20px; // Matches the preferred toggle's height
-    background-color: #ccc; // Off state, matching preferred toggle
-    border-radius: 20px; // Rounded ends
-    // margin-right: 10px; // Adds spacing like the preferred toggle
-    transition: background-color 0.3s; // Smooth background transition
+    width: 2.8125rem;
+    height: 1.25rem; 
+    background-color: #ccc; 
+    border-radius: 1.25rem; 
+    transition: background-color 0.3s;
 
     &::before {
       content: "";
       position: absolute;
-      width: 16px; // Matches preferred toggle's circle size
-      height: 16px; // Matches preferred toggle's circle size
+      width: 1rem; 
+      height: 1rem; 
       background-color: white;
       border-radius: 50%;
-      left: 2px; // Starting position (matches preferred toggle)
-      top: 2px; // Vertically centered within 20px height
-      transition: transform 0.3s; // Smooth movement (matches preferred toggle)
+      left: .125rem; 
+      top: .125rem; 
+      transition: transform 0.3s;
     }
   }
 
@@ -103,14 +102,14 @@
 
   input:checked + .slider::before {
     transform: translateX(
-      25px
-    ); // Moves circle 20px right (matches preferred toggle)
+      1.5625rem
+    ); 
   }
 
   .mode-label {
     color: #333;
-    @include buttonlabel-text;
     font-family: "Jua-Regular" !important;
+    @include buttonlabel-text;
 
     @include tablet {
       font-size: 0.9725rem;

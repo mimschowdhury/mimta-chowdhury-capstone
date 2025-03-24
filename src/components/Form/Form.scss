@@ -71,7 +71,7 @@
         background-color: $primary-purple;
         border: .125rem solid $secondary-blue;
         color: white;
-        border-radius: 40px;
+        border-radius: 2.5rem;
         cursor: pointer;
         padding: .5rem .5rem;
         font-family: 'Outfit-Medium';
@@ -79,7 +79,7 @@
 
         @include tablet {
             padding: .5rem 1.5rem;
-            border-radius: 40px;
+            border-radius: 2.5rem;
         }
 
         &:hover {

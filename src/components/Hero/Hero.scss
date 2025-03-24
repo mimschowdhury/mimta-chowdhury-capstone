@@ -14,7 +14,7 @@
 
   @include tablet {
     height: 80vh;
-    padding: 24px;
+    padding: 1.5rem;
     justify-content: center;
   }
 
@@ -22,31 +22,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 3.75rem;
     z-index: 3;
   }
 
   &__content {
     font-family: "Jua-Regular";
     color: $secondary-white;
-    padding-left: 16px;
-    text-shadow: -1px -1px 0 #d6c0b3d9, 1px -1px 0 #d6c0b3d9, -1px 1px 0 #d6c0b3d9,
-      1px 1px 0 #d6c0b3d9;
+    padding-left: 1rem;
+    text-align: center;
+    text-shadow: -0.0625rem -0.0625rem 0 #d6c0b3d9, .0625rem -0.0625rem 0 #d6c0b3d9, -0.0625rem .0625rem 0 #d6c0b3d9,
+      .0625rem .0625rem 0 #d6c0b3d9;
     opacity: 0;
     @include title-typography;
 
     @include tablet {
-      padding-left: 0px;
-    }
-
-    @include desktop {
-      width: 49%;
+      padding-left: 0rem;
     }
 
     &-italics {
       font-family: "Newsreader-LightItalic";
       text-shadow: none;
-      // font-weight: 500 !important;
     }
   }
 
@@ -69,6 +65,7 @@
     margin-top: 2.25rem;
     text-wrap: none;
     opacity: 0;
+    text-align: center;
     @include title-typography;
 
     @include tablet {
@@ -84,25 +81,25 @@
   &__title {
     color: $secondary-white;
     padding-left: 1rem;
-    width: 50%;
     z-index: 2;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     text-wrap: none;
     font-family: "Outfit-Light";
     font-weight: 300;
     opacity: 0;
+    text-align: center;
     @include heading;
 
     @include tablet {
       text-wrap: none;
       padding-left: 0rem;
-      width: 75%;
+      margin-bottom: 1rem;
     }
 
     @include desktop {
-      width: 90%;
       padding-left: 0rem;
+      margin-bottom: 1rem;
     }
   }
 }

@@ -18,14 +18,14 @@
     &__name {
         margin-bottom: 0.5rem;
         color: #666;
-        font-family: "Jua-Regular" !important;
+        font-family: "Jua-Regular";
         @include small-body-copy;
     }
 
     &__date {
         color: #666;
-        @include small-body-copy;
         font-family: "Jua-Regular";
+        @include small-body-copy;
     }
 
     &__comment {
@@ -34,7 +34,7 @@
         @include body-copy;
 
         @include tablet {
-        font-size: 15px !important;
+        font-size: .9375rem !important;
         }
     }
 }

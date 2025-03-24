@@ -5,14 +5,14 @@
 .collage-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 200px 100px 100px 100px 0px; // Added a 0px row 5 to allow spanning
-  gap: 10px; // Consistent gap between items
+  grid-template-rows: 12.5rem 6.25rem 6.25rem 6.25rem 0rem;
+  gap: .625rem; // Consistent gap between items
   width: 95%;
   margin: 0 auto;
-  padding: 20px 20px 10px 20px;
+  padding: 1.25rem 1.25rem .625rem 1.25rem;
   background-color: #de8ab2;
-  border: 2px solid #CCBEDF;
-  border-radius: 20px;
+  border: .125rem solid #CCBEDF;
+  border-radius: 1.25rem;
 
   @include tablet {
     width: 95%;
@@ -24,7 +24,7 @@
 }
 
 .collage-item {
-  border-radius: 20px;
+  border-radius: 1.25rem;
   overflow: hidden;
 
   &:hover {
@@ -40,10 +40,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @include body-copy;
   color: white;
   text-align: center;
-  font-family: 'Jua-Regular' !important;
+  font-family: 'Jua-Regular';
+  @include body-copy;
 }
 
 .cafe-placeholder {
@@ -82,13 +82,13 @@
   }
 
   .cafe-overlay__name {
-    color: white !important; // Ensure the text is visible
+    color: white !important; 
     font-size: 1.25rem; // Adjust size as needed
     text-align: center;
-    padding: 10px;
+    padding: .625rem;
     margin: 0;
     z-index: 3;
-    font-family: 'Jua-Regular' !important;
+    font-family: 'Jua-Regular';
     @include body-copy;
   }
 
@@ -98,15 +98,15 @@
 
   .cafe-name {
     position: absolute;
-    bottom: 10px;
+    bottom: .625rem;
     background: rgba(0, 0, 0, 0.5); // Semi-transparent background for readability
     color: white;
-    padding: 5px 10px;
+    padding: .3125rem .625rem;
     margin: 0;
-    @include small-body-copy;
-    border-radius: 5px;
+    border-radius: .3125rem;
     z-index: 1; 
     transition: opacity 0.3s ease; 
+    @include small-body-copy;
   }
 
   .cafe-link:hover ~ .cafe-name {
@@ -115,22 +115,24 @@
 }
 
 .text-box p {
+  font-family: 'Jua-Regular';
   @include body-copy;
-  font-family: 'Jua-Regular' !important;
 }
 
 // Overlay Styles
 .overlay-image {
-  width: 70px; // Adjust size as needed
+  width: 4.375rem; // Adjust size as needed
   height: auto;
   justify-self: center; 
   align-self: center;
   z-index: 10; 
+
   @include tablet {
-    width: 100px; // Slightly larger on tablet
+    width: 6.25rem; // Slightly larger on tablet
   }
+
   @include desktop {
-    width: 150px; // Larger on desktop
+    width: 9.375rem; // Larger on desktop
   }
 
   &:hover {
@@ -205,7 +207,7 @@
 }
 
 .item-9 .text-box {
-  padding: 24px;
+  padding: 1.5rem;
 }
 
 .item-10 { 

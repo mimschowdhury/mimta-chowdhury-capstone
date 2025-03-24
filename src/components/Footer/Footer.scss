@@ -21,8 +21,8 @@
     &__link {
         text-decoration: none;
         color: #62B6CB;
+        font-family: 'Jua-Regular';
         @include body-copy;
-        font-family: 'Jua-Regular' !important;
 
         &:hover {
             color: $secondary-blue;
@@ -50,8 +50,8 @@
     &__info {
         margin-bottom: 0.5rem;
         color: #adb594;
+        font-family: 'Jua-Regular';
         @include small-body-copy;
-        font-family: 'Jua-Regular' !important;
     }
 
     &__tablet-wrapper {

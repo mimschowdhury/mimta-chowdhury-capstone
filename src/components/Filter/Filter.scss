@@ -16,8 +16,12 @@
         padding: .6875rem 1.375rem;
         cursor: pointer;
         text-align: center;
+        font-family: 'Jua-Regular' !important;
         @include buttonlabel-text;
-        font-family: 'Jua-Regular';
+
+        @include tablet {
+            font-size: 0.9725rem;
+        }
 
         &:hover,
         &--active {
@@ -30,7 +34,7 @@
         }
 
         @include mobile {
-            padding: 5px 10px; 
+            padding: .3125rem .625rem; 
         }
     }
 }
@@ -44,34 +48,32 @@
     }
 
     &__button-icon {
-        width: 16px;
-        height: 16px;
+        width: 1rem;
+        height: 1rem;
     }
 
     &__dropdown {
         position: absolute;
         top: 100%;
-        right: 0px;
-        min-width: 185px;
+        right: 0rem;
+        min-width: 11.5625rem;
         background-color: $secondary-sage;
-        border: 1px solid $background-green;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        border: .0625rem solid $background-green;
+        border-radius: .625rem;
+        box-shadow: 0 .125rem .625rem rgba(0, 0, 0, 0.2);
         z-index: 1000;
-        // margin-top: 0.25rem;
         overflow: hidden;
         transition: opacity 0.4s ease, transform 0.4s ease;
         opacity: 0;
-        transform: translateY(-20px); // Start 10px above its final position
+        transform: translateY(-1.25rem); 
 
-        // When the dropdown is visible (controlled by JSX)
         &.visible {
             opacity: 0.78;
-            transform: translateY(0); // Slide down to its natural position
+            transform: translateY(0); 
         }
 
         @include mobile {
-            min-width: 150px;
+            min-width: 9.375rem;
         }
     }
 

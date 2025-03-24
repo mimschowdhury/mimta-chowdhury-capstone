@@ -13,7 +13,7 @@
 // }
 
 .cafeweekly__container {
-    max-width: 900px;
+    max-width: 56.25rem;
     margin: 2rem auto;
     padding: 1rem;
 
@@ -30,22 +30,22 @@
     display: flex;
     gap: 2rem;
     background: $secondary-sage;
-    border-radius: 20px;
-    border: 2px solid $background-green;
+    border-radius: 1.25rem;
+    border: .125rem solid $background-green;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,0.1);
 
     &__content {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 1.5rem;
         
         .cafe-weekly-image {
             width: 100%;
-            max-height: 350px;
+            max-height: 21.875rem;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 1.25rem;
             border: .0625rem solid $primary-blue;
         }
     }
@@ -57,22 +57,19 @@
     &__tags {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: .5rem;
 
         @include mobile {
-            gap: 8px;
+            gap: .5rem;
         }
 
         .cafe__weekly__tag {
             background: $secondary-white;
             padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            // margin-right: 0.5rem;
+            border-radius: .75rem;
             border: .0625rem solid $primary-blue;
             @include buttonlabel-text;
             display: flex;
-            // gap: 1rem;
-            // width: max-content;
 
             &:hover {
                 background-color: $secondary-blue;
@@ -87,7 +84,7 @@
         line-height: .9375rem;
         font-size: .75rem;
         @include tablet {
-            font-size: 18px; // Tablet & Desktop
+            font-size: 1.125rem; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -98,7 +95,7 @@
         align-items: center;
         gap: 0.5rem;
         color: #666;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
 
         &:hover {
             color: $background-green;
@@ -108,12 +105,12 @@
     &__name {
         font-family: "Jua-Regular";
         color: #3c2f2f;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
     }
 
     &__rating {
         color: #62B6CB;
-        margin-bottom: 8px;
+        margin-bottom: .5rem;
         @include buttonlabel-text;
         font-family: "Outfit-Medium";
     }
@@ -127,7 +124,7 @@
         line-height: .9375rem;
         font-size: .75rem;
         @include tablet {
-            font-size: 14px; // Tablet & Desktop
+            font-size: .875rem; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -137,12 +134,13 @@
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: .25rem;
         color: #62B6CB;
+        font-family: "Jua-Regular" !important;
         @include small-body-copy;
-        font-family: "Jua-Regular";
+
         @include tablet {
-            font-size: 14px; // Tablet & Desktop
+            font-size: .875rem; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -156,10 +154,10 @@
     &__location {
         color: #8c97c9;
         margin-bottom: 1rem;
-        @include small-body-copy;
         font-family: "Jua-Regular";
+        @include small-body-copy;
         @include tablet {
-            font-size: 14px; // Tablet & Desktop
+            font-size: .875rem; // Tablet & Desktop
             line-height: 1.625rem;
             font-weight: 600;
         }
@@ -168,7 +166,7 @@
 
 .cafe__weekly-footer {
     text-align: center;
-    margin-top: 32px;
+    margin-top: 2rem;
     font-family: 'Outfit-Medium';
     @include small-body-copy;
 }
