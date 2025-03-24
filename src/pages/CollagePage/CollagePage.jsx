@@ -1,6 +1,6 @@
 import React from "react";
-import Collage from "../../components/Collage/Collage"; // Import the Collage component
-import "./CollagePage.scss"; // Optional: CSS for the page styling
+import Collage from "../../components/Collage/Collage"; 
+import "./CollagePage.scss";
 import PhotoPageHeader from "../../components/PhotoPageHeader/PhotoPageHeader";
 import Footer from "../../components/Footer/Footer";
 

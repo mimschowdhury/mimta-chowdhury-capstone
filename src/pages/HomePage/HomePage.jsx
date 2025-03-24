@@ -120,7 +120,7 @@ export default function HomePage() {
             photos={filteredPhotos} 
             tags={tags} 
             isGridView={isGridView} 
-            onFilterChange={handleFilterChange} // Pass onFilterChange to PhotoCardList
+            onFilterChange={handleFilterChange} 
           />
         </div>
         <Footer />

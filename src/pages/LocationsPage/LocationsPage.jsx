@@ -116,7 +116,7 @@ const LocationsPage = () => {
   };
 
   const handleMouseLeave = (e) => {
-    e.currentTarget.style.backgroundImage = ""; // Reset to SCSS default
+    e.currentTarget.style.backgroundImage = ""; 
   };
 
   const mapContainerStyle = { height: "600px", width: "100%" };

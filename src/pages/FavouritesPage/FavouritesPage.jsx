@@ -3,7 +3,7 @@ import axios from "axios";
 import PhotoPageHeader from '../../components/PhotoPageHeader/PhotoPageHeader';
 import Footer from "../../components/Footer/Footer";
 import "./FavouritesPage.scss";
-import PhotoQuiz from "../../components/PhotoQuiz/PhotoQuiz"; // Import PhotoQuiz
+import PhotoQuiz from "../../components/PhotoQuiz/PhotoQuiz"; 
 
 export default function FavouritesPage() {
     const [photos, setPhotos] = useState([]);
@@ -43,7 +43,7 @@ export default function FavouritesPage() {
         const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
         const filteredFavorites = photos.filter(photo => favorites.includes(photo.id));
         setFavoritePhotos(filteredFavorites);
-    }, [photos]); // This runs AFTER photos are fetched
+    }, [photos]); 
 
     return (
         <>

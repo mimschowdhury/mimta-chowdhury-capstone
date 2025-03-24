@@ -22,7 +22,6 @@ function App() {
         <Route path="/quiz" element={<CafeQuizPage />} />
         <Route path="/cafeoftheweek" element={<CafeWeekPage />} />
         <Route path="/collage" element={<CollagePage />} />
-
       </Routes>
     </BrowserRouter>
   )

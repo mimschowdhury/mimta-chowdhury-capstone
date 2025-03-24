@@ -42,15 +42,15 @@
         width: 100%;
         gap: 1.125rem;
 
-        & > * { // Targets each photo card
-            width: calc(33.33% - 1rem); // Ensures 3 photos per row
+        & > * { 
+            width: calc(33.33% - 1rem); 
         }
     }
 }
 
 .photoquiz {
     position: relative;
-    width: 100%; // Ensure photo quiz takes full width inside the container
+    width: 100%; 
     max-width: 100%;
     border-radius: .9375rem;
     overflow: hidden;
@@ -62,15 +62,15 @@
     align-items: flex-start;
 
     @include mobile {
-        width: 100%;  // 1 card per row on mobile devices
+        width: 100%;  
     }
 
     @include tablet {
-        width: calc(50% - .75rem); // 2 cards per row on tablet devices
+        width: calc(50% - .75rem); 
     }
 
     @include desktop {
-        width: calc(33.33% - .75rem); // 3 cards per row on desktop devices
+        width: calc(33.33% - .75rem); 
     }
 
     .photoquiz__content {

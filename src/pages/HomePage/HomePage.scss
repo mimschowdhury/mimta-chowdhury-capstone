@@ -70,7 +70,6 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
   @include buttonlabel-text;
 
-  //fix dont include mixins define by width
   @include desktop {
     top: 85%;
   }
