@@ -1,0 +1,40 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.comment {
+    padding: 1rem 1rem 0;
+    background-color: $secondary-white;
+    
+    &__header {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;            
+        margin-bottom: 0.5rem;
+        padding-top: 1rem;
+        border-top: .0625rem solid $primary-brown;
+    }
+
+    &__name {
+        margin-bottom: 0.5rem;
+        color: #666;
+        font-family: "Jua-Regular";
+        @include small-body-copy;
+    }
+
+    &__date {
+        color: #666;
+        font-family: "Jua-Regular";
+        @include small-body-copy;
+    }
+
+    &__comment {
+        color: $primary-black;
+        font-family: 'Outfit-Medium';
+        @include body-copy;
+
+        @include tablet {
+        font-size: .9375rem !important;
+        }
+    }
+}

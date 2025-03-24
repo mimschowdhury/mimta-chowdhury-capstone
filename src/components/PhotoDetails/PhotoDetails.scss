@@ -1,0 +1,218 @@
+// PhotoDetails.scss
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.photo-details {
+    margin: 2rem auto;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    display: flex;
+    gap: 2rem;
+    background: linear-gradient(135deg, #f5e7f5, #e7e9f5); // Keeping your original gradient
+    border: .125rem solid $secondary-blue; // Keeping your original border color
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,0.1);
+
+    @include tablet {
+        margin: 1.5rem;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        
+        img {
+            width: 100%;
+            max-height: 28.125rem;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            border: .0625rem solid $primary-blue; // Keeping your original border color
+        }
+    }
+
+    &__details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        @include mobile {
+            gap: .5rem;
+        }
+
+        .photo-details__tag {
+            background: $secondary-white;
+            padding: 0.3rem 0.8rem;
+            border-radius: .75rem;
+            border: .0625rem solid $secondary-blue; // Keeping your original border color
+            color: #c38e70; // Keeping your original tag color
+            @include buttonlabel-text;
+
+            &:hover {
+                background-color: $secondary-blue;
+                color: white; // Keeping your original hover behavior
+            }
+        }
+    }
+
+    &__info {
+        margin-bottom: .5rem;
+        font-family: 'Outfit-Light';
+        font-weight: 600;
+        line-height: .9375rem;
+        font-size: .75rem;
+
+        @include tablet {
+            font-size: 1.125rem;
+            line-height: 1.625rem;
+            font-weight: 600;
+        }
+    }
+
+    &__context {
+        @include mobile {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__likes {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: #c99ab6; // Keeping your original color
+        margin-bottom: .5rem;
+        font-family: 'Jua-Regular' !important;
+        @include buttonlabel-text;
+
+        @include tablet {
+            font-size: .875rem;
+        }
+
+        &:hover {
+            .photo-details__favorite-icon {
+                transform: scale(1.1);
+            }
+            .photo-details__favorite-text {
+                color: #b199cd; // Matching CafeGenerator's hover color
+            }
+        }
+    }
+
+    &__favorite-icon {
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &.favorited {
+            transform: scale(1.2);
+            fill: $primary-blue; // Keeping your original filled color
+        }
+    }
+
+    &__favorite-text {
+        transition: color 0.2s ease-in-out;
+    }
+
+    &__photographer {
+        font-family: 'Jua-Regular';
+        color: $primary-black; 
+        margin-bottom: .5rem;
+
+        @include mobile {
+            font-family: 'Jua-Regular' !important;
+            font-size: .875rem !important;
+            @include buttonlabel-text;
+        }
+    }
+
+    &__location {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+        color: #b199cd;
+        margin-bottom: .5rem;
+        font-family: 'Jua-Regular' !important;
+        @include buttonlabel-text;
+
+        &:hover {
+            color: #de8ab2;
+        }
+    }
+
+    &__location-icon {
+        display: block;
+        height: 1.0625rem;
+    }
+
+    &__rating {
+        color: $primary-black; // Keeping your original color
+        margin-bottom: .5rem;
+        @include buttonlabel-text;
+    }
+
+    &__description {
+        color: #666; // Matching CafeGenerator
+        // margin: 1rem 0;
+        margin-bottom: 1rem;
+        font-family: 'Outfit-Light';
+        font-weight: 600;
+        line-height: .9375rem;
+        font-size: .75rem;
+
+        @include tablet {
+            font-size: .9375rem;
+            line-height: 1.25rem;
+            font-weight: 600;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: .625rem;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        @include desktop {
+            gap: 1rem;
+        }
+    }
+
+    &__favourites {
+        color: #48b0c9; // Keeping your original color
+        margin-bottom: 1rem;
+        font-family: 'Jua-Regular';
+        @include small-body-copy;
+
+        @include tablet {
+            font-size: .875rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.photo-details__container {
+    display: flex;
+    gap: 2rem;
+    background: linear-gradient(135deg, #f5e7f5, #e7e9f5); // Keeping your original gradient
+    border-radius: 1.25rem; // Keeping your original border color
+    padding: 1.5rem;
+}

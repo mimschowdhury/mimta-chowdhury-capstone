@@ -1,0 +1,133 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/typography' as *;
+
+.favourites {
+    &__page {
+        padding-top: 7.5rem;
+
+        @include mobile {
+            padding-top: 5rem;
+        }
+    }
+
+    &__header {
+        text-align: center;
+        color: $secondary-brown;
+        font-family: 'Jua-Regular';
+        @include heading;
+    }
+
+    &__text {
+        text-align: center;
+        padding-top: 1.5rem;
+        @include body-copy;
+    }
+}
+
+.favourites__results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: flex-start;
+
+    @include tablet {
+        padding: 2rem 1.5rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    @include desktop {
+        width: 100%;
+        gap: 1.125rem;
+
+        & > * { 
+            width: calc(33.33% - 1rem); 
+        }
+    }
+}
+
+.photoquiz {
+    position: relative;
+    width: 100%; 
+    max-width: 100%;
+    border-radius: .9375rem;
+    overflow: hidden;
+    background-color: $secondary-sage;
+    border: .0625rem solid $primary-blue;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mobile {
+        width: 100%;  
+    }
+
+    @include tablet {
+        width: calc(50% - .75rem); 
+    }
+
+    @include desktop {
+        width: calc(33.33% - .75rem); 
+    }
+
+    .photoquiz__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: .75rem .75rem 0 0;
+            object-fit: cover;
+        }
+    }
+
+    &__photographer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $secondary-sage;
+        margin-top: 1rem;
+        padding: .5rem;
+        border-radius: .75rem 0rem 0 0;
+        color: $primary-black;
+        text-align: right;
+        @include buttonlabel-text;
+    }
+
+    &__tags {
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        width: 100%;
+        padding-left: 1rem;
+
+        .photoquiz_tag {
+            background-color: $secondary-white;
+            border: .0625rem solid $primary-blue;
+            color: $primary-black;
+            padding: .375rem .5rem;
+            border-radius: .375rem;
+            text-transform: capitalize;
+            @include buttonlabel-text;
+
+            @include tablet {
+                padding: .5rem .75rem;
+                border-radius: .75rem;
+            }
+
+            // CTA hover properties
+            &:hover {
+                background-color: $secondary-blue;
+            }
+        }
+    }
+}

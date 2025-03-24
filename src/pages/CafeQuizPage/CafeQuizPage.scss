@@ -1,0 +1,124 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+.cafequiz {
+  &__page {
+    padding-top: 5rem;
+
+    @include tablet {
+      text-align: center;
+      padding-top: 7.5rem;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    color: $secondary-brown;
+    font-family: "Jua-Regular";
+    @include heading;
+  }
+
+  &__text {
+    text-align: center;
+    padding-top: 1rem;
+    color: $primary-brown;
+    padding-bottom: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
+    font-family: "Jua-Regular";
+    @include body-copy;
+  }
+
+  &__main {
+    text-align: center;
+    background-color: #dacee4;
+    border-radius: 1rem; 
+    border: .125rem solid $secondary-blue;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1.5rem;
+    @include body-copy;
+
+    @include tablet {
+      margin-left: 9.375rem;
+      margin-right: 9.375rem;
+    }
+
+    @include desktop {
+      margin-left: 18.75rem;
+      margin-right: 18.75rem;
+    }
+  }
+}
+
+.quiz-complete {
+  text-align: center;
+
+  &__heading {
+    text-align: center;
+    padding-top: 1rem;
+    color: #333;
+    font-family: "Jua-Regular" !important;
+    @include buttonlabel-text;
+  }
+
+  &__persona {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    color: #62B6CB;
+    font-family: "Jua-Regular";
+    @include body-copy;
+  }
+}
+
+.quiz__persona {
+  color: #2a6f97;
+  font-family: "Jua-Regular";
+  @include body-copy;
+}
+
+.quiz-results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: flex-start;
+
+  @include tablet {
+      padding: 2rem 1.5rem 1.5rem;
+      gap: 1.5rem;
+  }
+
+  @include desktop {
+      width: 100%;
+
+      & > * { // Targets each photo card
+          width: calc(33.33% - 1rem); // Ensures 3 photos per row
+      }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.button-container {
+  button {
+    padding: .5rem 1rem;
+    background-color: $primary-purple;
+    border: .125rem solid $secondary-blue;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Outfit-Medium';
+    @include small-body-copy;
+    
+
+    &:hover {
+      background-color: #dacee4;
+    }
+  }
+}

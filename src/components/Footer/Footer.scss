@@ -1,0 +1,94 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.footer {
+    text-align: left;
+    padding: 1rem;
+    margin-top: auto;
+    width: 100%;
+
+    @include tablet {
+        padding: 1.5rem;
+    }
+
+    &__heading {
+        padding-bottom: 1.5rem;
+        color: $primary-black;
+        @include wordmark;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #62B6CB;
+        font-family: 'Jua-Regular';
+        @include body-copy;
+
+        &:hover {
+            color: $secondary-blue;
+        }
+    }
+
+    &__links {
+        margin-bottom: 1rem;
+
+        div,
+        .footer__link {
+            display: flex;
+            margin-bottom: 0.5rem;
+            @include body-copy;
+        }
+    }
+
+    &__copyright {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    &__info {
+        margin-bottom: 0.5rem;
+        color: #adb594;
+        font-family: 'Jua-Regular';
+        @include small-body-copy;
+    }
+
+    &__tablet-wrapper {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        color: #62B6CB;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 5rem;
+            justify-content: space-between;
+            width: calc(50% - .75rem);
+        }
+
+        @include desktop {
+            width: auto;
+        }
+    }
+
+    &__desktop-wrapper {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            gap: 5rem;
+        }
+    }
+}
+
+
+

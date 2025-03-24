@@ -1,0 +1,101 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.photocard {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-radius: .9375rem;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #f4e6eb, #e6d0d7);
+    border: .0625rem solid #E8B2D2;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__link {
+        display: flex;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    @include mobile {
+        width: 100%;  
+    }
+
+    @include tablet {
+        width: calc(50% - .75rem); // 2 cards per row on tablet
+    }
+
+    @include desktop {
+        width: calc(33.33% - .75rem); // Desktop width to match the desired layout
+    }
+
+    .photocard__content {
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        img {
+            width: 100%; 
+            height: auto;
+            border-radius: .75rem .75rem 0 0;
+            object-fit: cover;
+        }
+    }
+
+    &__photographer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $secondary-white;
+        border-bottom-right-radius: 0.75rem;
+        padding: 0.55rem;
+        color: $primary-black;
+        text-align: left;
+        font-weight: bold !important;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.1);
+        // Prevent text from wrapping and hide overflow
+        white-space: nowrap;
+        overflow: hidden; 
+        @include buttonlabel-text;
+    }
+
+    &__tags {
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap; // Already set, prevents wrapping
+        gap: 0.5rem;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        width: 100%;
+        padding-left: 1rem;
+        overflow: hidden; // Hide any tags that don’t fit
+
+        .photocard_tag {
+            background-color: $secondary-white;
+            border: .0625rem solid $primary-blue;
+            color: $primary-black;
+            padding: .375rem .5rem;
+            border-radius: .375rem; 
+            text-transform: capitalize;
+            // Prevent tag text from wrapping and hide overflow
+            white-space: nowrap;
+            overflow: hidden;
+            font-weight: 300 !important;
+            @include buttonlabel-text;
+
+            @include tablet {
+                padding: .5rem .75rem;
+                border-radius: .75rem; // Slightly larger on tablet
+            }
+            
+            &:hover {
+                background-color: $secondary-blue;
+            }
+        }
+    }
+}

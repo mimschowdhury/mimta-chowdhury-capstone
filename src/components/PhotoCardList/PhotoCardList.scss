@@ -1,0 +1,135 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+// Base styles for the container
+.photocard-list {
+
+  // Scroll Mode
+  &.scroll-mode {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &.dragging {
+      cursor: grabbing;
+    }
+
+    > * {
+      flex: 0 0 auto;
+      margin-right: 1.25rem;
+    }
+
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+    @include mobile {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 1rem;
+      > * {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  // Grid Mode (from your commented-out code)
+  &.grid-mode {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+
+    @include tablet {
+        padding: 2rem 1.5rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    @include desktop {
+        width: 100%;
+
+        & > * { 
+            width: calc(33.33% - 1rem); 
+        }
+    }
+}
+}
+
+// Photocard styles (for both modes)
+.photocard {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include mobile {
+    &:hover {
+        transform: scale(0.975); // Shrink effect on hover
+      }
+  }
+}
+
+// Search bar styles
+.search-bar {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+  @include mobile {
+    margin-bottom: 1rem;
+  }
+}
+
+.search-bar__input {
+  width: 100%;
+  max-width: 15.625rem; // Limit the width for larger screens
+  padding: .625rem .9375rem;
+  border: .125rem solid #db98b8;
+  border-radius: 1.5625rem;
+  background-color: whitesmoke;
+  outline: none;
+  transition: border-color 0.3s ease;
+  color: $primary-black;
+  font-family: 'Jua-Regular';
+  @include small-body-copy;
+
+  &:focus {
+    border-color: $secondary-blue;
+  }
+
+  &::placeholder {
+    color: #333;
+    font-family: 'Jua-Regular', sans-serif;
+  }
+
+  @include tablet {
+    padding: .5rem 1rem;
+  }
+
+  @include desktop {
+    padding: .5rem 1rem;
+  }
+}
+
+.no-results {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1.25rem;
+  color: $primary-black;
+  font-family: 'Jua-Regular';
+  @include body-copy;
+}

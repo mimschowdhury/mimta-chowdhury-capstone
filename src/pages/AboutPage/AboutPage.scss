@@ -1,0 +1,94 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/typography' as *;
+
+.about-page {
+    font-family: 'Outfit-Light';
+    color: #333;
+    padding: 1rem;
+    padding-top: 5rem;
+
+    @include tablet {
+      padding-top: 7.5rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: $secondary-blue;
+
+    h1 {
+      font-family: "Jua-Regular";
+      margin-bottom: .625rem;
+      @include heading;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #666;
+      font-family: "Jua-Regular";
+      @include body-copy;
+    }
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .about-image {
+      flex: 1;
+      margin-right: 1.25rem;
+
+      img {
+        width: 100%;
+        border-radius: .625rem;
+        border: .125rem solid $secondary-blue;
+        box-shadow: 0rem .25rem .375rem rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .about-text {
+      flex: 2;
+
+      p {
+        font-family: 'Outfit-Light';
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+      }
+    }
+}
+
+// Scroll animation 
+.scroll-element {
+    opacity: 0;
+    transform: translateY(1.875rem);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    visibility: hidden; 
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+@media (max-width: 48rem) {
+    .about-content {
+      flex-direction: column;
+
+      .about-image {
+        margin-bottom: 1.25rem;
+        margin-right: 0;
+      }
+      
+      .about-text {
+        text-align: center;
+      }
+    }
+}

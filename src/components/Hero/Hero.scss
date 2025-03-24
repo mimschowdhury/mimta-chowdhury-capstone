@@ -1,96 +1,139 @@
-@use '../../styles/partials/typography' as *;
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+// Hero.scss
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .hero {
-    position: relative;
-    height: 48vh;
-    width: 100%;
+  position: relative;
+  height: 48vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+
+  @include tablet {
+    height: 80vh;
+    padding: 1.5rem;
+    justify-content: center;
+  }
+
+  &__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
+    padding-top: 3.75rem;
+    z-index: 3;
+  }
+
+  &__content {
+    font-family: "Jua-Regular";
+    color: $secondary-white;
+    padding-left: 1rem;
+    text-align: center;
+    text-shadow: -0.0625rem -0.0625rem 0 #d6c0b3d9, .0625rem -0.0625rem 0 #d6c0b3d9, -0.0625rem .0625rem 0 #d6c0b3d9,
+      .0625rem .0625rem 0 #d6c0b3d9;
+    opacity: 0;
+    @include title-typography;
 
     @include tablet {
-        height: 60vh;
-        padding: 24px;
-        justify-content: center;
+      padding-left: 0rem;
     }
 
-    &__text {
-        z-index: 3;
+    &-italics {
+      font-family: "Newsreader-LightItalic";
+      text-shadow: none;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #323232;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  &__subtitle {
+    color: $secondary-white;
+    font-family: "Newsreader-Light";
+    z-index: 3;
+    padding-left: 1rem;
+    margin-top: 2.25rem;
+    text-wrap: none;
+    opacity: 0;
+    text-align: center;
+    @include title-typography;
+
+    @include tablet {
+      padding-left: 0rem;
+      padding-right: 0rem;
     }
 
-    &__content {
-        font-family: 'Newsreader-Light';
-        @include title-typography;
-        color: $secondary-white;
-        padding-left: 16px;
+    @include desktop {
+      margin-top: 0rem;
+    }
+  }
 
-        @include tablet {
-            padding-left: 0px;
-        }
+  &__title {
+    color: $secondary-white;
+    padding-left: 1rem;
+    z-index: 2;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    text-wrap: none;
+    font-family: "Outfit-Light";
+    font-weight: 300;
+    opacity: 0;
+    text-align: center;
+    @include heading;
 
-        @include desktop {
-            width: 49%;
-        }
-
-        &-italics {
-            font-family: 'Newsreader-LightItalic';
-        }
+    @include tablet {
+      text-wrap: none;
+      padding-left: 0rem;
+      margin-bottom: 1rem;
     }
 
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #323232;
-        opacity: 0.5;
-        z-index: 1;
+    @include desktop {
+      padding-left: 0rem;
+      margin-bottom: 1rem;
     }
+  }
+}
 
-    &__subtitle {
-        color: $secondary-white;
-        font-family: 'Newsreader-Light';
-        @include title-typography;
-        z-index: 3;
-        padding-left: 1rem;
-        margin-top: 2.25rem;
-        text-wrap: none;
+// Animation keyframes
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-        @include tablet {
-            padding-left: 0rem;
-            padding-right: 0rem;
-        }
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
-        @include desktop {
-            margin-top: 0rem;
-        }
-    }
+// Animation classes
+.slide-in-from-left {
+  animation: slideInFromLeft 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
 
-    &__title {
-        color: $secondary-white;
-        padding-left: 1rem;
-        width: 50%;
-        z-index: 2;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        text-wrap: none;
-        font-family: 'Outfit-Light';
-        font-weight: 300;
-        @include heading;
-
-        @include tablet {
-            text-wrap: none;
-            padding-left: 0rem;
-            width: 75%;
-        }
-
-        @include desktop {
-            width: 90%;
-            padding-left: 0rem;
-        }
-    }
+.slide-in-from-right {
+  animation: slideInFromRight 1s ease-out forwards;
+  animation-delay: 1s; // Slight delay for staggered effect
 }

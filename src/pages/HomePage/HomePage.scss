@@ -1,0 +1,82 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $secondary-white;
+  color: $primary-black;
+  min-height: 100vh;
+}
+
+// handles layout of react components
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+}
+
+//landing page background
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: opacity 1.5s ease-in-out; // Increased from 0.5s to 1.5s
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.inactive {
+    opacity: 0;
+  }
+
+  @include tablet {
+    background-size: contain;
+  }
+
+  @include mobile {
+    background-size: contain;
+  }
+}
+
+// Ensure app content is below the overlay initially
+.app__content {
+  position: relative;
+  z-index: 0;
+}
+
+.enter-button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: .9375rem 1.875rem;
+  color: #fff;
+  background-color: rgba(167, 134, 130, 0.9);
+  border: .125rem solid #c2a2b1;
+  border-radius: 3.125rem;
+  cursor: pointer;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  @include buttonlabel-text;
+
+  @include desktop {
+    top: 85%;
+  }
+
+  &:hover {
+    background-color: rgba(175, 125, 145, 0.8);
+    border: .125rem solid $secondary-brown;
+    transform: translate(-50%, -50%) scale(1.05); // Slight scale-up
+  }
+}

@@ -1,0 +1,107 @@
+// src/components/Login/Login.scss
+
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .login-modal {
+    background: $secondary-sage;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 0 .625rem rgba(0, 0, 0, 0.1);
+    width: 18.75rem;
+    text-align: center;
+    font-family: 'Jua-Regular';
+    color: $background-blue;
+    @include body-copy;
+    
+  }
+  
+  .login-input {
+    display: block;
+    width: 100%;
+    margin: .625rem 0;
+    padding: .5rem;
+    box-sizing: border-box;
+    font-family: 'Jua-Regular';
+    @include small-body-copy;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: .625rem;
+    background-color: $background-blue;
+    color: white;
+    border: .125rem solid $secondary-white;
+    border-radius: 3.125rem;
+    cursor: pointer;
+    margin-top: .625rem;
+    font-family: 'Jua-Regular';
+    @include buttonlabel-text;
+  
+    &:hover {
+      background-color: $secondary-white;
+      color: $background-blue;
+      border: .125rem solid $background-blue;
+    }
+  }
+  
+  .toggle-mode-button {
+    width: 100%;
+    padding: .625rem;
+    background: none;
+    border: none;
+    color: #b07d62;
+    cursor: pointer;
+    margin-top: .625rem;
+    font-weight: bold !important;
+    @include buttonlabel-text;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .close-button {
+    width: 100%;
+    padding: .625rem;
+    background-color: #ccc;
+    border: none;
+    border-radius: 3.125rem;
+    cursor: pointer;
+    margin-top: .625rem;
+    font-family: 'Jua-Regular';
+    @include buttonlabel-text;
+  
+    &:hover {
+      background-color: $secondary-white;
+      border: .125rem solid #ccc;
+    }
+  }
+  
+  .login-error {
+    color: $error-red;
+    margin: .625rem 0;
+    font-family: 'Jua-Regular';
+    @include small-body-copy;
+  }
+  
+  .login-success {
+    color: #bba3de;
+    margin: .625rem 0;
+    font-family: 'Jua-Regular';
+    @include small-body-copy;
+  }

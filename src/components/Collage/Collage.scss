@@ -1,0 +1,227 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.collage-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 12.5rem 6.25rem 6.25rem 6.25rem 0rem;
+  gap: .625rem; // Consistent gap between items
+  width: 95%;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem .625rem 1.25rem;
+  background-color: #de8ab2;
+  border: .125rem solid #CCBEDF;
+  border-radius: 1.25rem;
+
+  @include tablet {
+    width: 95%;
+  }
+
+  @include desktop {
+    width: 90%;
+  }
+}
+
+.collage-item {
+  border-radius: 1.25rem;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+.cafe-placeholder,
+.text-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-family: 'Jua-Regular';
+  @include body-copy;
+}
+
+.cafe-placeholder {
+  position: relative;
+
+  .cafe-link {
+    display: block; // Ensure the Link takes up the full space
+    width: 100%;
+    height: 100%;
+    position: relative; // Ensure the link is positioned to contain the overlay
+  }
+
+  img {
+    position: absolute; // Position the image absolutely to fill the container
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensure the image fills the space without distortion
+    transition: filter 0.3s ease; // Optional: Add a blur effect on hover
+  }
+
+  .cafe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); // Semi-transparent black background
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; // Hidden by default
+    transition: opacity 0.3s ease; // Smooth transition for the hover effect
+    z-index: 2; // Ensure the overlay is above the image
+  }
+
+  .cafe-overlay__name {
+    color: white !important; 
+    font-size: 1.25rem; // Adjust size as needed
+    text-align: center;
+    padding: .625rem;
+    margin: 0;
+    z-index: 3;
+    font-family: 'Jua-Regular';
+    @include body-copy;
+  }
+
+  .cafe-link:hover .cafe-overlay {
+    opacity: 1; // Show the overlay on hover
+  }
+
+  .cafe-name {
+    position: absolute;
+    bottom: .625rem;
+    background: rgba(0, 0, 0, 0.5); // Semi-transparent background for readability
+    color: white;
+    padding: .3125rem .625rem;
+    margin: 0;
+    border-radius: .3125rem;
+    z-index: 1; 
+    transition: opacity 0.3s ease; 
+    @include small-body-copy;
+  }
+
+  .cafe-link:hover ~ .cafe-name {
+    opacity: 0; 
+  }
+}
+
+.text-box p {
+  font-family: 'Jua-Regular';
+  @include body-copy;
+}
+
+// Overlay Styles
+.overlay-image {
+  width: 4.375rem; // Adjust size as needed
+  height: auto;
+  justify-self: center; 
+  align-self: center;
+  z-index: 10; 
+
+  @include tablet {
+    width: 6.25rem; // Slightly larger on tablet
+  }
+
+  @include desktop {
+    width: 9.375rem; // Larger on desktop
+  }
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+// Blocks
+.item-1 { 
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2; 
+  .cafe-placeholder {
+    background-color: #CC7FA3;
+  }
+}
+
+.item-2 { 
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2; 
+  .text-box {
+    background-color: $primary-brown;
+  }
+}
+
+.item-3 { 
+  grid-column: 3 / 5; 
+  grid-row: 1 / 2; 
+  position: relative; 
+  .cafe-placeholder {
+    background-color: #D4BFFF;
+  }
+}
+
+.item-4 { 
+  grid-column: 1 / 2; 
+  grid-row: 2 / 5; 
+  .cafe-placeholder {
+    background-color: #BFF5FF;
+  }
+}
+
+.item-5 { 
+  grid-column: 2 / 3; 
+  grid-row: 2 / 3; 
+  .text-box {
+    background-color: #CCBEDF;
+  }
+}
+
+.item-6 { 
+  grid-column: 3 / 4; 
+  grid-row: 2 / 5; 
+  .cafe-placeholder {
+    background-color: #FFD4CC;
+  }
+}
+
+.item-7 { 
+  grid-column: 4 / 5; 
+  grid-row: 2 / 3; 
+  .text-box {
+    background-color: #E2BAC7;
+  }
+}
+
+.item-9 {
+  grid-column: 2 / 3; 
+  grid-row: 3 / 5; 
+  .text-box {
+    background-color: #8ED0DC;
+  }
+}
+
+.item-9 .text-box {
+  padding: 1.5rem;
+}
+
+.item-10 { 
+  grid-column: 4 / 5; 
+  grid-row: 3 / 4; 
+  .text-box {
+    background-color: #D6D5B3;
+  }
+}
+
+.item-11 { 
+  grid-column: 4 / 5; 
+  grid-row: 4 / 5; 
+  .cafe-placeholder {
+    background-color: #E2BAC7;
+  }
+}

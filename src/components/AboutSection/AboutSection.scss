@@ -2,108 +2,122 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.875rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: $primary-brown;
+  border-radius: 1.25rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  @include body-copy;
+
+  @include tablet {
+    padding: 2.5rem 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .features-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 75rem;
+    margin-bottom: 3.125rem;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .feature-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 16px;
-    background-color: $primary-brown;
-    @include body-copy;
+    width: 30%;
+    text-align: center;
+    opacity: 0; /* Hidden until scrolled into view */
 
-    @include tablet {
-        padding: 50px 24px;
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards; /* Animate only when visible */
     }
-  
-    .features-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      margin-bottom: 50px;
-  
-    @include mobile {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  
-    .feature-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 30%;
-      text-align: center;
-  
-      @media (max-width: 768px) {
-        width: 80%;
-        margin-bottom: 40px;
-      }
-    }
-  
-    .icon-image {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-  
-    .feature-title {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: #333;
-    }
-  
-    .feature-description {
-      font-family: 'Outfit-Light';
-      font-size: 16px;
-      color: #666;
-      line-height: 1.6;
-    }
-  
-    .main-heading {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #333;
-      text-align: center;
 
-      @include tablet {
-        padding: 32px 0px 0px;
-      }
-    }
-  
-    .main-description {
-      font-family: 'Outfit-Light';
-      font-size: 18px;
-      color: #666;
-      line-height: 1.6;
-      text-align: center;
-      max-width: 800px;
-      margin-bottom: 30px;
-    }
-  
-    .illustration-container {
-      background-color: #ff69b4; /* Pink */
-      width: 100%;
-      max-width: 600px;
-      height: 200px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 40px;
-      margin-top: 20px;
-    }
-  
-    .blue-shape {
-      background-color: #6495ed; /* Cornflower Blue */
-      width: 60px;
-      height: 40px;
-      border-radius: 5px;
-      margin: 10px;
+    @media (max-width: 57.5rem) {
+      width: 80%;
+      margin-bottom: 2.5rem;
     }
   }
-  
+
+  .icon-image {
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+    margin-bottom: .625rem;
+    color: whitesmoke;
+    font-family: 'Jua-Regular';
+    text-shadow: .125rem .125rem .25rem rgba(0, 0, 0, 0.5);
+  }
+
+  .feature-description {
+    font-family: 'Outfit-Light';
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .main-heading {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    color: $secondary-white;
+    text-align: center;
+    font-family: 'Jua-Regular';
+    opacity: 0; /* Hidden until scrolled into view */
+    text-shadow: .125rem .125rem .25rem rgba(0, 0, 0, 0.5);
+
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @include tablet {
+      padding: 2rem 0rem 0rem;
+    }
+  }
+
+  .main-description {
+    font-family: 'Outfit-Light';
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 50rem;
+    margin-bottom: 1.875rem;
+    opacity: 0; /* Hidden until scrolled into view */
+
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  }
+}
