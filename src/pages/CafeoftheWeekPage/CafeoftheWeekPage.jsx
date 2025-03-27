@@ -1,6 +1,6 @@
 // pages/CafeWeekPage.jsx
 import React from 'react';
-import CafeOfTheWeek from '../../components/CafeoftheWeek/CafeoftheWeek';
+import CafeOfTheWeek from '../../components/CafeOfTheWeek/CafeOfTheWeek';
 import PhotoPageHeader from '../../components/PhotoPageHeader/PhotoPageHeader';
 import './CafeoftheWeekPage.scss';
 import Footer from '../../components/Footer/Footer';
