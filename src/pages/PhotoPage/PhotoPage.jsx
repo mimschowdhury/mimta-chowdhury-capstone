@@ -20,7 +20,7 @@ export default function PhotoPage() {
 
     async function fetchPhoto() {
         try {
-            const { data } = await axios.get(`http://localhost:8080/photos/${id}`);
+            const { data } = await axios.get(`https://sixcafesbackend-73cce46c9779.herokuapp.com/photos/${id}`);
             setPhoto(data);
         } catch (error) {
             console.error("Error fetching photo:", error);
@@ -30,7 +30,7 @@ export default function PhotoPage() {
 
     async function fetchComments() {
         try {
-            const { data } = await axios.get(`http://localhost:8080/photos/${id}/comments`);
+            const { data } = await axios.get(`https://sixcafesbackend-73cce46c9779.herokuapp.com/photos/${id}/comments`);
             setComments(data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)));
         } catch (error) {
             console.error("Error fetching comments:", error);
@@ -41,7 +41,7 @@ export default function PhotoPage() {
     const handlePostComment = (comment) => {
         async function postComment(comment) {
             try {
-                await axios.post(`http://localhost:8080/photos/${id}/comments`, comment);
+                await axios.post(`https://sixcafesbackend-73cce46c9779.herokuapp.com/photos/${id}/comments`, comment);
                 fetchComments();
             } catch (error) {
                 console.error("Error posting comment:", error);
