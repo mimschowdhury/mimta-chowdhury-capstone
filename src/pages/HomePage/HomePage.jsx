@@ -93,8 +93,7 @@ export default function HomePage() {
         <div
           className={`intro-overlay ${isIntroActive ? "active" : "inactive"}`}
           style={{
-            backgroundImage: `url(${homeImage})`,
-            backgroundSize: "cover",
+            backgroundImage: `url(${homeImage})`
           }}
         >
           {isIntroActive && (
