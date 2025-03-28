@@ -37,10 +37,10 @@ function Footer() {
             </div>
 
             <div className="footer__copyright">
-                <p className="footer__info">© 2024 6ixCafes co.</p>
+                <p className="footer__info">© 2025 6ixCafes co.</p>
                 <p className="footer__info">Terms</p>
                 <p className="footer__info">Privacy</p>
-                <p className="footer__info">Cookies</p>
+                <p className="footer__info">Designed & Built by Mimta Chowdhury</p>
             </div>
         </section>
     );
